@@ -1,0 +1,4 @@
+// the configured options and settings for MTL
+#define MTL_VERSION_MAJOR @MTL_VERSION_MAJOR@
+#define MTL_VERSION_MINOR @MTL_VERSION_MINOR@
+#define MTL_VERSION_PATCH @MTL_VERSION_PATCH@
