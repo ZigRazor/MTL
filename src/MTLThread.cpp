@@ -78,10 +78,10 @@ namespace MTL
 
     void MTLThread::join()
     {
-        if(m_thread_ptr->joinable())
+        if (m_thread_ptr->joinable())
         {
             m_thread_ptr->join();
-        }        
+        }
     }
 
     Runnable &MTLThread::getRunnableReference()

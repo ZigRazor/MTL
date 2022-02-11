@@ -1,7 +1,5 @@
 #include <iostream>
-#include "MTLThread.h"
-#include "MTLWorkerThread.h"
-#include "MTLThreadPool.h"
+#include "MTL.h"
 
 class MyWorker1 : public MTL::MTLWorkerThread
 {
@@ -19,50 +17,11 @@ public:
         MTL::MTLWorkerThread::clean_exit();
     }
 };
-/*
-class MyWorker2 : public MTL::MTLWorkerThread
-{
-public:
-    MyWorker2() = default;
-    virtual ~MyWorker2() = default;
-    virtual void processMessage(MTL::Message message) override
-    {
-        int *message_casted = static_cast<int *>(message.get());
-        std::cout << "MyWorker2::processMessage(" << *message_casted + 10 << ")" << std::endl;
-    }
 
-    void clean_exit() override
-    {
-        std::cout << "MyWorker2::clean_exit()" << std::endl;
-        std::cout << "MyWorker2::getQueueSize() = " << MyWorker2::getQueueSize() << std::endl;
-        MTL::MTLWorkerThread::clean_exit();
-    }
-};
-
-class MyWorker3 : public MTL::MTLWorkerThread
-{
-public:
-    MyWorker3() = default;
-    virtual ~MyWorker3() = default;
-    virtual void processMessage(MTL::Message message) override
-    {
-        int *message_casted = static_cast<int *>(message.get());
-        std::cout << "MyWorker3::processMessage(" << *message_casted + 100 << ")" << std::endl;
-    }
-
-    void clean_exit() override
-    {
-        std::cout << "MyWorker3::clean_exit()" << std::endl;
-        std::cout << "MyWorker3::getQueueSize() = " << MyWorker3::getQueueSize() << std::endl;
-        MTL::MTLWorkerThread::clean_exit();
-    }
-};
-*/
 int main()
 {
+    std::cout << "Running Example 4 for MTL Version " << MTL_VERSION_MAJOR << "." << MTL_VERSION_MINOR << "." << MTL_VERSION_PATCH << std::endl;
     MyWorker1 myWorker1;
-    //MyWorker2 myWorker2;
-    //MyWorker3 myWorker3;
 
     MTL::MTLThreadPool threadPool(myWorker1, 4);
 

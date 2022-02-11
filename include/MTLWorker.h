@@ -5,11 +5,21 @@
 
 #include "MTLTypedefs.h"
 
-namespace MTL{
-    class MTLWorker{
-        protected:
-            virtual void processMessage(Message message) = 0;
-        
+namespace MTL
+{
+    /**
+     * @brief Worker Interface
+     *
+     */
+    class MTLWorker
+    {
+    protected:
+        /**
+         * @brief Process Message
+         *
+         * @param message The message to process.
+         */
+        virtual void processMessage(Message message) = 0;
     };
 }
 

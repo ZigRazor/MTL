@@ -76,7 +76,7 @@ namespace MTL
     void MTLThreadManager::clean_exit()
     {
         std::lock_guard<std::mutex> lock(m_threads_mutex);
-        for (auto it = m_threads.begin(); it != m_threads.end();++it)
+        for (auto it = m_threads.begin(); it != m_threads.end(); ++it)
         {
             if ((*it)->getThreadState() == E_MTLThreadState::CREATED)
             {

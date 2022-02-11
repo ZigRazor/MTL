@@ -1,6 +1,5 @@
 #include <iostream>
-#include "MTLThread.h"
-#include "MTLWorkerThread.h"
+#include "MTL.h"
 
 class MyWorker : public MTL::MTLWorkerThread
 {
@@ -16,6 +15,7 @@ public:
 
 int main()
 {
+    std::cout << "Running Example 2 for MTL Version " << MTL_VERSION_MAJOR << "." << MTL_VERSION_MINOR << "." << MTL_VERSION_PATCH << std::endl;
     MyWorker myWorker;
     MTL::MTLThread thread(myWorker);
     thread.run();

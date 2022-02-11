@@ -2,3 +2,13 @@
 #define MTL_VERSION_MAJOR @MTL_VERSION_MAJOR@
 #define MTL_VERSION_MINOR @MTL_VERSION_MINOR@
 #define MTL_VERSION_PATCH @MTL_VERSION_PATCH@
+
+#include "MTLMessageQueue.h"
+#include "MTLThread.h"
+#include "MTLThreadInterface.h"
+#include "MTLThreadManager.h"
+#include "MTLThreadPool.h"
+#include "MTLTypedefs.h"
+#include "MTLWorker.h"
+#include "MTLWorkerThread.h"
+#include "Runnable.h"
