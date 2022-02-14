@@ -32,6 +32,12 @@ namespace MTL
      *
      */
     typedef std::shared_ptr<void> Message;
+
+    /**
+     * @brief Shared Object Id Type Definition
+     *
+     */
+    typedef unsigned int SharedObjectId;
 }
 
 #endif // __MTL__TYPEDEFS__

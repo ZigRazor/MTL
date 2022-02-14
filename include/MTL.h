@@ -4,6 +4,8 @@
 #define MTL_VERSION_PATCH 1
 
 #include "MTLMessageQueue.h"
+#include "MTLSharedMemory.h"
+#include "MTLSharedObject.h"
 #include "MTLThread.h"
 #include "MTLThreadInterface.h"
 #include "MTLThreadManager.h"

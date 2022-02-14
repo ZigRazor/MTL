@@ -47,6 +47,8 @@ add_library(MTL SHARED
 				src/MTLWorkerThread.cpp
 				src/MTLThreadManager.cpp
 				src/MTLThreadPool.cpp
+				src/MTLSharedObject.cpp
+				src/MTLSharedMemory.cpp
 				)
 target_include_directories(MTL PUBLIC
 						  "${PROJECT_SOURCE_DIR}/include"
