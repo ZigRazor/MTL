@@ -6,6 +6,7 @@
 #include "MTLMessageQueue.h"
 #include "MTLSharedMemory.h"
 #include "MTLSharedObject.h"
+#include "MTLTask.h"
 #include "MTLThread.h"
 #include "MTLThreadInterface.h"
 #include "MTLThreadManager.h"
@@ -14,3 +15,4 @@
 #include "MTLWorker.h"
 #include "MTLWorkerThread.h"
 #include "Runnable.h"
+#include "RunnableTask.h"

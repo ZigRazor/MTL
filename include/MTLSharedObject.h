@@ -1,6 +1,8 @@
 #ifndef __MTL__MTLSHAREDOBJECT__
 #define __MTL__MTLSHAREDOBJECT__
 
+#pragma once
+
 #include <mutex>
 #include "MTLTypedefs.h"
 

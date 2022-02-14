@@ -1,6 +1,8 @@
 #ifndef __MTL__MTLSHAREDMEMORY__
 #define __MTL__MTLSHAREDMEMORY__
 
+#pragma once
+
 #include "MTLSharedObject.h"
 #include <map>
 #include <memory>
