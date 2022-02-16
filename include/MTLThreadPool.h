@@ -12,6 +12,10 @@ namespace MTL
     /**
      * @brief Class that implements a thread pool.
      *
+     * This class is a thread pool that can be used to manage threads.
+     * 
+     * @author @ZigRazor
+     * @date 2020-02-16
      */
     class MTLThreadPool : public MTLThreadManager
     {
@@ -22,11 +26,16 @@ namespace MTL
          *
          * @param worker worker thread for the thread pool.
          * @param num_threads number of threads in the thread pool.
+         * 
+         * @author @ZigRazor
+         * @date 2020-02-16
          */
         MTLThreadPool(MTLWorkerThread &worker, unsigned int num_threads);
         /**
          * @brief Destroy the MTLThreadPool object
          *
+         * @author @ZigRazor
+         * @date 2020-02-16
          */
         ~MTLThreadPool();
 
@@ -34,14 +43,17 @@ namespace MTL
          * @brief Dispatch a message to the thread pool.
          *
          * @param message Message to dispatch.
+         * 
+         * @author @ZigRazor
+         * @date 2020-02-16
          */
         virtual void onMessage(Message &message);
 
     private:
-        std::mutex m_onMessage_mutex;
-        unsigned int m_num_threads;
-        unsigned int m_current_thread;
-        MTLWorkerThread &worker;
+        std::mutex m_onMessage_mutex; /**< Mutex for the onMessage method. */
+        unsigned int m_num_threads; /**< Number of threads in the thread pool. */
+        unsigned int m_current_thread; /**< Current thread in the thread pool. */
+        MTLWorkerThread &worker; /**< Worker thread for the thread pool. */
     };
 
 }
