@@ -38,6 +38,12 @@ namespace MTL
      *
      */
     typedef unsigned int SharedObjectId;
+
+    /**
+     * @brief TaskName Type Definition
+     *
+     */
+    typedef std::string TaskName;
 }
 
 #endif // __MTL__TYPEDEFS__

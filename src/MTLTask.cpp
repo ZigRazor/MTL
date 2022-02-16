@@ -1,19 +1,36 @@
 #include "MTLTask.h"
-
+#include <iostream>
 namespace MTL
 {
-    MTLTask::MTLTask(RunnableTask &runnableTask)
+    MTLTask::MTLTask(RunnableTask &runnableTask) : m_runnableTask(runnableTask), m_future(),m_futureMutex(), m_result(nullptr)
     {
-        m_future = std::async(std::launch::async, &RunnableTask::run, &runnableTask);
+    
     }
+    
 
     MTLTask::~MTLTask()
     {
     }
 
-    std::shared_ptr<void> MTLTask::getFuture()
+    std::shared_ptr<void> MTLTask::run(MTLTaskInterface* interface)
     {
-        return m_future.get();
+        m_future = std::async(std::launch::async, &RunnableTask::run, &m_runnableTask,nullptr);
+        return std::shared_ptr<void>(nullptr);
+    }
+
+    std::shared_ptr<void> MTLTask::getResult()
+    {
+        std::lock_guard<std::mutex> lock(m_futureMutex);
+        if(m_future.valid())
+        {
+            m_result = m_future.get();
+        }
+        return m_result;
+    }
+
+    void MTLTask::waitResult()
+    {
+        m_future.wait();
     }
 
 }

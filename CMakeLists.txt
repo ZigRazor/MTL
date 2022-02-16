@@ -50,8 +50,10 @@ add_library(MTL SHARED
 				src/MTLSharedObject.cpp
 				src/MTLSharedMemory.cpp
 				src/MTLTask.cpp
+				src/MTLOrderedTask.cpp
+				src/MTLTaskFlow.cpp
 				)
-				
+
 target_include_directories(MTL PUBLIC
 						  "${PROJECT_SOURCE_DIR}/include"
 						  )

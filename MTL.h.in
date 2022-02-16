@@ -4,9 +4,12 @@
 #define MTL_VERSION_PATCH @MTL_VERSION_PATCH@
 
 #include "MTLMessageQueue.h"
+#include "MTLOrderedTask.h"
+#include "MTLOrderedTaskInterface.h"
 #include "MTLSharedMemory.h"
 #include "MTLSharedObject.h"
 #include "MTLTask.h"
+#include "MTLTaskFlow.h"
 #include "MTLThread.h"
 #include "MTLThreadInterface.h"
 #include "MTLThreadManager.h"

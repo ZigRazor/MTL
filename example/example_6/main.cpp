@@ -6,7 +6,7 @@ class MyRunnableTask : public MTL::RunnableTask
 public:
     MyRunnableTask() = default;
     virtual ~MyRunnableTask() = default;
-    std::shared_ptr<void> run()
+    std::shared_ptr<void> run(MTL::MTLTaskInterface* interface = nullptr)
     {
         std::cout << "Hello World!" << std::endl;
         std::cout << "Simulating Working for 3 seconds" << std::endl;
@@ -31,7 +31,8 @@ int main()
     std::cout << "Running Example 6 for MTL Version " << MTL_VERSION_MAJOR << "." << MTL_VERSION_MINOR << "." << MTL_VERSION_PATCH << std::endl;
     MyRunnableTask myRunnableTask;
     MTL::MTLTask task(myRunnableTask);
-    std::shared_ptr<void> result = task.getFuture();
+    task.run();
+    std::shared_ptr<void> result = task.getResult();
     std::cout << "Result: " << *(static_cast<int*>(result.get())) << std::endl;
     return 0;
 }

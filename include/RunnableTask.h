@@ -4,6 +4,7 @@
 #pragma once
 
 #include <memory>
+#include "MTLTaskInterface.h"
 
 namespace MTL
 {
@@ -19,7 +20,7 @@ namespace MTL
          * 
          * @return std::shared_ptr<void> the result of the task.
          */
-        virtual std::shared_ptr<void> run() = 0;
+        virtual std::shared_ptr<void> run(MTLTaskInterface* interface = nullptr) = 0;
     };
 
 }
