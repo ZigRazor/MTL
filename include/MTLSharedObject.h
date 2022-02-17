@@ -1,5 +1,5 @@
-#ifndef __MTL__MTLSHAREDOBJECT__
-#define __MTL__MTLSHAREDOBJECT__
+#ifndef MTLSHAREDOBJECT_H
+#define MTLSHAREDOBJECT_H
 
 #pragma once
 
@@ -69,4 +69,4 @@ namespace MTL{
     };
 }
 
-#endif /* __MTL__MTLSHAREDOBJECT__ */
+#endif // MTLSHAREDOBJECT_H

@@ -1,7 +1,7 @@
 #include "MTLOrderedTask.h"
 
 namespace MTL{
-    MTLOrderedTask::MTLOrderedTask(const TaskName& taskName, RunnableTask &runnableTask) : MTLTask(runnableTask), m_name(taskName), m_predecessor(), m_successor()
+    MTLOrderedTask::MTLOrderedTask(const TaskName& taskName, MTLRunnableTask &runnableTask) : MTLTask(runnableTask), m_name(taskName), m_predecessor(), m_successor()
     {
     }
 
@@ -12,7 +12,7 @@ namespace MTL{
     
     std::shared_ptr<void> MTLOrderedTask::run(MTLTaskInterface* interface)
     {
-        m_future = std::async(std::launch::async, &RunnableTask::run, &m_runnableTask, this);
+        m_future = std::async(std::launch::async, &MTLRunnableTask::run, &m_runnableTask, this);
         return std::shared_ptr<void>(nullptr);
     }
     

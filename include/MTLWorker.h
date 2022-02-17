@@ -1,5 +1,5 @@
-#ifndef __MTL__MTLWORKER__
-#define __MTL__MTLWORKER__
+#ifndef MTLWORKER_H
+#define MTLWORKER_H
 
 #pragma once
 
@@ -27,4 +27,5 @@ namespace MTL
     };
 }
 
-#endif // __MTL__MTLWORKER__
+
+#endif // MTLWORKER_H

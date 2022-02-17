@@ -1,3 +1,6 @@
+#ifndef MTL_H
+#define MTL_H
+
 // the configured options and settings for MTL
 #define MTL_VERSION_MAJOR 0
 #define MTL_VERSION_MINOR 0
@@ -17,5 +20,7 @@
 #include "MTLTypedefs.h"
 #include "MTLWorker.h"
 #include "MTLWorkerThread.h"
-#include "Runnable.h"
-#include "RunnableTask.h"
+#include "MTLRunnable.h"
+#include "MTLRunnableTask.h"
+
+#endif // MTL_H

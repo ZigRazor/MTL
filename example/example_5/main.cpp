@@ -21,7 +21,7 @@ private:
     int value;
 };
 
-class MyRunnable : public MTL::Runnable
+class MyRunnable : public MTL::MTLRunnable
 {
 public:
     MyRunnable(MTL::MTLSharedMemory* sharedMemory) : m_sharedMemory(sharedMemory)

@@ -1,9 +1,9 @@
-#ifndef __MTL__MTLWORKERTHREAD__
-#define __MTL__MTLWORKERTHREAD__
+#ifndef MTLWORKERTHREAD_H
+#define MTLWORKERTHREAD_H
 
 #pragma once
 
-#include "Runnable.h"
+#include "MTLRunnable.h"
 #include "MTLMessageQueue.h"
 #include "MTLWorker.h"
 
@@ -17,7 +17,7 @@ namespace MTL
      * @author @ZigRazor
      * @date 2020-02-16
      */
-    class MTLWorkerThread : public Runnable, public MTLWorker, public MTLMessageQueue
+    class MTLWorkerThread : public MTLRunnable, public MTLWorker, public MTLMessageQueue
     {
     public:
         /**
@@ -106,4 +106,5 @@ namespace MTL
 
 }
 
-#endif // __MTL__MTLWORKERTHREAD__
+
+#endif // MTLWORKERTHREAD_H

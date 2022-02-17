@@ -1,5 +1,5 @@
-#ifndef __MTL__MTLORDEREDTASK__
-#define __MTL__MTLORDEREDTASK__
+#ifndef MTLORDEREDTASK_H
+#define MTLORDEREDTASK_H
 
 #pragma once
 
@@ -29,7 +29,7 @@ namespace MTL{
          * @author @ZigRazor
          * @date 2020-02-16
          */
-        MTLOrderedTask(const TaskName& taskname,RunnableTask &runnableTask);
+        MTLOrderedTask(const TaskName& taskname,MTLRunnableTask &runnableTask);
         
         /**
          * @brief Destructor
@@ -118,4 +118,5 @@ namespace MTL{
     };
 }
 
-#endif /*__MTL__MTLORDEREDTASK__*/
+
+#endif // MTLORDEREDTASK_H

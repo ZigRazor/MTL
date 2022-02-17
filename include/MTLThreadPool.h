@@ -1,5 +1,5 @@
-#ifndef __MTL__MTLTHREADPOOL__
-#define __MTL__MTLTHREADPOOL__
+#ifndef MTLTHREADPOOL_H
+#define MTLTHREADPOOL_H
 
 #pragma once
 
@@ -57,4 +57,6 @@ namespace MTL
     };
 
 }
-#endif // __MTL__MTLTHREADPOOL__
+
+
+#endif // MTLTHREADPOOL_H

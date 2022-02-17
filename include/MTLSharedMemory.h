@@ -1,5 +1,5 @@
-#ifndef __MTL__MTLSHAREDMEMORY__
-#define __MTL__MTLSHAREDMEMORY__
+#ifndef MTLSHAREDMEMORY_H
+#define MTLSHAREDMEMORY_H
 
 #pragma once
 
@@ -86,4 +86,4 @@ namespace MTL {
         };
 }
 
-#endif /* __MTL__MTLSHAREDMEMORY__ */
+#endif // MTLSHAREDMEMORY_H

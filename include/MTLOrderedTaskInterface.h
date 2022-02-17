@@ -1,5 +1,7 @@
-#ifndef __MTL__MTLORDEREDTASKINTERFACE__
-#define __MTL__MTLORDEREDTASKINTERFACE__
+#ifndef MTLORDEREDTASKINTERFACE_H
+#define MTLORDEREDTASKINTERFACE_H
+
+#pragma once
 
 #include "MTLTypedefs.h"
 #include <unordered_map>
@@ -51,4 +53,4 @@ namespace MTL
     };
 }
 
-#endif /* __MTL__MTLORDEREDTASKINTERFACE__ */
+#endif // MTLORDEREDTASKINTERFACE_H

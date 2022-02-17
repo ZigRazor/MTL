@@ -1,5 +1,5 @@
-#ifndef __MTL__MTLTASKFLOW__
-#define __MTL__MTLTASKFLOW__
+#ifndef MTLTASKFLOW_H
+#define MTLTASKFLOW_H
 
 #pragma once
 
@@ -91,4 +91,4 @@ namespace MTL{
 }
 
 
-#endif /* __MTL__MTLTASKFLOW__ */
+#endif // MTLTASKFLOW_H

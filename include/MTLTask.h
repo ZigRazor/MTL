@@ -1,11 +1,11 @@
-#ifndef __MTL__MTLTASK__
-#define __MTL__MTLTASK__
+#ifndef MTLTASK_H
+#define MTLTASK_H
 
 #pragma once
 
 #include <future>
 #include "MTLTaskInterface.h"
-#include "RunnableTask.h"
+#include "MTLRunnableTask.h"
 
 namespace MTL
 {
@@ -17,7 +17,7 @@ namespace MTL
      * @author @ZigRazor
      * @date 2020-02-16
      */
-    class MTLTask : public MTLTaskInterface, public RunnableTask
+    class MTLTask : public MTLTaskInterface, public MTLRunnableTask
     {
     public:
         /**
@@ -28,7 +28,7 @@ namespace MTL
          * @author @ZigRazor
          * @date 2020-02-16
          */
-        MTLTask(RunnableTask &runnableTask);
+        MTLTask(MTLRunnableTask &runnableTask);
         /**
          * @brief Destroy the MTLTask object.
          *
@@ -66,7 +66,7 @@ namespace MTL
         virtual void waitResult();
 
     protected:
-        RunnableTask &m_runnableTask;                //!< The runnable task.
+        MTLRunnableTask &m_runnableTask;                //!< The runnable task.
         std::future<std::shared_ptr<void>> m_future; //!< The future object.
         std::mutex m_futureMutex;                    //!< The mutex for the future object.
         std::shared_ptr<void> m_result;              //!< The result of the task.
@@ -74,4 +74,4 @@ namespace MTL
 
 }
 
-#endif /* __MTL__MTLTASK__ */
+#endif // MTLTASK_H

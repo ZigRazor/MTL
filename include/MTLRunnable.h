@@ -1,5 +1,5 @@
-#ifndef __MTL__RUNNABLE__
-#define __MTL__RUNNABLE__
+#ifndef RUNNABLE_H
+#define RUNNABLE_H
 
 #pragma once
 
@@ -16,7 +16,7 @@ namespace MTL
      * @author @ZigRazor
      * @date 2020-02-16
      */
-    class Runnable
+    class MTLRunnable
     {
     public:
         /**
@@ -71,4 +71,5 @@ namespace MTL
 
 }
 
-#endif // __MTL__RUNNABLE__
+
+#endif // RUNNABLE_H

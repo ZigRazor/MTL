@@ -1,5 +1,5 @@
-#ifndef __MTL__TYPEDEFS__
-#define __MTL__TYPEDEFS__
+#ifndef MTLTYPEDEFS_H
+#define MTLTYPEDEFS_H
 
 #pragma once
 
@@ -66,4 +66,5 @@ namespace MTL
     typedef std::string TaskName;
 }
 
-#endif // __MTL__TYPEDEFS__
+
+#endif // MTLTYPEDEFS_H

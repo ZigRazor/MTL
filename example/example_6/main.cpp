@@ -1,7 +1,7 @@
 #include <iostream>
 #include "MTL.h"
 
-class MyRunnableTask : public MTL::RunnableTask
+class MyRunnableTask : public MTL::MTLRunnableTask
 {
 public:
     MyRunnableTask() = default;

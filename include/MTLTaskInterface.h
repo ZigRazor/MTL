@@ -1,5 +1,5 @@
-#ifndef __MTL__MTLTASKINTERFACE__
-#define __MTL__MTLTASKINTERFACE__
+#ifndef MTLTASKINTERFACE_H
+#define MTLTASKINTERFACE_H
 
 #pragma once
 
@@ -38,4 +38,4 @@ namespace MTL
 
 }
 
-#endif /* __MTL__MTLTASKINTERFACE__ */
+#endif // MTLTASKINTERFACE_H

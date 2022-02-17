@@ -1,5 +1,5 @@
-#ifndef __MTL__MTLTHREADMANAGER__
-#define __MTL__MTLTHREADMANAGER__
+#ifndef MTLTHREADMANAGER_H
+#define MTLTHREADMANAGER_H
 
 #pragma once
 
@@ -17,7 +17,7 @@ namespace MTL
      * @author @ZigRazor
      * @date 2020-02-16
      */
-    class MTLThreadManager : public Runnable
+    class MTLThreadManager : public MTLRunnable
     {
     public:
         /**
@@ -109,4 +109,5 @@ namespace MTL
     };
 }
 
-#endif // __MTL__MTLTHREADMANAGER__
+
+#endif // MTLTHREADMANAGER_H

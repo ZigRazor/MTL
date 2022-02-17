@@ -1,5 +1,5 @@
-#ifndef __MTL__RUNNABLETASK__
-#define __MTL__RUNNABLETASK__
+#ifndef RUNNABLETASK_H
+#define RUNNABLETASK_H
 
 #pragma once
 
@@ -16,7 +16,7 @@ namespace MTL
      * @author @ZigRazor
      * @date 2020-02-16
      */
-    class RunnableTask
+    class MTLRunnableTask
     {
     public:
         /**
@@ -32,4 +32,4 @@ namespace MTL
 
 }
 
-#endif /* __MTL__RUNNABLETASK__ */
+#endif // RUNNABLETASK_H

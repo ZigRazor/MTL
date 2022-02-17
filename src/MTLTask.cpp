@@ -2,7 +2,7 @@
 #include <iostream>
 namespace MTL
 {
-    MTLTask::MTLTask(RunnableTask &runnableTask) : m_runnableTask(runnableTask), m_future(),m_futureMutex(), m_result(nullptr)
+    MTLTask::MTLTask(MTLRunnableTask &runnableTask) : m_runnableTask(runnableTask), m_future(),m_futureMutex(), m_result(nullptr)
     {
     
     }
@@ -14,7 +14,7 @@ namespace MTL
 
     std::shared_ptr<void> MTLTask::run(MTLTaskInterface* interface)
     {
-        m_future = std::async(std::launch::async, &RunnableTask::run, &m_runnableTask,nullptr);
+        m_future = std::async(std::launch::async, &MTLRunnableTask::run, &m_runnableTask,nullptr);
         return std::shared_ptr<void>(nullptr);
     }
 

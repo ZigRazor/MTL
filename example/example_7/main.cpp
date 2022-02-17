@@ -1,7 +1,7 @@
 #include <iostream>
 #include "MTL.h"
 
-class Var2Task : public MTL::RunnableTask
+class Var2Task : public MTL::MTLRunnableTask
 {
 public:
     Var2Task() = default;
@@ -31,7 +31,7 @@ public:
     }
 };
 
-class SumTask : public MTL::RunnableTask
+class SumTask : public MTL::MTLRunnableTask
 {
 public:
     SumTask() = default;
@@ -77,7 +77,7 @@ public:
     }
 };
 
-class MulTask : public MTL::RunnableTask
+class MulTask : public MTL::MTLRunnableTask
 {
 public:
     MulTask() = default;

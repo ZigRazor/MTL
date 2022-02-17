@@ -1,9 +1,9 @@
-#ifndef __MTL__MTLTHREAD__
-#define __MTL__MTLTHREAD__
+#ifndef MTLTHREAD_H
+#define MTLTHREAD_H
 
 #pragma once
 
-#include "Runnable.h"
+#include "MTLRunnable.h"
 #include "MTLThreadInterface.h"
 #include <thread>
 #include <mutex>
@@ -18,7 +18,7 @@ namespace MTL
      * @author @ZigRazor
      * @date 2020-02-16 
      */
-    class MTLThread : public Runnable, public MTLThreadInterface
+    class MTLThread : public MTLRunnable, public MTLThreadInterface
     {
     public:
         /**
@@ -29,7 +29,7 @@ namespace MTL
          * @author @ZigRazor
          * @date 2020-02-16
          */
-        MTLThread(Runnable &runnable);
+        MTLThread(MTLRunnable &runnable);
         /**
          * @brief Destroy the MTLThread object.
          *
@@ -110,7 +110,7 @@ namespace MTL
          * @author @ZigRazor
          * @date 2020-02-16
          */
-        Runnable &getRunnableReference();
+        MTLRunnable &getRunnableReference();
 
         /**
          * @brief Get the Thread State
@@ -136,8 +136,10 @@ namespace MTL
         E_MTLThreadState m_threadState; //!< The thread state.
         std::mutex m_threadState_mutex; //!< The mutex for the thread state.
         std::unique_ptr<std::thread> m_thread_ptr; //!< The thread pointer.
-        Runnable &m_runnable; //!< The runnable object.
+        MTLRunnable &m_runnable; //!< The runnable object.
     };
 
 }
-#endif // __MTL__MTLTHREAD__
+
+
+#endif // MTLTHREAD_H

@@ -1,7 +1,7 @@
 #include <iostream>
 #include "MTL.h"
 
-class MyRunnable : public MTL::Runnable
+class MyRunnable : public MTL::MTLRunnable
 {
 public:
     MyRunnable() = default;

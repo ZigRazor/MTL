@@ -5,7 +5,7 @@
 namespace MTL
 {
 
-    MTLWorkerThread::MTLWorkerThread() : Runnable(), MTLWorker(), MTLMessageQueue(), m_sleep_time(100)
+    MTLWorkerThread::MTLWorkerThread() : MTLRunnable(), MTLWorker(), MTLMessageQueue(), m_sleep_time(100)
     {
     }
 

@@ -3,7 +3,7 @@
 
 namespace MTL
 {
-    MTLThread::MTLThread(Runnable &runnable) : Runnable(), MTLThreadInterface(), m_threadState(CREATED), m_threadState_mutex(), m_thread_ptr(nullptr), m_runnable(runnable)
+    MTLThread::MTLThread(MTLRunnable &runnable) : MTLRunnable(), MTLThreadInterface(), m_threadState(CREATED), m_threadState_mutex(), m_thread_ptr(nullptr), m_runnable(runnable)
     {
     }
 
@@ -21,7 +21,7 @@ namespace MTL
         if (!isRunning())
         {
             std::lock_guard<std::mutex> lock(m_threadState_mutex);
-            m_thread_ptr = std::unique_ptr<std::thread>(new std::thread(&Runnable::run, &m_runnable, this));
+            m_thread_ptr = std::unique_ptr<std::thread>(new std::thread(&MTLRunnable::run, &m_runnable, this));
             m_threadState = RUNNING;
         }
     }
@@ -84,7 +84,7 @@ namespace MTL
         }
     }
 
-    Runnable &MTLThread::getRunnableReference()
+    MTLRunnable &MTLThread::getRunnableReference()
     {
         return m_runnable;
     }

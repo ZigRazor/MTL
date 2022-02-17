@@ -1,5 +1,5 @@
-#ifndef __MTL__MTLTHREADINTERFACE__
-#define __MTL__MTLTHREADINTERFACE__
+#ifndef MTLTHREADINTERFACE_H
+#define MTLTHREADINTERFACE_H
 
 #pragma once
 
@@ -49,4 +49,4 @@ namespace MTL
     };
 }
 
-#endif /* __MTL__MTLTHREADINTERFACE__ */
+#endif // MTLTHREADINTERFACE_H

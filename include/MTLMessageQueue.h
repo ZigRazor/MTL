@@ -1,5 +1,5 @@
-#ifndef __MTL__MTLMESSAGEQUEUE__
-#define __MTL__MTLMESSAGEQUEUE__
+#ifndef MTLMESSAGEQUEUE_H
+#define MTLMESSAGEQUEUE_H
 
 #pragma once
 
@@ -86,4 +86,5 @@ namespace MTL
     };
 }
 
-#endif // __MTL__MTLMESSAGEQUEUE__
+
+#endif // MTLMESSAGEQUEUE_H
