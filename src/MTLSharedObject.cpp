@@ -1,8 +1,9 @@
 #include "MTLSharedObject.h"
 
-namespace MTL{
-    
-    MTLSharedObject::MTLSharedObject(SharedObjectId id): objId(id), m_mutex()
+namespace MTL
+{
+
+    MTLSharedObject::MTLSharedObject(SharedObjectId id) : objId(id), m_mutex()
     {
     }
     MTLSharedObject::~MTLSharedObject()
@@ -13,7 +14,7 @@ namespace MTL{
     {
         return objId;
     }
-    MTLSharedObject& MTLSharedObject::getObj()
+    MTLSharedObject &MTLSharedObject::getObj()
     {
         m_mutex.lock();
         return *this;

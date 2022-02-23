@@ -2,15 +2,15 @@
 
 namespace MTL
 {
-    MTLTaskFlow::MTLTaskFlow(const TaskName& taskName): MTLOrderedTask(taskName, *this)
+    MTLTaskFlow::MTLTaskFlow(const TaskName &taskName) : MTLOrderedTask(taskName, *this)
     {
     }
-    
+
     MTLTaskFlow::~MTLTaskFlow()
     {
     }
 
-    std::shared_ptr<void> MTLTaskFlow::run(MTLTaskInterface* interface)
+    std::shared_ptr<void> MTLTaskFlow::run(MTLTaskInterface *interface)
     {
         for (auto &task : m_orderedTasks)
         {
@@ -23,19 +23,19 @@ namespace MTL
     {
         for (auto &task : m_orderedTasks)
         {
-            if(!task.second->hasSuccessor())
+            if (!task.second->hasSuccessor())
             {
                 return task.second->getResult();
             }
         }
         return std::shared_ptr<void>(nullptr);
     }
-    
+
     void MTLTaskFlow::waitResult()
     {
         for (auto &task : m_orderedTasks)
         {
-            if(!task.second->hasSuccessor())
+            if (!task.second->hasSuccessor())
             {
                 return task.second->waitResult();
             }

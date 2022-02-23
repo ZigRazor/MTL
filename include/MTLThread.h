@@ -14,9 +14,9 @@ namespace MTL
      * @brief Class that implements a thread.
      *
      * This class is a thread that can be used to run a task.
-     * 
+     *
      * @author @ZigRazor
-     * @date 2020-02-16 
+     * @date 2020-02-16
      */
     class MTLThread : public MTLRunnable, public MTLThreadInterface
     {
@@ -25,7 +25,7 @@ namespace MTL
          * @brief Construct a new MTLThread object.
          *
          * @param runnable the runnable object to run.
-         * 
+         *
          * @author @ZigRazor
          * @date 2020-02-16
          */
@@ -42,7 +42,7 @@ namespace MTL
          * @brief Start the thread.
          *
          * @param threadIf The thread interface.
-         * 
+         *
          * @author @ZigRazor
          *  @date 2020-02-16
          */
@@ -88,7 +88,7 @@ namespace MTL
          *
          * @return true if the thread is running.
          * @return false if the thread is not running.
-         * 
+         *
          * @author @ZigRazor
          * @date 2020-02-16
          */
@@ -106,7 +106,7 @@ namespace MTL
          * @brief Get the Runnable Reference object
          *
          * @return Runnable& get the Runnable Reference object
-         * 
+         *
          * @author @ZigRazor
          * @date 2020-02-16
          */
@@ -116,7 +116,7 @@ namespace MTL
          * @brief Get the Thread State
          *
          * @return E_MTLThreadState Thread State
-         * 
+         *
          * @author @ZigRazor
          * @date 2020-02-16
          */
@@ -126,20 +126,19 @@ namespace MTL
          * @brief Set the Thread State object
          *
          * @param threadState the Thread State to set
-         * 
+         *
          * @author @ZigRazor
          * @date 2020-02-16
          */
         void setThreadState(E_MTLThreadState threadState);
 
     private:
-        E_MTLThreadState m_threadState; //!< The thread state.
-        std::mutex m_threadState_mutex; //!< The mutex for the thread state.
+        E_MTLThreadState m_threadState;            //!< The thread state.
+        std::mutex m_threadState_mutex;            //!< The mutex for the thread state.
         std::unique_ptr<std::thread> m_thread_ptr; //!< The thread pointer.
-        MTLRunnable &m_runnable; //!< The runnable object.
+        MTLRunnable &m_runnable;                   //!< The runnable object.
     };
 
 }
-
 
 #endif // MTLTHREAD_H

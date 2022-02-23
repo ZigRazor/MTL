@@ -13,7 +13,7 @@ namespace MTL
      * @brief Class that implements a Worker Thread.
      *
      * This class is a Worker Thread that can be used to run a task.
-     * 
+     *
      * @author @ZigRazor
      * @date 2020-02-16
      */
@@ -38,7 +38,7 @@ namespace MTL
          * @brief Start the thread.
          *
          * @param threadIf The thread interface.
-         * 
+         *
          * @author @ZigRazor
          * @date 2020-02-16
          */
@@ -83,7 +83,7 @@ namespace MTL
          * @brief Set the Sleep Time
          *
          * @param sleep_time sleep time in milliseconds.
-         * 
+         *
          * @author @ZigRazor
          * @date 2020-02-16
          */
@@ -94,7 +94,7 @@ namespace MTL
          * @brief Process the message Message
          *
          * @param message The message to process.
-         * 
+         *
          * @author @ZigRazor
          * @date 2020-02-16
          */
@@ -105,6 +105,5 @@ namespace MTL
     };
 
 }
-
 
 #endif // MTLWORKERTHREAD_H

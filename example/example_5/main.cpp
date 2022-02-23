@@ -1,22 +1,28 @@
 #include <iostream>
 #include "MTL.h"
 
-class MySharedObject : public MTL::MTLSharedObject {
+class MySharedObject : public MTL::MTLSharedObject
+{
 public:
-    MySharedObject(unsigned int id) : MTLSharedObject(id) {
+    MySharedObject(unsigned int id) : MTLSharedObject(id)
+    {
         std::cout << "MySharedObject::MySharedObject()" << std::endl;
         value = 0;
     }
-    ~MySharedObject() {
+    ~MySharedObject()
+    {
         std::cout << "MySharedObject::~MySharedObject()" << std::endl;
     }
 
-    int getValue() {
+    int getValue()
+    {
         return value;
     }
-    void setValue(int v) {
+    void setValue(int v)
+    {
         value = v;
     }
+
 private:
     int value;
 };
@@ -24,39 +30,41 @@ private:
 class MyRunnable : public MTL::MTLRunnable
 {
 public:
-    MyRunnable(MTL::MTLSharedMemory* sharedMemory) : m_sharedMemory(sharedMemory)
-    {};
+    MyRunnable(MTL::MTLSharedMemory *sharedMemory) : m_sharedMemory(sharedMemory){};
     virtual ~MyRunnable() = default;
-    void run(MTL::MTLThreadInterface* threadIf)
+    void run(MTL::MTLThreadInterface *threadIf)
     {
         std::cout << "Hello World!" << std::endl;
         int counter = 0;
         while (true)
         {
-            if(threadIf->getThreadState() == MTL::E_MTLThreadState::STOPPED){
+            if (threadIf->getThreadState() == MTL::E_MTLThreadState::STOPPED)
+            {
                 std::cout << "Stopped Thread Id: " << std::this_thread::get_id() << std::endl;
                 std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-            }else if (threadIf->getThreadState() == MTL::E_MTLThreadState::SUSPENDED)
+            }
+            else if (threadIf->getThreadState() == MTL::E_MTLThreadState::SUSPENDED)
             {
-                std::cout << "Suspended Thread Id: "<< std::this_thread::get_id() << std::endl;
+                std::cout << "Suspended Thread Id: " << std::this_thread::get_id() << std::endl;
                 std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-            }else if (threadIf->getThreadState() == MTL::E_MTLThreadState::EXITED)
+            }
+            else if (threadIf->getThreadState() == MTL::E_MTLThreadState::EXITED)
             {
                 std::cout << "Exited Thread Id: " << std::this_thread::get_id() << std::endl;
                 break;
-            } else if (threadIf->getThreadState() == MTL::E_MTLThreadState::RUNNING)
+            }
+            else if (threadIf->getThreadState() == MTL::E_MTLThreadState::RUNNING)
             {
-                MySharedObject& myObj = dynamic_cast<MySharedObject&>(m_sharedMemory->getSharedObjectById(1));
-                std::cout << "Thread Id: " << std::this_thread::get_id()  << " starting Value: " << myObj.getValue() << " end Value: " << myObj.getValue() + 1 << std::endl;
+                MySharedObject &myObj = dynamic_cast<MySharedObject &>(m_sharedMemory->getSharedObjectById(1));
+                std::cout << "Thread Id: " << std::this_thread::get_id() << " starting Value: " << myObj.getValue() << " end Value: " << myObj.getValue() + 1 << std::endl;
                 myObj.setValue(myObj.getValue() + 1);
                 m_sharedMemory->releaseSharedObject(myObj);
                 std::this_thread::sleep_for(std::chrono::milliseconds(10));
                 counter++;
             }
         }
-        
     }
-    
+
     void stop()
     {
         std::cout << "Stopping" << std::endl;
@@ -83,7 +91,7 @@ public:
     }
 
 private:
-    MTL::MTLSharedMemory* m_sharedMemory;
+    MTL::MTLSharedMemory *m_sharedMemory;
 };
 
 int main()
@@ -99,7 +107,7 @@ int main()
     MTL::MTLThread thread2(myRunnable2);
     thread1.run();
     thread2.run();
-    
+
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     std::cout << "Suspend Thread 1" << std::endl;
     thread1.suspend();
@@ -108,12 +116,12 @@ int main()
     thread1.resume();
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     std::cout << "Exit the Threads" << std::endl;
-    thread1.clean_exit();   
-    thread2.clean_exit(); 
+    thread1.clean_exit();
+    thread2.clean_exit();
 
     thread1.join();
     thread2.join();
-    
+
     std::cout << "Threads Joined" << std::endl;
 
     return 0;

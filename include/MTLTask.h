@@ -66,7 +66,7 @@ namespace MTL
         virtual void waitResult();
 
     protected:
-        MTLRunnableTask &m_runnableTask;                //!< The runnable task.
+        MTLRunnableTask &m_runnableTask;             //!< The runnable task.
         std::future<std::shared_ptr<void>> m_future; //!< The future object.
         std::mutex m_futureMutex;                    //!< The mutex for the future object.
         std::shared_ptr<void> m_result;              //!< The result of the task.

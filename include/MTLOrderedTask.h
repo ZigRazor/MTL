@@ -8,7 +8,8 @@
 #include "MTLTypedefs.h"
 #include <unordered_map>
 
-namespace MTL{
+namespace MTL
+{
     /**
      * @brief Ordered Task
      *
@@ -17,8 +18,9 @@ namespace MTL{
      * @author @ZigRazor
      * @date 2020-02-16
      */
-    class MTLOrderedTask : public MTLTask, public MTLOrderedTaskInterface{
-    
+    class MTLOrderedTask : public MTLTask, public MTLOrderedTaskInterface
+    {
+
     public:
         /**
          * @brief Constructor
@@ -29,8 +31,8 @@ namespace MTL{
          * @author @ZigRazor
          * @date 2020-02-16
          */
-        MTLOrderedTask(const TaskName& taskname,MTLRunnableTask &runnableTask);
-        
+        MTLOrderedTask(const TaskName &taskname, MTLRunnableTask &runnableTask);
+
         /**
          * @brief Destructor
          *
@@ -38,33 +40,33 @@ namespace MTL{
          * @date 2020-02-16
          */
         virtual ~MTLOrderedTask();
-        
+
         /**
          * @brief Run the task
-         * 
+         *
          * @param interface Task Interface
          * @return std::shared_ptr<void> The result of the run
-         * 
+         *
          * @author @ZigRazor
          * @date 2020-02-16
          */
-        virtual std::shared_ptr<void> run(MTLTaskInterface* interface = nullptr);
+        virtual std::shared_ptr<void> run(MTLTaskInterface *interface = nullptr);
 
         /**
-         * @brief Get the Task Name 
-         * 
+         * @brief Get the Task Name
+         *
          * @return TaskName The Task Name
-         * 
+         *
          * @author @ZigRazor
          * @date 2020-02-16
          */
         TaskName getTaskName();
-        
+
         /**
          * @brief Add a predecessor task
-         * 
+         *
          * @param task The predecessor task
-         * 
+         *
          * @author @ZigRazor
          * @date 2020-02-16
          */
@@ -72,9 +74,9 @@ namespace MTL{
 
         /**
          * @brief Add a successor task
-         * 
+         *
          * @param task The successor task
-         * 
+         *
          * @author @ZigRazor
          * @date 2020-02-16
          */
@@ -99,24 +101,22 @@ namespace MTL{
          * @author @ZigRazor
          * @date 2022-02-16
          */
-        const std::unordered_map<TaskName, std::shared_ptr<void>>& getPredecessorsResults();
-        
-        
+        const std::unordered_map<TaskName, std::shared_ptr<void>> &getPredecessorsResults();
+
         /**
          * @brief Check if the task has Successors
-         * 
+         *
          * @return true If the task has successors
          * @return false Otherwise
          */
         bool hasSuccessor();
 
     private:
-        TaskName m_name; /**< The name of the task */
+        TaskName m_name;                                                             /**< The name of the task */
         std::unordered_map<TaskName, std::shared_ptr<MTLOrderedTask>> m_predecessor; /**< The predecessor tasks */
-        std::unordered_map<TaskName, std::shared_ptr<MTLOrderedTask>> m_successor; /**< The successor tasks */
-        std::unordered_map<TaskName, std::shared_ptr<void>> m_predecessorResults; /**< The predecessor results */
+        std::unordered_map<TaskName, std::shared_ptr<MTLOrderedTask>> m_successor;   /**< The successor tasks */
+        std::unordered_map<TaskName, std::shared_ptr<void>> m_predecessorResults;    /**< The predecessor results */
     };
 }
-
 
 #endif // MTLORDEREDTASK_H

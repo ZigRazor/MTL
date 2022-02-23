@@ -10,9 +10,11 @@ public:
     {
         MTL::MTLOrderedTaskInterface *orderedTaskIf = dynamic_cast<MTL::MTLOrderedTaskInterface *>(interface);
         std::cout << orderedTaskIf->getTaskName() << ": "
-                  << "Start Task " << std::endl <<std::flush;
+                  << "Start Task " << std::endl
+                  << std::flush;
         std::cout << orderedTaskIf->getTaskName() << ": "
-                  << "Simulating Working for 3 seconds" << std::endl <<std::flush;
+                  << "Simulating Working for 3 seconds" << std::endl
+                  << std::flush;
 
         for (int i = 0; i < 3; i++)
         {
@@ -26,7 +28,8 @@ public:
 
         std::shared_ptr<void> result(new int(2));
         std::cout << orderedTaskIf->getTaskName() << ": "
-                  << "Result = " << *((int *)(result.get())) << std::endl <<std::flush;
+                  << "Result = " << *((int *)(result.get())) << std::endl
+                  << std::flush;
         return result;
     }
 };
@@ -40,9 +43,11 @@ public:
     {
         MTL::MTLOrderedTaskInterface *orderedTaskIf = dynamic_cast<MTL::MTLOrderedTaskInterface *>(interface);
         std::cout << orderedTaskIf->getTaskName() << ": "
-                  << "Start Task " << std::endl<<std::flush;
+                  << "Start Task " << std::endl
+                  << std::flush;
         std::cout << orderedTaskIf->getTaskName() << ": "
-                  << "Simulating Working for 3 seconds" << std::endl<<std::flush;
+                  << "Simulating Working for 3 seconds" << std::endl
+                  << std::flush;
 
         for (int i = 0; i < 3; i++)
         {
@@ -62,7 +67,7 @@ public:
         else
         {
             auto it = predecessorsResults.begin();
-            std::shared_ptr<void> result((int*)it->second.get());
+            std::shared_ptr<void> result((int *)it->second.get());
             ++it;
             for (it; it != predecessorsResults.end(); ++it)
             {
@@ -71,7 +76,8 @@ public:
                 *currentResult = (*currentResult) + (*previousResult);
             }
             std::cout << orderedTaskIf->getTaskName() << ": "
-                  << "Result = " << *((int *)(result.get())) << std::endl <<std::flush;
+                      << "Result = " << *((int *)(result.get())) << std::endl
+                      << std::flush;
             return result;
         }
     }
@@ -86,9 +92,11 @@ public:
     {
         MTL::MTLOrderedTaskInterface *orderedTaskIf = dynamic_cast<MTL::MTLOrderedTaskInterface *>(interface);
         std::cout << orderedTaskIf->getTaskName() << ": "
-                  << "Start Task " << std::endl<<std::flush;
+                  << "Start Task " << std::endl
+                  << std::flush;
         std::cout << orderedTaskIf->getTaskName() << ": "
-                  << "Simulating Working for 3 seconds" << std::endl<<std::flush;
+                  << "Simulating Working for 3 seconds" << std::endl
+                  << std::flush;
 
         for (int i = 0; i < 3; i++)
         {
@@ -96,7 +104,8 @@ public:
             std::this_thread::sleep_for(std::chrono::seconds(1));
         }
 
-        std::cout << std::endl<<std::flush;
+        std::cout << std::endl
+                  << std::flush;
 
         auto predecessorsResults = orderedTaskIf->getPredecessorsResults();
         std::shared_ptr<void> result(new int(0));
@@ -108,7 +117,7 @@ public:
         else
         {
             auto it = predecessorsResults.begin();
-            std::shared_ptr<void> result((int*)it->second.get());
+            std::shared_ptr<void> result((int *)it->second.get());
             ++it;
             for (it; it != predecessorsResults.end(); ++it)
             {
@@ -117,12 +126,12 @@ public:
                 *currentResult = (*currentResult) * (*previousResult);
             }
             std::cout << orderedTaskIf->getTaskName() << ": "
-                  << "Result = " << *((int *)(result.get())) << std::endl <<std::flush;
+                      << "Result = " << *((int *)(result.get())) << std::endl
+                      << std::flush;
             return result;
         }
     }
 };
-
 
 // This Example simulate the execution of the following expression ((a+b)+c)*(d+e) where a,b,c,d,e are value 2
 int main()
@@ -143,7 +152,6 @@ int main()
     auto taskH = std::make_shared<MTL::MTLOrderedTask>("h", sum2Task);
 
     auto taskI = std::make_shared<MTL::MTLOrderedTask>("i", mul2Task);
-    
 
     MTL::MTLTaskFlow taskFlow;
     taskFlow.precede(taskA, taskF);

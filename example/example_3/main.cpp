@@ -107,7 +107,7 @@ int main()
     int counter = 0;
 
     std::cout << "Exit" << std::endl;
-    thread.clean_exit();    
+    thread.clean_exit();
     while (thread.isRunning())
     {
         std::this_thread::sleep_for(std::chrono::seconds(1));

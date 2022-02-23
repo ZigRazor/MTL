@@ -9,7 +9,8 @@ public:
     virtual void processMessage(MTL::Message message) override
     {
         int *message_casted = static_cast<int *>(message.get());
-        std::cout << "MyWorker1::processMessage("<< *message_casted << ")" << " thread ID : "<< std::this_thread::get_id() <<std::endl;
+        std::cout << "MyWorker1::processMessage(" << *message_casted << ")"
+                  << " thread ID : " << std::this_thread::get_id() << std::endl;
     }
 
     void clean_exit() override
@@ -31,7 +32,7 @@ int main()
     {
         std::cout << "Inject Message " << i << std::endl;
         MTL::Message message(new int(i));
-        threadPool.onMessage(message);        
+        threadPool.onMessage(message);
     }
     std::this_thread::sleep_for(std::chrono::milliseconds(10000));
     std::cout << "Suspend" << std::endl;
@@ -40,23 +41,22 @@ int main()
     {
         std::cout << "Inject Message " << i << std::endl;
         MTL::Message message(new int(i));
-        threadPool.onMessage(message);       
-        
+        threadPool.onMessage(message);
     }
     std::this_thread::sleep_for(std::chrono::milliseconds(5000));
     std::cout << "Resume" << std::endl;
     thread.resume();
-    
+
     for (int i = 20; i < 30; ++i)
     {
-       std::cout << "Inject Message " << i << std::endl;
+        std::cout << "Inject Message " << i << std::endl;
         MTL::Message message(new int(i));
-        threadPool.onMessage(message);     
+        threadPool.onMessage(message);
     }
     int counter = 0;
 
     std::cout << "Exit" << std::endl;
-    thread.clean_exit();    
+    thread.clean_exit();
     while (thread.isRunning())
     {
         std::this_thread::sleep_for(std::chrono::seconds(1));

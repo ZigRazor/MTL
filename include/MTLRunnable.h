@@ -12,7 +12,7 @@ namespace MTL
      * @brief Runnable Interface
      *
      * This class is the interface for the Runnable class.
-     * 
+     *
      * @author @ZigRazor
      * @date 2020-02-16
      */
@@ -23,7 +23,7 @@ namespace MTL
          * @brief Run the runnable
          *
          * @param threadIf The thread interface.
-         * 
+         *
          * @author @ZigRazor
          * @date 2020-02-16
          */
@@ -61,7 +61,7 @@ namespace MTL
          *
          * @author @ZigRazor
          * @date 2020-02-16
-         * 
+         *
          */
         virtual void force_exit() = 0;
 
@@ -70,6 +70,5 @@ namespace MTL
     };
 
 }
-
 
 #endif // RUNNABLE_H

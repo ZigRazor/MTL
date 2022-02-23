@@ -11,7 +11,7 @@ namespace MTL
      * @brief Class that implements a thread interface.
      *
      * This class is a thread interface that can be used to run a task.
-     * 
+     *
      * @author @ZigRazor
      * @date 2020-02-16
      */
@@ -23,7 +23,7 @@ namespace MTL
          *
          * @return true if the thread is running.
          * @return false if the thread is not running.
-         * 
+         *
          * @author @ZigRazor
          * @date 2020-02-16
          */
@@ -32,7 +32,7 @@ namespace MTL
          * @brief Get the Thread State object
          *
          * @return E_MTLThreadState the state of the thread.
-         * 
+         *
          * @author @ZigRazor
          * @date 2020-02-16
          */
@@ -41,7 +41,7 @@ namespace MTL
          * @brief Set the Thread State object
          *
          * @param threadState the Thread State to set
-         * 
+         *
          * @author @ZigRazor
          * @date 2020-02-16
          */

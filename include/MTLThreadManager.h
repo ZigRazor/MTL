@@ -13,7 +13,7 @@ namespace MTL
      * @brief Class that implements a thread manager.
      *
      * This class is a thread manager that can be used to manage threads.
-     * 
+     *
      * @author @ZigRazor
      * @date 2020-02-16
      */
@@ -39,7 +39,7 @@ namespace MTL
          * @brief Start the thread manager.
          *
          * @param threadIf the thread interface.
-         * 
+         *
          * @author @ZigRazor
          * @date 2020-02-16
          */
@@ -84,7 +84,7 @@ namespace MTL
          * @brief Add a thread to the thread manager.
          *
          * @param thread the thread to add.
-         * 
+         *
          * @author @ZigRazor
          * @date 2020-02-16
          */
@@ -94,7 +94,7 @@ namespace MTL
          * @brief Set the Sleep Time object
          *
          * @param sleep_time Sleep time in milliseconds.
-         * 
+         *
          * @author @ZigRazor
          * @date 2020-02-16
          */
@@ -102,12 +102,11 @@ namespace MTL
 
     protected:
         std::vector<std::unique_ptr<MTLThread>> m_threads; /**< The threads vector. */
-        std::mutex m_threads_mutex; /**< The threads mutex. */
+        std::mutex m_threads_mutex;                        /**< The threads mutex. */
 
     private:
         unsigned int m_sleep_time; /**< The sleep time. */
     };
 }
-
 
 #endif // MTLTHREADMANAGER_H

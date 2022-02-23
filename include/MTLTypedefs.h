@@ -11,7 +11,7 @@ namespace MTL
      * @brief Thread State Enumeration
      *
      * This enum is used to represent the state of a thread.
-     * 
+     *
      * @author @ZigRazor
      * @date 2020-02-16
      */
@@ -29,7 +29,7 @@ namespace MTL
      * @brief Thread State Enumeration Type Definition
      *
      * This typedef is used to represent the state of a thread.
-     * 
+     *
      * @author @ZigRazor
      * @date 2020-02-16
      */
@@ -39,7 +39,7 @@ namespace MTL
      * @brief Message Type Definition
      *
      * This typedef is used to represent the message type.
-     * 
+     *
      * @author @ZigRazor
      * @date 2020-02-16
      */
@@ -49,7 +49,7 @@ namespace MTL
      * @brief Shared Object Id Type Definition
      *
      * This typedef is used to represent the shared object id.
-     * 
+     *
      * @author @ZigRazor
      * @date 2020-02-16
      */
@@ -59,12 +59,11 @@ namespace MTL
      * @brief TaskName Type Definition
      *
      * This typedef is used to represent the task name.
-     * 
+     *
      * @author @ZigRazor
      * @date 2020-02-16
      */
     typedef std::string TaskName;
 }
-
 
 #endif // MTLTYPEDEFS_H

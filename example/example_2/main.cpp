@@ -8,7 +8,7 @@ public:
     virtual ~MyWorker() = default;
     virtual void processMessage(MTL::Message message) override
     {
-        int* message_casted = static_cast< int *> (message.get());
+        int *message_casted = static_cast<int *>(message.get());
         std::cout << "MyWorker::processMessage(" << *message_casted << ")" << std::endl;
     }
 };
@@ -38,14 +38,15 @@ int main()
     thread.resume();
     std::cout << "Exit" << std::endl;
     thread.clean_exit();
-    //thread.force_exit();
+    // thread.force_exit();
     int counter = 0;
-    while(thread.isRunning()){
+    while (thread.isRunning())
+    {
         std::this_thread::sleep_for(std::chrono::seconds(1));
         std::cout << "Counter: " << counter << std::endl;
         counter++;
     }
     std::cout << "Thread Terminated" << std::endl;
-    
+
     return 0;
 }

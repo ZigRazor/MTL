@@ -6,26 +6,30 @@ class MyRunnable : public MTL::MTLRunnable
 public:
     MyRunnable() = default;
     virtual ~MyRunnable() = default;
-    void run(MTL::MTLThreadInterface* threadIf)
+    void run(MTL::MTLThreadInterface *threadIf)
     {
         std::cout << "Hello World!" << std::endl;
         int counter = 0;
         while (true)
         {
-            if(threadIf->getThreadState() == MTL::E_MTLThreadState::STOPPED){
+            if (threadIf->getThreadState() == MTL::E_MTLThreadState::STOPPED)
+            {
                 std::cout << "Stopped" << std::endl;
                 std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-            }else if (threadIf->getThreadState() == MTL::E_MTLThreadState::SUSPENDED)
+            }
+            else if (threadIf->getThreadState() == MTL::E_MTLThreadState::SUSPENDED)
             {
                 std::cout << "Suspended" << std::endl;
                 std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-            }else if (threadIf->getThreadState() == MTL::E_MTLThreadState::EXITED)
+            }
+            else if (threadIf->getThreadState() == MTL::E_MTLThreadState::EXITED)
             {
                 std::cout << "Exited" << std::endl;
                 break;
-            } else if (threadIf->getThreadState() == MTL::E_MTLThreadState::RUNNING)
+            }
+            else if (threadIf->getThreadState() == MTL::E_MTLThreadState::RUNNING)
             {
-                if(counter == 20)
+                if (counter == 20)
                 {
                     threadIf->setThreadState(MTL::E_MTLThreadState::EXITED);
                 }
@@ -34,7 +38,6 @@ public:
                 counter++;
             }
         }
-        
     }
 
     void stop()
@@ -74,10 +77,11 @@ int main()
     thread.suspend();
     std::this_thread::sleep_for(std::chrono::milliseconds(5000));
     thread.resume();
-    //thread.force_exit();
+    // thread.force_exit();
     int counter = 0;
-    while(thread.isRunning()){
-        if(counter == 10)
+    while (thread.isRunning())
+    {
+        if (counter == 10)
         {
             break;
         }
