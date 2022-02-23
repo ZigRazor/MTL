@@ -63,7 +63,7 @@ int main()
         std::cout << "Counter: " << counter << std::endl;
         counter++;
     }
-    std::cout << "Thread Manager Terminated" << std::endl;
+    std::cout << "Thread Pool Terminated" << std::endl;
 
     return 0;
 }

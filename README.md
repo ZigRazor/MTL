@@ -247,6 +247,208 @@ int main(){
 }
 ```
 
+### Thread Pool Class
+
+The Thread Pool class is a Thread Manager that can be used to create a fixed number of workers that execute the same task. When a message is enqueued to the thread pool, the message is passed to a workers.
+This kind of thread manager is useful when you have to implement a multi threaded consumer.
+An example of usage can be the following:
+
+```cpp
+#include "MTL.h"
+
+int main(){
+    MyWorker1 myWorker1; //Create a worker
+
+    MTL::MTLThreadPool threadPool(myWorker1, 4); //Create a thread pool with 4 workers
+
+    MTL::MTLThread thread(threadPool); //Create a thread object and pass it the thread pool
+    thread.run(); //Start the thread pool that will start all the workers
+    for (int i = 0; i < 10; ++i) // Enqueue 10 messages
+    {
+        std::cout << "Inject Message " << i << std::endl;
+        MTL::Message message(new int(i));
+        threadPool.onMessage(message);        
+    }
+    std::this_thread::sleep_for(std::chrono::milliseconds(10000)); //Let him work for 10 seconds
+    std::cout << "Suspend" << std::endl; 
+    thread.suspend(); // Suspend the thread pool that will suspend all the workers
+    for (int i = 10; i < 20; ++i) // Enqueue 10 messages
+    {
+        std::cout << "Inject Message " << i << std::endl;
+        MTL::Message message(new int(i));
+        threadPool.onMessage(message);       
+        
+    }
+    std::this_thread::sleep_for(std::chrono::milliseconds(5000)); //Let Suspeded for 5 seconds
+    std::cout << "Resume" << std::endl; 
+    thread.resume(); // Resume the thread pool that will resume all the workers
+    
+    std::cout << "Exit" << std::endl;
+    thread.clean_exit();  // Clean Exit the thread pool that will clean exit all the workers  
+    while (thread.isRunning()) //Wait for the thread pool to exit
+    {
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        std::cout << "Counter: " << counter << std::endl;
+        counter++;
+    }
+    std::cout << "Thread Pool Terminated" << std::endl;
+
+    return 0;
+}
+```
+
+### Shared Object and Shared Memory Classes
+
+The Shared Object class is a class that manage a shared memory object and can be used in a thread safe manner.
+
+The Shared Memory class is a class that manage shared objects and can be used in a thread safe manner.
+
+The two classes can be used to create a thread safe memory to share data between threads.
+
+The following is a simple example of application:
+
+**MySharedObject.hpp**
+
+```cpp
+#include "MTL.h"
+
+class MySharedObject : public MTL::MTLSharedObject {
+public:
+    MySharedObject(unsigned int id) : MTLSharedObject(id) {
+        std::cout << "MySharedObject::MySharedObject()" << std::endl;
+        value = 0;
+    }
+    ~MySharedObject() {
+        std::cout << "MySharedObject::~MySharedObject()" << std::endl;
+    }
+
+    int getValue() {
+        return value;
+    }
+    void setValue(int v) {
+        value = v;
+    }
+private:
+    int value; //The value of the shared object
+};
+```
+
+**MyRunnable.hpp**
+
+```cpp
+#include "MTL.h"
+
+class MyRunnable : public MTL::MTLRunnable
+{
+public:
+    MyRunnable(MTL::MTLSharedMemory* sharedMemory) : m_sharedMemory(sharedMemory)
+    {};
+    virtual ~MyRunnable() = default;
+    void run(MTL::MTLThreadInterface* threadIf)
+    {
+        std::cout << "Hello World!" << std::endl;
+        int counter = 0;
+        while (true)
+        {
+            if(threadIf->getThreadState() == MTL::E_MTLThreadState::STOPPED){
+                std::cout << "Stopped Thread Id: " << std::this_thread::get_id() << std::endl;
+                std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+            }else if (threadIf->getThreadState() == MTL::E_MTLThreadState::SUSPENDED)
+            {
+                std::cout << "Suspended Thread Id: "<< std::this_thread::get_id() << std::endl;
+                std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+            }else if (threadIf->getThreadState() == MTL::E_MTLThreadState::EXITED)
+            {
+                std::cout << "Exited Thread Id: " << std::this_thread::get_id() << std::endl;
+                break;
+            } else if (threadIf->getThreadState() == MTL::E_MTLThreadState::RUNNING)
+            {
+                // when running this runnable increment the shared memory value by 1
+                MySharedObject& myObj = dynamic_cast<MySharedObject&>(m_sharedMemory->getSharedObjectById(1));
+                std::cout << "Thread Id: " << std::this_thread::get_id()  << " starting Value: " << myObj.getValue() << " end Value: " << myObj.getValue() + 1 << std::endl;
+                myObj.setValue(myObj.getValue() + 1);
+                m_sharedMemory->releaseSharedObject(myObj);
+                std::this_thread::sleep_for(std::chrono::milliseconds(10));
+                counter++;
+            }
+        }
+        
+    }
+    
+    void stop()
+    {
+        std::cout << "Stopping" << std::endl;
+    }
+
+    void suspend()
+    {
+        std::cout << "Suspending" << std::endl;
+    }
+
+    void resume()
+    {
+        std::cout << "Resuming" << std::endl;
+    }
+
+    void clean_exit()
+    {
+        std::cout << "Exiting" << std::endl;
+    }
+
+    void force_exit()
+    {
+        std::cout << "Force Exiting" << std::endl;
+    }
+
+private:
+    MTL::MTLSharedMemory* m_sharedMemory;
+};
+```
+
+**main.cpp**
+
+```cpp
+int main()
+{
+    /**
+     *  This example demostrate how the shared memory and shared object classes 
+     *  can be used to share data between threads. Without alter the atomicity 
+     *  of the execution over the memory objects
+     
+     
+     **/
+    
+    std::unique_ptr<MySharedObject> myObj(new MySharedObject(1)); //Create a shared object
+    MTL::MTLSharedMemory sharedMemory; //Create a shared memory
+    sharedMemory.addSharedObject(std::move(myObj)); //Add the shared object to the shared memory
+    MyRunnable myRunnable1(&sharedMemory); //Create a runnable
+    MyRunnable myRunnable2(&sharedMemory); //Create another runnable
+
+    MTL::MTLThread thread1(myRunnable1); //Create a thread from the runnable
+    MTL::MTLThread thread2(myRunnable2); //Create another thread from the runnable
+    thread1.run(); //Run the thread
+    thread2.run(); //Run the thread
+    
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000)); //Let the threads run for 1 second
+    std::cout << "Suspend Thread 1" << std::endl;
+    thread1.suspend(); //Suspend the thread 1
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000)); //Let the thread 2 runs for 1 second
+    std::cout << "Resume Thread 1" << std::endl;  
+    thread1.resume(); //Resume the thread 1
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000)); //Let the threads run for 1 second
+    std::cout << "Exit the Threads" << std::endl;
+    thread1.clean_exit();    //Exit the thread 1
+    thread2.clean_exit();    //Exit the thread 2
+
+    thread1.join(); //Wait for the thread 1 to finish
+    thread2.join(); //Wait for the thread 2 to finish
+    
+    std::cout << "Threads Joined" << std::endl;
+
+    return 0;
+}
+```
+
 _For more examples, please refer to the [Example Directory](https://github.com/ZigRazor/MTL/tree/main/example)_
 
 ## Contributing
