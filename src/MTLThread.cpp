@@ -1,5 +1,4 @@
 #include "MTLThread.h"
-#include <iostream>
 
 namespace MTL
 {

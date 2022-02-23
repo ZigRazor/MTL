@@ -41,17 +41,14 @@ endif(CODE_COVERAGE)
 
 # add the library
 
+file (GLOB SOURCE_FILES "src/*.cpp")
+file (GLOB HEADER_FILES "include/*.h")
+
+message( STATUS "MTL Source files: ${SOURCE_FILES}" )
+message( STATUS "MTL Header files: ${HEADER_FILES}" )
+
 add_library(MTL SHARED 
-				src/MTLThread.cpp
-				src/MTLMessageQueue.cpp
-				src/MTLWorkerThread.cpp
-				src/MTLThreadManager.cpp
-				src/MTLThreadPool.cpp
-				src/MTLSharedObject.cpp
-				src/MTLSharedMemory.cpp
-				src/MTLTask.cpp
-				src/MTLOrderedTask.cpp
-				src/MTLTaskFlow.cpp
+			${SOURCE_FILES}
 				)
 
 target_include_directories(MTL PUBLIC
@@ -80,6 +77,10 @@ target_link_libraries(test_exe
 
 
 
-install(FILES include/MTL.hpp DESTINATION /usr/include)
+# Install
+install(TARGETS MTL DESTINATION /usr/local/lib)
+
+# Install the headers
+install(FILES ${HEADER_FILES} DESTINATION /usr/local/include/MTL)
 
 add_subdirectory(example)

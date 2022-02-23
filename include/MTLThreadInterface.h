@@ -19,7 +19,7 @@ namespace MTL
     {
     public:
         /**
-         * @brief Checl if the thread is running.
+         * @brief Check if the thread is running.
          *
          * @return true if the thread is running.
          * @return false if the thread is not running.

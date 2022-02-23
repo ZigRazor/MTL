@@ -12,6 +12,7 @@
 [![Issues][issues-shield]][issues-url]
 [![GPL-3.0 License][license-shield]][license-url]
 
+![MTL](logo/logo.gif)
 # MTL
 Multi Thread Library
 
@@ -30,7 +31,6 @@ Multi Thread Library
 - [ ] CI/CD Pipeline
 - [ ] First Stable Release
 - [ ] Thread Monitoring
-- [ ] Python Interface Implementation (PyBind11)
 - [ ] ...
 
 See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
@@ -42,18 +42,38 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+The following are required to get the project up and running.
 
-Work in progress...
+#### Google Test
+
+[GoogleTest](https://github.com/google/googletest)
+
+```bash
+git clone https://github.com/google/googletest.git  # Dowload the Google Test repository
+cd googletest                                       # Main directory of the cloned repository.
+mkdir -p build                                      # Create a directory to hold the build output.
+cd build                                            # Move into the build directory.   
+cmake ..                                            # Generate native build scripts for GoogleTest.
+make                                                # Compile
+sudo make install                                   # Install in /usr/local/ by default
+```
 
 ### Installation
 
-Work in progress...
+```bash
+git clone https://github.com/ZigRazor/MTL.git       # Dowload the MTL repository
+cd MTL                                              # Main directory of the cloned repository.
+mkdir -p build                                      # Create a directory to hold the build output.
+cd build                                            # Move into the build directory.   
+cmake ..                                            # Generate native build scripts for MTL.
+make                                                # Compile
+sudo make install                                   # Install in /usr/local/ by default
+```
 
 ## Usage
 
 Work in Progress...
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For more examples, please refer to the [Example Directory](https://github.com/ZigRazor/MTL/tree/main/example)_
 
 
 ## Contributing
