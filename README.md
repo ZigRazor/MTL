@@ -24,7 +24,7 @@ Multi Threading Library
 - [x] Task Flow
 - [x] Complete Documentation
 - [x] Doxygen Integration
-- [ ] First Beta Release
+- [x] First Beta Release
 - [ ] Test Framework
 - [ ] CI/CD Pipeline
 - [ ] First Stable Release
@@ -720,6 +720,10 @@ Before these steps please read the [Contributing Guidelines](https://github.com/
 ## License
 
 Distributed under the GPL-3.0 License. See [`LICENSE`](https://github.com/ZigRazor/MTL/blob/master/LICENSE) for more information.
+
+## Detailed Documentation
+
+You can find more detailed documentation at [MTL Documentation](https://raw.githack.com/ZigRazor/MTL/main/docs/html/index.html)
 
 ## Contact
 
