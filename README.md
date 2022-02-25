@@ -216,6 +216,7 @@ A Simple example of usage can be the following:
 
 ```cpp
 #include "MTL.h"
+#include "MyWorker.hpp"
 
 int main(){
     // Three different kind of workers
@@ -408,6 +409,10 @@ private:
 **main.cpp**
 
 ```cpp
+#include "MTL.h"
+#include "MySharedObject.hpp"
+#include "MyRunnable.hpp"
+
 int main()
 {
     /**
@@ -447,6 +452,253 @@ int main()
 
     return 0;
 }
+```
+
+### Task Class
+
+The task class is a wrapper of C++ task class.
+It needs a runnable task to be executed.
+A simple example can be the following one:
+
+**MyRunnableTask.hpp**
+
+```cpp
+#include <iostream>
+#include "MTL.h"
+
+class MyRunnableTask : public MTL::MTLRunnableTask
+{
+public:
+    MyRunnableTask() = default;
+    virtual ~MyRunnableTask() = default;
+    std::shared_ptr<void> run(MTL::MTLTaskInterface *interface = nullptr)
+    {
+        std::cout << "Hello World!" << std::endl;
+        std::cout << "Simulating Working for 3 seconds" << std::endl;
+
+        for (int i = 0; i < 3; i++)
+        {
+            std::cout << "." << std::flush;
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
+        std::cout << std::endl;
+        std::cout << "This is a Task that return 1" << std::endl;
+
+        int i = 1;
+        std::shared_ptr<void> result(new int(i));
+        return result;
+    }
+};
+```
+
+**main.cpp**
+
+```cpp
+#include "MyRunnableTask.hpp"
+
+int main()
+{
+    MyRunnableTask myRunnableTask; //Create a runnable task
+    MTL::MTLTask task(myRunnableTask); //Create a task from the runnable task
+    task.run(); //Run the task
+    std::shared_ptr<void> result = task.getResult(); //Get the result of the task
+    std::cout << "Result: " << *(static_cast<int *>(result.get())) << std::endl; //Print the result
+    return 0;
+}
+```
+
+### Ordered Task and Task Flow Classes
+
+The Ordered Task class is derived from Task class and has a list of predecessors and a list of successors.
+
+The Task Flow class is a class that allow to execute ordered task in a consistent manner and return the final result.
+
+A simple example can be the following one:
+
+**DerivedTasks.hpp**
+
+```cpp
+#include <iostream>
+#include "MTL.h"
+
+//Return 2
+class Var2Task : public MTL::MTLRunnableTask
+{
+public:
+    Var2Task() = default;
+    virtual ~Var2Task() = default;
+    std::shared_ptr<void> run(MTL::MTLTaskInterface *interface = nullptr)
+    {
+        MTL::MTLOrderedTaskInterface *orderedTaskIf = dynamic_cast<MTL::MTLOrderedTaskInterface *>(interface);
+        std::cout << orderedTaskIf->getTaskName() << ": "
+                  << "Start Task " << std::endl
+                  << std::flush;
+        std::cout << orderedTaskIf->getTaskName() << ": "
+                  << "Simulating Working for 3 seconds" << std::endl
+                  << std::flush;
+
+        for (int i = 0; i < 3; i++)
+        {
+            std::cout << "." << std::flush;
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
+
+        std::cout << std::endl;
+
+        auto previousResult = orderedTaskIf->getPredecessorsResults();
+
+        std::shared_ptr<void> result(new int(2));
+        std::cout << orderedTaskIf->getTaskName() << ": "
+                  << "Result = " << *((int *)(result.get())) << std::endl
+                  << std::flush;
+        return result;
+    }
+};
+
+// Sum predecessors
+class SumTask : public MTL::MTLRunnableTask
+{
+public:
+    SumTask() = default;
+    virtual ~SumTask() = default;
+    std::shared_ptr<void> run(MTL::MTLTaskInterface *interface = nullptr)
+    {
+        MTL::MTLOrderedTaskInterface *orderedTaskIf = dynamic_cast<MTL::MTLOrderedTaskInterface *>(interface);
+        std::cout << orderedTaskIf->getTaskName() << ": "
+                  << "Start Task " << std::endl
+                  << std::flush;
+        std::cout << orderedTaskIf->getTaskName() << ": "
+                  << "Simulating Working for 3 seconds" << std::endl
+                  << std::flush;
+
+        for (int i = 0; i < 3; i++)
+        {
+            std::cout << "." << std::flush;
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
+
+        std::cout << std::endl;
+
+        auto predecessorsResults = orderedTaskIf->getPredecessorsResults();
+        std::shared_ptr<void> result(new int(0));
+        if (predecessorsResults.empty())
+        {
+            std::shared_ptr<void> result(new int(0));
+            return result;
+        }
+        else
+        {
+            auto it = predecessorsResults.begin();
+            std::shared_ptr<void> result((int *)it->second.get());
+            ++it;
+            for (it; it != predecessorsResults.end(); ++it)
+            {
+                int *previousResult = (int *)(it->second.get());
+                int *currentResult = (int *)(result.get());
+                *currentResult = (*currentResult) + (*previousResult);
+            }
+            std::cout << orderedTaskIf->getTaskName() << ": "
+                      << "Result = " << *((int *)(result.get())) << std::endl
+                      << std::flush;
+            return result;
+        }
+    }
+};
+
+// Multiply predecessors
+class MulTask : public MTL::MTLRunnableTask
+{
+public:
+    MulTask() = default;
+    virtual ~MulTask() = default;
+    std::shared_ptr<void> run(MTL::MTLTaskInterface *interface = nullptr)
+    {
+        MTL::MTLOrderedTaskInterface *orderedTaskIf = dynamic_cast<MTL::MTLOrderedTaskInterface *>(interface);
+        std::cout << orderedTaskIf->getTaskName() << ": "
+                  << "Start Task " << std::endl
+                  << std::flush;
+        std::cout << orderedTaskIf->getTaskName() << ": "
+                  << "Simulating Working for 3 seconds" << std::endl
+                  << std::flush;
+
+        for (int i = 0; i < 3; i++)
+        {
+            std::cout << "." << std::flush;
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
+
+        std::cout << std::endl
+                  << std::flush;
+
+        auto predecessorsResults = orderedTaskIf->getPredecessorsResults();
+        std::shared_ptr<void> result(new int(0));
+        if (predecessorsResults.empty())
+        {
+            std::shared_ptr<void> result(new int(0));
+            return result;
+        }
+        else
+        {
+            auto it = predecessorsResults.begin();
+            std::shared_ptr<void> result((int *)it->second.get());
+            ++it;
+            for (it; it != predecessorsResults.end(); ++it)
+            {
+                int *previousResult = (int *)(it->second.get());
+                int *currentResult = (int *)(result.get());
+                *currentResult = (*currentResult) * (*previousResult);
+            }
+            std::cout << orderedTaskIf->getTaskName() << ": "
+                      << "Result = " << *((int *)(result.get())) << std::endl
+                      << std::flush;
+            return result;
+        }
+    }
+};
+
+```
+
+**main.cpp**
+
+```cpp
+#include "DerivedTasks.hpp"
+
+// This Example simulate the execution of the following expression ((a+b)+c)*(d+e) where a,b,c,d,e are value 2
+int main()
+{
+    std::cout << "Running Example 7 for MTL Version " << MTL_VERSION_MAJOR << "." << MTL_VERSION_MINOR << "." << MTL_VERSION_PATCH << std::endl;
+    Var2Task var2Task; // Task that return 2
+    SumTask sum2Task; // Task that return the sum of the predecessors 
+    MulTask mul2Task; // Task that return the multiplication of the predecessors
+
+    auto taskA = std::make_shared<MTL::MTLOrderedTask>("a", var2Task); // Task that return 2
+    auto taskB = std::make_shared<MTL::MTLOrderedTask>("b", var2Task); // Task that return 2
+    auto taskC = std::make_shared<MTL::MTLOrderedTask>("c", var2Task); // Task that return 2
+    auto taskD = std::make_shared<MTL::MTLOrderedTask>("d", var2Task); // Task that return 2
+    auto taskE = std::make_shared<MTL::MTLOrderedTask>("e", var2Task); // Task that return 2
+
+    auto taskF = std::make_shared<MTL::MTLOrderedTask>("f", sum2Task); // Task that return the sum of the predecessors
+    auto taskG = std::make_shared<MTL::MTLOrderedTask>("g", sum2Task); // Task that return the sum of the predecessors
+    auto taskH = std::make_shared<MTL::MTLOrderedTask>("h", sum2Task); // Task that return the sum of the predecessors
+
+    auto taskI = std::make_shared<MTL::MTLOrderedTask>("i", mul2Task); // Task that return the multiplication of the predecessors
+
+    MTL::MTLTaskFlow taskFlow; // Task Flow
+    taskFlow.precede(taskA, taskF); // Task A precede Task F
+    taskFlow.precede(taskB, taskF); // Task B precede Task F
+    taskFlow.precede(taskC, taskG); // Task C precede Task G
+    taskFlow.precede(taskF, taskG); // Task F precede Task G
+    taskFlow.precede(taskD, taskH); // Task D precede Task H
+    taskFlow.precede(taskE, taskH); // Task E precede Task H
+    taskFlow.precede(taskG, taskI); // Task G precede Task I
+    taskFlow.precede(taskH, taskI); // Task H precede Task I
+
+    taskFlow.run(); // Run the task flow
+    std::shared_ptr<void> result = taskFlow.getResult(); // Get the result of the task flow
+    std::cout << "Result: " << *(static_cast<int *>(result.get())) << std::endl; // Print the result
+    return 0;
+}
+
 ```
 
 _For more examples, please refer to the [Example Directory](https://github.com/ZigRazor/MTL/tree/main/example)_
