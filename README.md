@@ -23,7 +23,7 @@ Multi Threading Library
 - [X] Ordered Task
 - [x] Task Flow
 - [x] Complete Documentation
-- [ ] Doxygen Integration
+- [x] Doxygen Integration
 - [ ] First Beta Release
 - [ ] Test Framework
 - [ ] CI/CD Pipeline
