@@ -11,8 +11,6 @@ MTL::MTLWorkerThread \- Class that implements a Worker Thread\&.
 \fC#include <MTLWorkerThread\&.h>\fP
 .PP
 Inherits \fBMTL::MTLRunnable\fP, \fBMTL::MTLWorker\fP, and \fBMTL::MTLMessageQueue\fP\&.
-.PP
-Inherited by \fBMyWorker\fP, \fBMyWorker1\fP, \fBMyWorker2\fP, and \fBMyWorker3\fP\&.
 .SS "Public Member Functions"
 
 .in +1c
@@ -141,10 +139,6 @@ A clean Exit of the Thread\&.
 
 .PP
 Implements \fBMTL::MTLRunnable\fP\&.
-.PP
-Reimplemented in \fBMyWorker3\fP, \fBMyWorker2\fP, \fBMyWorker1\fP, and \fBMyWorker1\fP\&.
-.PP
-Referenced by MyWorker1::clean_exit(), MyWorker2::clean_exit(), and MyWorker3::clean_exit()\&.
 .SS "void MTL::MTLWorkerThread::force_exit ()\fC [virtual]\fP"
 
 .PP
@@ -186,8 +180,6 @@ Process the message Message\&.
 
 .PP
 Implements \fBMTL::MTLWorker\fP\&.
-.PP
-Implemented in \fBMyWorker3\fP, \fBMyWorker2\fP, \fBMyWorker\fP, \fBMyWorker1\fP, and \fBMyWorker1\fP\&.
 .PP
 Referenced by run()\&.
 .SS "void MTL::MTLWorkerThread::resume ()\fC [virtual]\fP"

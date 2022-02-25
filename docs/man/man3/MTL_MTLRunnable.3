@@ -10,7 +10,7 @@ MTL::MTLRunnable \- Runnable Interface\&.
 .PP
 \fC#include <MTLRunnable\&.h>\fP
 .PP
-Inherited by \fBMTL::MTLThread\fP, \fBMTL::MTLThreadManager\fP, \fBMTL::MTLWorkerThread\fP, and \fBMyRunnable\fP\&.
+Inherited by \fBMTL::MTLThread\fP, \fBMTL::MTLThreadManager\fP, and \fBMTL::MTLWorkerThread\fP\&.
 .SS "Public Member Functions"
 
 .in +1c
@@ -83,7 +83,7 @@ A clean Exit of the runnable\&.
 .PP
 
 .PP
-Implemented in \fBMyWorker3\fP, \fBMyWorker2\fP, \fBMyWorker1\fP, \fBMyWorker1\fP, \fBMyRunnable\fP, \fBMTL::MTLThread\fP, \fBMTL::MTLThreadManager\fP, \fBMTL::MTLWorkerThread\fP, and \fBMyRunnable\fP\&.
+Implemented in \fBMTL::MTLThread\fP, \fBMTL::MTLThreadManager\fP, and \fBMTL::MTLWorkerThread\fP\&.
 .PP
 Referenced by MTL::MTLThread::clean_exit()\&.
 .SS "virtual void MTL::MTLRunnable::force_exit ()\fC [pure virtual]\fP"
@@ -103,7 +103,7 @@ Force the runnable to exit\&.
 .PP
 
 .PP
-Implemented in \fBMyRunnable\fP, \fBMTL::MTLThread\fP, \fBMTL::MTLThreadManager\fP, \fBMTL::MTLWorkerThread\fP, and \fBMyRunnable\fP\&.
+Implemented in \fBMTL::MTLThread\fP, \fBMTL::MTLThreadManager\fP, and \fBMTL::MTLWorkerThread\fP\&.
 .PP
 Referenced by MTL::MTLThread::force_exit()\&.
 .SS "virtual void MTL::MTLRunnable::resume ()\fC [pure virtual]\fP"
@@ -123,7 +123,7 @@ Resume the runnable\&.
 .PP
 
 .PP
-Implemented in \fBMyRunnable\fP, \fBMTL::MTLThread\fP, \fBMTL::MTLThreadManager\fP, \fBMTL::MTLWorkerThread\fP, and \fBMyRunnable\fP\&.
+Implemented in \fBMTL::MTLThread\fP, \fBMTL::MTLThreadManager\fP, and \fBMTL::MTLWorkerThread\fP\&.
 .PP
 Referenced by MTL::MTLThread::resume()\&.
 .SS "virtual void MTL::MTLRunnable::run (\fBMTLThreadInterface\fP * threadIf)\fC [pure virtual]\fP"
@@ -148,7 +148,7 @@ Run the runnable\&.
 .PP
 
 .PP
-Implemented in \fBMTL::MTLThread\fP, \fBMTL::MTLThreadManager\fP, \fBMTL::MTLWorkerThread\fP, \fBMyRunnable\fP, and \fBMyRunnable\fP\&.
+Implemented in \fBMTL::MTLThread\fP, \fBMTL::MTLThreadManager\fP, and \fBMTL::MTLWorkerThread\fP\&.
 .PP
 Referenced by MTL::MTLThread::run()\&.
 .SS "virtual void MTL::MTLRunnable::stop ()\fC [pure virtual]\fP"
@@ -168,7 +168,7 @@ Stop the runnable\&.
 .PP
 
 .PP
-Implemented in \fBMTL::MTLThread\fP, \fBMyRunnable\fP, \fBMTL::MTLThreadManager\fP, \fBMTL::MTLWorkerThread\fP, and \fBMyRunnable\fP\&.
+Implemented in \fBMTL::MTLThread\fP, \fBMTL::MTLThreadManager\fP, and \fBMTL::MTLWorkerThread\fP\&.
 .PP
 Referenced by MTL::MTLThread::stop()\&.
 .SS "virtual void MTL::MTLRunnable::suspend ()\fC [pure virtual]\fP"
@@ -188,7 +188,7 @@ Suspend the runnable\&.
 .PP
 
 .PP
-Implemented in \fBMyRunnable\fP, \fBMTL::MTLThread\fP, \fBMTL::MTLThreadManager\fP, \fBMTL::MTLWorkerThread\fP, and \fBMyRunnable\fP\&.
+Implemented in \fBMTL::MTLThread\fP, \fBMTL::MTLThreadManager\fP, and \fBMTL::MTLWorkerThread\fP\&.
 .PP
 Referenced by MTL::MTLThread::suspend()\&.
 .SH "Field Documentation"

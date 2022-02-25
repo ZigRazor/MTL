@@ -153,8 +153,6 @@ unsigned int The size of the queue\&.
 
 .PP
 References m_queue, and m_queue_mutex\&.
-.PP
-Referenced by MyWorker1::clean_exit(), MyWorker2::clean_exit(), and MyWorker3::clean_exit()\&.
 .SS "bool MTL::MTLMessageQueue::isEmpty ()\fC [virtual]\fP"
 
 .PP
@@ -231,7 +229,7 @@ Add a message to the queue\&.
 .PP
 References m_queue, and m_queue_mutex\&.
 .PP
-Referenced by main(), and MTL::MTLThreadPool::onMessage()\&.
+Referenced by MTL::MTLThreadPool::onMessage()\&.
 .SH "Field Documentation"
 .PP 
 .SS "std::queue<\fBMessage\fP> MTL::MTLMessageQueue::m_queue\fC [private]\fP"

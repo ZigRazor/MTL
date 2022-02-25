@@ -137,8 +137,6 @@ std::shared_ptr<void> The result of the task execution\&.
 Reimplemented from \fBMTL::MTLTask\fP\&.
 .PP
 References MTL::MTLTask::getResult(), MTL::MTLOrderedTask::hasSuccessor(), and m_orderedTasks\&.
-.PP
-Referenced by main()\&.
 .SS "void MTL::MTLTaskFlow::precede (std::shared_ptr< \fBMTLOrderedTask\fP > taskA, std::shared_ptr< \fBMTLOrderedTask\fP > taskB)"
 
 .PP
@@ -164,8 +162,6 @@ Declare the taskA as a predecessor of taskB\&.
 
 .PP
 References MTL::MTLOrderedTask::addPredecessor(), MTL::MTLOrderedTask::addSuccessor(), MTL::MTLOrderedTask::getTaskName(), and m_orderedTasks\&.
-.PP
-Referenced by main()\&.
 .SS "std::shared_ptr< void > MTL::MTLTaskFlow::run (\fBMTLTaskInterface\fP * interface = \fCnullptr\fP)\fC [virtual]\fP"
 
 .PP
@@ -196,8 +192,6 @@ std::shared_ptr<void> The result of the run\&.
 Reimplemented from \fBMTL::MTLOrderedTask\fP\&.
 .PP
 References m_orderedTasks, and MTL::MTLOrderedTask::run()\&.
-.PP
-Referenced by main()\&.
 .SS "void MTL::MTLTaskFlow::succeed (std::shared_ptr< \fBMTLOrderedTask\fP > taskA, std::shared_ptr< \fBMTLOrderedTask\fP > taskB)"
 
 .PP

@@ -100,7 +100,7 @@ Construct a new \fBMTLTask\fP object\&.
 .PP
 References m_future, m_futureMutex, m_result, and m_runnableTask\&.
 .PP
-Referenced by main(), and MTL::MTLOrderedTask::MTLOrderedTask()\&.
+Referenced by MTL::MTLOrderedTask::MTLOrderedTask()\&.
 .SS "MTL::MTLTask::~MTLTask ()\fC [virtual]\fP"
 
 .PP
@@ -147,7 +147,7 @@ Reimplemented in \fBMTL::MTLTaskFlow\fP\&.
 .PP
 References m_future, m_futureMutex, and m_result\&.
 .PP
-Referenced by MTL::MTLOrderedTask::getPredecessorResult(), MTL::MTLOrderedTask::getPredecessorsResults(), MTL::MTLTaskFlow::getResult(), and main()\&.
+Referenced by MTL::MTLOrderedTask::getPredecessorResult(), MTL::MTLOrderedTask::getPredecessorsResults(), and MTL::MTLTaskFlow::getResult()\&.
 .SS "std::shared_ptr< void > MTL::MTLTask::run (\fBMTLTaskInterface\fP * interface = \fCnullptr\fP)\fC [virtual]\fP"
 
 .PP
@@ -175,8 +175,6 @@ Implements \fBMTL::MTLRunnableTask\fP\&.
 Reimplemented in \fBMTL::MTLOrderedTask\fP, and \fBMTL::MTLTaskFlow\fP\&.
 .PP
 References m_future, m_runnableTask, and MTL::MTLRunnableTask::run()\&.
-.PP
-Referenced by main()\&.
 .SS "void MTL::MTLTask::waitResult ()\fC [virtual]\fP"
 
 .PP

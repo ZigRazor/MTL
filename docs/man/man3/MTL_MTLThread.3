@@ -130,7 +130,7 @@ Construct a new \fBMTLThread\fP object\&.
 .PP
 References MTL::CREATED, m_runnable, m_thread_ptr, m_threadState, and m_threadState_mutex\&.
 .PP
-Referenced by main(), and MTL::MTLThreadPool::MTLThreadPool()\&.
+Referenced by MTL::MTLThreadPool::MTLThreadPool()\&.
 .SS "MTL::MTLThread::~MTLThread ()\fC [virtual]\fP"
 
 .PP
@@ -172,7 +172,7 @@ Implements \fBMTL::MTLRunnable\fP\&.
 .PP
 References MTL::MTLRunnable::clean_exit(), MTL::EXITED, m_runnable, m_threadState, and m_threadState_mutex\&.
 .PP
-Referenced by MTL::MTLThreadManager::clean_exit(), and main()\&.
+Referenced by MTL::MTLThreadManager::clean_exit()\&.
 .SS "void MTL::MTLThread::force_exit ()\fC [virtual]\fP"
 
 .PP
@@ -273,7 +273,7 @@ Implements \fBMTL::MTLThreadInterface\fP\&.
 .PP
 References m_threadState, m_threadState_mutex, MTL::RUNNING, MTL::STOPPED, and MTL::SUSPENDED\&.
 .PP
-Referenced by main(), resume(), MTL::MTLThreadManager::run(), run(), stop(), and suspend()\&.
+Referenced by resume(), MTL::MTLThreadManager::run(), run(), stop(), and suspend()\&.
 .SS "void MTL::MTLThread::join ()"
 
 .PP
@@ -293,7 +293,7 @@ Join the thread\&.
 .PP
 References m_thread_ptr\&.
 .PP
-Referenced by main(), MTL::MTLThreadManager::run(), and ~MTLThread()\&.
+Referenced by MTL::MTLThreadManager::run(), and ~MTLThread()\&.
 .SS "void MTL::MTLThread::resume ()\fC [virtual]\fP"
 
 .PP
@@ -314,8 +314,6 @@ Resume the thread\&.
 Implements \fBMTL::MTLRunnable\fP\&.
 .PP
 References isRunning(), m_runnable, m_threadState, m_threadState_mutex, MTL::MTLRunnable::resume(), and MTL::RUNNING\&.
-.PP
-Referenced by main()\&.
 .SS "void MTL::MTLThread::run (\fBMTLThreadInterface\fP * threadIf = \fCnullptr\fP)\fC [virtual]\fP"
 
 .PP
@@ -342,7 +340,7 @@ Implements \fBMTL::MTLRunnable\fP\&.
 .PP
 References isRunning(), m_runnable, m_thread_ptr, m_threadState, m_threadState_mutex, MTL::MTLRunnable::run(), and MTL::RUNNING\&.
 .PP
-Referenced by MTL::MTLThreadManager::clean_exit(), main(), and MTL::MTLThreadManager::run()\&.
+Referenced by MTL::MTLThreadManager::clean_exit(), and MTL::MTLThreadManager::run()\&.
 .SS "void MTL::MTLThread::setThreadState (\fBE_MTLThreadState\fP threadState)\fC [virtual]\fP"
 
 .PP
@@ -408,8 +406,6 @@ Suspend the thread\&.
 Implements \fBMTL::MTLRunnable\fP\&.
 .PP
 References isRunning(), m_runnable, m_threadState, m_threadState_mutex, MTL::MTLRunnable::suspend(), and MTL::SUSPENDED\&.
-.PP
-Referenced by main()\&.
 .SH "Field Documentation"
 .PP 
 .SS "\fBMTLRunnable\fP& MTL::MTLThread::m_runnable\fC [private]\fP"

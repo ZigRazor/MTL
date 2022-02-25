@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['value_138',['value',['../dd/d97/classMySharedObject.html#a97c3ad374398f6c12e595eae5fc6757b',1,'MySharedObject']]],
-  ['var2task_139',['Var2Task',['../d7/d43/classVar2Task.html',1,'Var2Task'],['../d7/d43/classVar2Task.html#a6a1ab6ff1dffa1d48d2c080aa22eaa73',1,'Var2Task::Var2Task()']]]
+  ['waitresult_121',['waitResult',['../d7/d56/classMTL_1_1MTLTask.html#a2eb6d3347c4f1cf5e47f3c80fb29237d',1,'MTL::MTLTask::waitResult()'],['../d5/d46/classMTL_1_1MTLTaskInterface.html#a7389c94d7677980bafa2c49b5f617892',1,'MTL::MTLTaskInterface::waitResult()'],['../d7/d79/classMTL_1_1MTLTaskFlow.html#a53a5ef5faaf8970af552ea589e8f946c',1,'MTL::MTLTaskFlow::waitResult()']]],
+  ['worker_122',['worker',['../d4/d9b/classMTL_1_1MTLThreadPool.html#a370dca6ec9b28347c2ea6f63759a50cb',1,'MTL::MTLThreadPool']]]
 ];
