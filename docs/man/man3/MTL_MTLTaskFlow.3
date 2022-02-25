@@ -1,0 +1,257 @@
+.TH "MTL::MTLTaskFlow" 3 "Fri Feb 25 2022" "Version 0.0.1" "MTL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MTL::MTLTaskFlow \- Task Flow Class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MTLTaskFlow\&.h>\fP
+.PP
+Inherits \fBMTL::MTLOrderedTask\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMTLTaskFlow\fP (const \fBTaskName\fP &taskName='')"
+.br
+.RI "Construct a new \fBMTLTaskFlow\fP object\&. "
+.ti -1c
+.RI "virtual \fB~MTLTaskFlow\fP ()"
+.br
+.RI "Destroy the \fBMTLTaskFlow\fP object\&. "
+.ti -1c
+.RI "virtual std::shared_ptr< void > \fBrun\fP (\fBMTLTaskInterface\fP *interface=nullptr)"
+.br
+.RI "Run the Task Flow\&. "
+.ti -1c
+.RI "virtual std::shared_ptr< void > \fBgetResult\fP ()"
+.br
+.RI "Get the Result object\&. "
+.ti -1c
+.RI "virtual void \fBwaitResult\fP ()"
+.br
+.RI "Wait for the task to finish\&. "
+.ti -1c
+.RI "void \fBprecede\fP (std::shared_ptr< \fBMTLOrderedTask\fP > taskA, std::shared_ptr< \fBMTLOrderedTask\fP > taskB)"
+.br
+.RI "Declare the taskA as a predecessor of taskB\&. "
+.ti -1c
+.RI "void \fBsucceed\fP (std::shared_ptr< \fBMTLOrderedTask\fP > taskA, std::shared_ptr< \fBMTLOrderedTask\fP > taskB)"
+.br
+.RI "Declare the taskA as a successor of taskB\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::unordered_map< \fBTaskName\fP, std::shared_ptr< \fBMTLOrderedTask\fP > > \fBm_orderedTasks\fP"
+.br
+.RI "The ordered tasks\&. "
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Task Flow Class\&. 
+
+This class implement \fBMTLTaskFlow\fP\&.
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MTL::MTLTaskFlow::MTLTaskFlow (const \fBTaskName\fP & taskName = \fC''\fP)"
+
+.PP
+Construct a new \fBMTLTaskFlow\fP object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItaskName\fP The task name\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References MTL::MTLOrderedTask::MTLOrderedTask()\&.
+.SS "MTL::MTLTaskFlow::~MTLTaskFlow ()\fC [virtual]\fP"
+
+.PP
+Destroy the \fBMTLTaskFlow\fP object\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "std::shared_ptr< void > MTL::MTLTaskFlow::getResult ()\fC [virtual]\fP"
+
+.PP
+Get the Result object\&. 
+.PP
+\fBReturns\fP
+.RS 4
+std::shared_ptr<void> The result of the task execution\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBMTL::MTLTask\fP\&.
+.PP
+References MTL::MTLTask::getResult(), MTL::MTLOrderedTask::hasSuccessor(), and m_orderedTasks\&.
+.PP
+Referenced by main()\&.
+.SS "void MTL::MTLTaskFlow::precede (std::shared_ptr< \fBMTLOrderedTask\fP > taskA, std::shared_ptr< \fBMTLOrderedTask\fP > taskB)"
+
+.PP
+Declare the taskA as a predecessor of taskB\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItaskA\fP The predecessor task 
+.br
+\fItaskB\fP The successor task
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References MTL::MTLOrderedTask::addPredecessor(), MTL::MTLOrderedTask::addSuccessor(), MTL::MTLOrderedTask::getTaskName(), and m_orderedTasks\&.
+.PP
+Referenced by main()\&.
+.SS "std::shared_ptr< void > MTL::MTLTaskFlow::run (\fBMTLTaskInterface\fP * interface = \fCnullptr\fP)\fC [virtual]\fP"
+
+.PP
+Run the Task Flow\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinterface\fP The task interface\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+std::shared_ptr<void> The result of the run\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBMTL::MTLOrderedTask\fP\&.
+.PP
+References m_orderedTasks, and MTL::MTLOrderedTask::run()\&.
+.PP
+Referenced by main()\&.
+.SS "void MTL::MTLTaskFlow::succeed (std::shared_ptr< \fBMTLOrderedTask\fP > taskA, std::shared_ptr< \fBMTLOrderedTask\fP > taskB)"
+
+.PP
+Declare the taskA as a successor of taskB\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItaskA\fP The successor task 
+.br
+\fItaskB\fP The predecessor task
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References MTL::MTLOrderedTask::addPredecessor(), MTL::MTLOrderedTask::addSuccessor(), MTL::MTLOrderedTask::getTaskName(), and m_orderedTasks\&.
+.SS "void MTL::MTLTaskFlow::waitResult ()\fC [virtual]\fP"
+
+.PP
+Wait for the task to finish\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBMTL::MTLTask\fP\&.
+.PP
+References MTL::MTLOrderedTask::hasSuccessor(), m_orderedTasks, and MTL::MTLTask::waitResult()\&.
+.SH "Field Documentation"
+.PP 
+.SS "std::unordered_map<\fBTaskName\fP, std::shared_ptr<\fBMTLOrderedTask\fP> > MTL::MTLTaskFlow::m_orderedTasks\fC [private]\fP"
+
+.PP
+The ordered tasks\&. 
+.PP
+Referenced by getResult(), precede(), run(), succeed(), and waitResult()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MTL from the source code\&.

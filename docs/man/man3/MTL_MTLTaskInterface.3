@@ -1,0 +1,89 @@
+.TH "MTL::MTLTaskInterface" 3 "Fri Feb 25 2022" "Version 0.0.1" "MTL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MTL::MTLTaskInterface \- The \fBMTLTaskInterface\fP Interface Class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MTLTaskInterface\&.h>\fP
+.PP
+Inherited by \fBMTL::MTLTask\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual std::shared_ptr< void > \fBgetResult\fP ()=0"
+.br
+.RI "Get the Result object\&. "
+.ti -1c
+.RI "virtual void \fBwaitResult\fP ()=0"
+.br
+.RI "Wait for the task to finish\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBMTLTaskInterface\fP Interface Class\&. 
+
+This class is the interface for the \fBMTLTask\fP class\&.
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2022-02-16 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual std::shared_ptr<void> MTL::MTLTaskInterface::getResult ()\fC [pure virtual]\fP"
+
+.PP
+Get the Result object\&. 
+.PP
+\fBReturns\fP
+.RS 4
+std::shared_ptr<void> The result of the task
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2022-02-16 
+.RE
+.PP
+
+.PP
+Implemented in \fBMTL::MTLTask\fP, and \fBMTL::MTLTaskFlow\fP\&.
+.SS "virtual void MTL::MTLTaskInterface::waitResult ()\fC [pure virtual]\fP"
+
+.PP
+Wait for the task to finish\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2022-02-16 
+.RE
+.PP
+
+.PP
+Implemented in \fBMTL::MTLTask\fP, and \fBMTL::MTLTaskFlow\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MTL from the source code\&.

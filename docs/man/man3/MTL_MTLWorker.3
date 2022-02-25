@@ -1,0 +1,55 @@
+.TH "MTL::MTLWorker" 3 "Fri Feb 25 2022" "Version 0.0.1" "MTL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MTL::MTLWorker \- Worker Interface\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MTLWorker\&.h>\fP
+.PP
+Inherited by \fBMTL::MTLWorkerThread\fP\&.
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBprocessMessage\fP (\fBMessage\fP message)=0"
+.br
+.RI "Process Message\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Worker Interface\&. 
+
+This class is the interface for the \fBMTLWorker\fP class\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void MTL::MTLWorker::processMessage (\fBMessage\fP message)\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.PP
+Process Message\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImessage\fP The message to process\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implemented in \fBMyWorker3\fP, \fBMyWorker2\fP, \fBMyWorker\fP, \fBMyWorker1\fP, \fBMyWorker1\fP, and \fBMTL::MTLWorkerThread\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MTL from the source code\&.

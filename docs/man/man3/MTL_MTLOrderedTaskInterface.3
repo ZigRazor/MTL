@@ -1,0 +1,130 @@
+.TH "MTL::MTLOrderedTaskInterface" 3 "Fri Feb 25 2022" "Version 0.0.1" "MTL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MTL::MTLOrderedTaskInterface \- The \fBMTLOrderedTaskInterface\fP Interface Class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MTLOrderedTaskInterface\&.h>\fP
+.PP
+Inherited by \fBMTL::MTLOrderedTask\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual std::shared_ptr< void > \fBgetPredecessorResult\fP (const \fBTaskName\fP &taskName)=0"
+.br
+.RI "Get the Predecessor Result object\&. "
+.ti -1c
+.RI "virtual const std::unordered_map< \fBTaskName\fP, std::shared_ptr< void > > & \fBgetPredecessorsResults\fP ()=0"
+.br
+.RI "Get the Predecessors Results object\&. "
+.ti -1c
+.RI "virtual \fBTaskName\fP \fBgetTaskName\fP ()=0"
+.br
+.RI "Get the Task Name\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBMTLOrderedTaskInterface\fP Interface Class\&. 
+
+This class is the interface for the \fBMTLOrderedTask\fP class\&.
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2022-02-16 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual std::shared_ptr<void> MTL::MTLOrderedTaskInterface::getPredecessorResult (const \fBTaskName\fP & taskName)\fC [pure virtual]\fP"
+
+.PP
+Get the Predecessor Result object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItaskName\fP The name of the predecessor task 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+std::shared_ptr<void> The result of the predecessor task
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2022-02-16 
+.RE
+.PP
+
+.PP
+Implemented in \fBMTL::MTLOrderedTask\fP\&.
+.SS "virtual const std::unordered_map<\fBTaskName\fP, std::shared_ptr<void> >& MTL::MTLOrderedTaskInterface::getPredecessorsResults ()\fC [pure virtual]\fP"
+
+.PP
+Get the Predecessors Results object\&. 
+.PP
+\fBReturns\fP
+.RS 4
+const std::unordered_map<TaskName, std::shared_ptr<void>>& The predecessors results
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2022-02-16 
+.RE
+.PP
+
+.PP
+Implemented in \fBMTL::MTLOrderedTask\fP\&.
+.PP
+Referenced by Var2Task::run(), SumTask::run(), and MulTask::run()\&.
+.SS "virtual \fBTaskName\fP MTL::MTLOrderedTaskInterface::getTaskName ()\fC [pure virtual]\fP"
+
+.PP
+Get the Task Name\&. 
+.PP
+\fBReturns\fP
+.RS 4
+const TaskName& The name of the task
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2022-02-16 
+.RE
+.PP
+
+.PP
+Implemented in \fBMTL::MTLOrderedTask\fP\&.
+.PP
+Referenced by Var2Task::run(), SumTask::run(), and MulTask::run()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MTL from the source code\&.

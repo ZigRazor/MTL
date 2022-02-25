@@ -1,0 +1,442 @@
+.TH "MTL::MTLThread" 3 "Fri Feb 25 2022" "Version 0.0.1" "MTL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MTL::MTLThread \- Class that implements a thread\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MTLThread\&.h>\fP
+.PP
+Inherits \fBMTL::MTLRunnable\fP, and \fBMTL::MTLThreadInterface\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMTLThread\fP (\fBMTLRunnable\fP &runnable)"
+.br
+.RI "Construct a new \fBMTLThread\fP object\&. "
+.ti -1c
+.RI "virtual \fB~MTLThread\fP ()"
+.br
+.RI "Destroy the \fBMTLThread\fP object\&. "
+.ti -1c
+.RI "virtual void \fBrun\fP (\fBMTLThreadInterface\fP *\fBthreadIf\fP=nullptr)"
+.br
+.RI "Start the thread\&. "
+.ti -1c
+.RI "virtual void \fBsuspend\fP ()"
+.br
+.RI "Suspend the thread\&. "
+.ti -1c
+.RI "virtual void \fBresume\fP ()"
+.br
+.RI "Resume the thread\&. "
+.ti -1c
+.RI "virtual void \fBstop\fP ()"
+.br
+.RI "Stop the thread\&. "
+.ti -1c
+.RI "virtual void \fBclean_exit\fP ()"
+.br
+.RI "A clean Exit of the Thread\&. "
+.ti -1c
+.RI "virtual void \fBforce_exit\fP ()"
+.br
+.RI "Force the thread to exit\&. "
+.ti -1c
+.RI "bool \fBisRunning\fP ()"
+.br
+.RI "Check if the thread is running\&. "
+.ti -1c
+.RI "void \fBjoin\fP ()"
+.br
+.RI "Join the thread\&. "
+.ti -1c
+.RI "\fBMTLRunnable\fP & \fBgetRunnableReference\fP ()"
+.br
+.RI "Get the Runnable Reference object\&. "
+.ti -1c
+.RI "\fBE_MTLThreadState\fP \fBgetThreadState\fP ()"
+.br
+.RI "Get the Thread State\&. "
+.ti -1c
+.RI "void \fBsetThreadState\fP (\fBE_MTLThreadState\fP threadState)"
+.br
+.RI "Set the Thread State object\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBE_MTLThreadState\fP \fBm_threadState\fP"
+.br
+.RI "The thread state\&. "
+.ti -1c
+.RI "std::mutex \fBm_threadState_mutex\fP"
+.br
+.RI "The mutex for the thread state\&. "
+.ti -1c
+.RI "std::unique_ptr< std::thread > \fBm_thread_ptr\fP"
+.br
+.RI "The thread pointer\&. "
+.ti -1c
+.RI "\fBMTLRunnable\fP & \fBm_runnable\fP"
+.br
+.RI "The runnable object\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class that implements a thread\&. 
+
+This class is a thread that can be used to run a task\&.
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MTL::MTLThread::MTLThread (\fBMTLRunnable\fP & runnable)"
+
+.PP
+Construct a new \fBMTLThread\fP object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIrunnable\fP the runnable object to run\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References MTL::CREATED, m_runnable, m_thread_ptr, m_threadState, and m_threadState_mutex\&.
+.PP
+Referenced by main(), and MTL::MTLThreadPool::MTLThreadPool()\&.
+.SS "MTL::MTLThread::~MTLThread ()\fC [virtual]\fP"
+
+.PP
+Destroy the \fBMTLThread\fP object\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References MTL::EXITED, join(), m_threadState, and m_threadState_mutex\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void MTL::MTLThread::clean_exit ()\fC [virtual]\fP"
+
+.PP
+A clean Exit of the Thread\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.PP
+References MTL::MTLRunnable::clean_exit(), MTL::EXITED, m_runnable, m_threadState, and m_threadState_mutex\&.
+.PP
+Referenced by MTL::MTLThreadManager::clean_exit(), and main()\&.
+.SS "void MTL::MTLThread::force_exit ()\fC [virtual]\fP"
+
+.PP
+Force the thread to exit\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.PP
+References MTL::MTLRunnable::force_exit(), MTL::FORCE_EXITED, m_runnable, m_threadState, and m_threadState_mutex\&.
+.PP
+Referenced by MTL::MTLThreadManager::force_exit()\&.
+.SS "\fBMTLRunnable\fP & MTL::MTLThread::getRunnableReference ()"
+
+.PP
+Get the Runnable Reference object\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Runnable& get the Runnable Reference object
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References m_runnable\&.
+.SS "\fBE_MTLThreadState\fP MTL::MTLThread::getThreadState ()\fC [virtual]\fP"
+
+.PP
+Get the Thread State\&. 
+.PP
+\fBReturns\fP
+.RS 4
+E_MTLThreadState Thread State
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLThreadInterface\fP\&.
+.PP
+References m_threadState, and m_threadState_mutex\&.
+.PP
+Referenced by MTL::MTLThreadManager::clean_exit(), and MTL::MTLThreadManager::run()\&.
+.SS "bool MTL::MTLThread::isRunning ()\fC [virtual]\fP"
+
+.PP
+Check if the thread is running\&. 
+.PP
+\fBReturns\fP
+.RS 4
+true if the thread is running\&. 
+.PP
+false if the thread is not running\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLThreadInterface\fP\&.
+.PP
+References m_threadState, m_threadState_mutex, MTL::RUNNING, MTL::STOPPED, and MTL::SUSPENDED\&.
+.PP
+Referenced by main(), resume(), MTL::MTLThreadManager::run(), run(), stop(), and suspend()\&.
+.SS "void MTL::MTLThread::join ()"
+
+.PP
+Join the thread\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References m_thread_ptr\&.
+.PP
+Referenced by main(), MTL::MTLThreadManager::run(), and ~MTLThread()\&.
+.SS "void MTL::MTLThread::resume ()\fC [virtual]\fP"
+
+.PP
+Resume the thread\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.PP
+References isRunning(), m_runnable, m_threadState, m_threadState_mutex, MTL::MTLRunnable::resume(), and MTL::RUNNING\&.
+.PP
+Referenced by main()\&.
+.SS "void MTL::MTLThread::run (\fBMTLThreadInterface\fP * threadIf = \fCnullptr\fP)\fC [virtual]\fP"
+
+.PP
+Start the thread\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIthreadIf\fP The thread interface\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.PP
+References isRunning(), m_runnable, m_thread_ptr, m_threadState, m_threadState_mutex, MTL::MTLRunnable::run(), and MTL::RUNNING\&.
+.PP
+Referenced by MTL::MTLThreadManager::clean_exit(), main(), and MTL::MTLThreadManager::run()\&.
+.SS "void MTL::MTLThread::setThreadState (\fBE_MTLThreadState\fP threadState)\fC [virtual]\fP"
+
+.PP
+Set the Thread State object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIthreadState\fP the Thread State to set
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLThreadInterface\fP\&.
+.PP
+References m_threadState, and m_threadState_mutex\&.
+.SS "void MTL::MTLThread::stop ()\fC [virtual]\fP"
+
+.PP
+Stop the thread\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.PP
+References isRunning(), m_runnable, m_threadState, m_threadState_mutex, MTL::MTLRunnable::stop(), and MTL::STOPPED\&.
+.SS "void MTL::MTLThread::suspend ()\fC [virtual]\fP"
+
+.PP
+Suspend the thread\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.PP
+References isRunning(), m_runnable, m_threadState, m_threadState_mutex, MTL::MTLRunnable::suspend(), and MTL::SUSPENDED\&.
+.PP
+Referenced by main()\&.
+.SH "Field Documentation"
+.PP 
+.SS "\fBMTLRunnable\fP& MTL::MTLThread::m_runnable\fC [private]\fP"
+
+.PP
+The runnable object\&. 
+.PP
+Referenced by clean_exit(), force_exit(), getRunnableReference(), MTLThread(), resume(), run(), stop(), and suspend()\&.
+.SS "std::unique_ptr<std::thread> MTL::MTLThread::m_thread_ptr\fC [private]\fP"
+
+.PP
+The thread pointer\&. 
+.PP
+Referenced by join(), MTLThread(), and run()\&.
+.SS "\fBE_MTLThreadState\fP MTL::MTLThread::m_threadState\fC [private]\fP"
+
+.PP
+The thread state\&. 
+.PP
+Referenced by clean_exit(), force_exit(), getThreadState(), isRunning(), MTLThread(), resume(), run(), setThreadState(), stop(), suspend(), and ~MTLThread()\&.
+.SS "std::mutex MTL::MTLThread::m_threadState_mutex\fC [private]\fP"
+
+.PP
+The mutex for the thread state\&. 
+.PP
+Referenced by clean_exit(), force_exit(), getThreadState(), isRunning(), MTLThread(), resume(), run(), setThreadState(), stop(), suspend(), and ~MTLThread()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MTL from the source code\&.

@@ -1,0 +1,195 @@
+.TH "MTL::MTLSharedObject" 3 "Fri Feb 25 2022" "Version 0.0.1" "MTL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MTL::MTLSharedObject \- Class that implements a shared object\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MTLSharedObject\&.h>\fP
+.PP
+Inherited by \fBMySharedObject\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMTLSharedObject\fP (\fBSharedObjectId\fP id)"
+.br
+.RI "Construct a new \fBMTLSharedObject\fP object\&. "
+.ti -1c
+.RI "virtual \fB~MTLSharedObject\fP ()"
+.br
+.RI "Destroy the \fBMTLSharedObject\fP object\&. "
+.ti -1c
+.RI "\fBSharedObjectId\fP \fBgetObjId\fP ()"
+.br
+.RI "Get the id of the object\&. "
+.ti -1c
+.RI "\fBMTLSharedObject\fP & \fBgetObj\fP ()"
+.br
+.RI "Lock the object and Get the object reference\&. "
+.ti -1c
+.RI "void \fBreleaseObj\fP ()"
+.br
+.RI "Release the object lock\&. ( this function should be used only after the end of the critical section that use the object ) "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSharedObjectId\fP \fBobjId\fP"
+.br
+.ti -1c
+.RI "std::mutex \fBm_mutex\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class that implements a shared object\&. 
+
+This class is a shared object that can be used to share data between threads\&.
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MTL::MTLSharedObject::MTLSharedObject (\fBSharedObjectId\fP id)"
+
+.PP
+Construct a new \fBMTLSharedObject\fP object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIid\fP The id of the object\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References m_mutex, and objId\&.
+.PP
+Referenced by MySharedObject::MySharedObject()\&.
+.SS "MTL::MTLSharedObject::~MTLSharedObject ()\fC [virtual]\fP"
+
+.PP
+Destroy the \fBMTLSharedObject\fP object\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References m_mutex\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBMTLSharedObject\fP & MTL::MTLSharedObject::getObj ()"
+
+.PP
+Lock the object and Get the object reference\&. 
+.PP
+\fBReturns\fP
+.RS 4
+\fBMTLSharedObject\fP& The object\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References m_mutex\&.
+.PP
+Referenced by MTL::MTLSharedMemory::getSharedObjectById()\&.
+.SS "\fBSharedObjectId\fP MTL::MTLSharedObject::getObjId ()"
+
+.PP
+Get the id of the object\&. 
+.PP
+\fBReturns\fP
+.RS 4
+SharedObjectId The id of the object\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References objId\&.
+.PP
+Referenced by MTL::MTLSharedMemory::addSharedObject(), and MTL::MTLSharedMemory::releaseSharedObject()\&.
+.SS "void MTL::MTLSharedObject::releaseObj ()"
+
+.PP
+Release the object lock\&. ( this function should be used only after the end of the critical section that use the object ) 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References m_mutex\&.
+.PP
+Referenced by MTL::MTLSharedMemory::releaseSharedObject()\&.
+.SH "Field Documentation"
+.PP 
+.SS "std::mutex MTL::MTLSharedObject::m_mutex\fC [private]\fP"
+The mutex of the object\&. 
+.PP
+Referenced by getObj(), MTLSharedObject(), releaseObj(), and ~MTLSharedObject()\&.
+.SS "\fBSharedObjectId\fP MTL::MTLSharedObject::objId\fC [private]\fP"
+The id of the object\&. 
+.PP
+Referenced by getObjId(), and MTLSharedObject()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MTL from the source code\&.

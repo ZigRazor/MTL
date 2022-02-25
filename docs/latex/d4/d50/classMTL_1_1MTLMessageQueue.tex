@@ -1,0 +1,281 @@
+\hypertarget{classMTL_1_1MTLMessageQueue}{}\doxysection{M\+TL\+::M\+T\+L\+Message\+Queue Class Reference}
+\label{classMTL_1_1MTLMessageQueue}\index{MTL::MTLMessageQueue@{MTL::MTLMessageQueue}}
+
+
+Class that implements a message queue.  
+
+
+
+
+{\ttfamily \#include $<$M\+T\+L\+Message\+Queue.\+h$>$}
+
+
+
+Inheritance diagram for M\+TL\+::M\+T\+L\+Message\+Queue\+:
+% FIG 0
+
+
+Collaboration diagram for M\+TL\+::M\+T\+L\+Message\+Queue\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMTL_1_1MTLMessageQueue_a99546fa52ff05ea01cc6ca46dfa61106}{M\+T\+L\+Message\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classMTL_1_1MTLMessageQueue}{M\+T\+L\+Message\+Queue}} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMTL_1_1MTLMessageQueue_ab99c90cc4d753610f9ed408c58b9cddf}{$\sim$\+M\+T\+L\+Message\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classMTL_1_1MTLMessageQueue}{M\+T\+L\+Message\+Queue}} object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMTL_1_1MTLMessageQueue_ac28ac4dacf9e904ea854999abbd2626e}{push\+Message}} (\mbox{\hyperlink{namespaceMTL_aa51e466042eddacf258ce1a69e5a0e6b}{Message}} message)
+\begin{DoxyCompactList}\small\item\em Add a message to the queue. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespaceMTL_aa51e466042eddacf258ce1a69e5a0e6b}{Message}} \mbox{\hyperlink{classMTL_1_1MTLMessageQueue_a3e9ec500de265bd3d6ab49288d8f26bd}{pop\+Message}} ()
+\begin{DoxyCompactList}\small\item\em Get the next message from the queue. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classMTL_1_1MTLMessageQueue_a1f04158e8dc8c9c79e6c08a6bfcaecee}{is\+Empty}} ()
+\begin{DoxyCompactList}\small\item\em Check if the queue is empty. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMTL_1_1MTLMessageQueue_a949a33a53502b02b3f613d5087e10b12}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clear the Queue. \end{DoxyCompactList}\item 
+virtual unsigned int \mbox{\hyperlink{classMTL_1_1MTLMessageQueue_a3327a92430209247c763af2571340157}{get\+Queue\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the Queue Size object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::mutex \mbox{\hyperlink{classMTL_1_1MTLMessageQueue_af20d314c59678301e66d5448350aee9c}{m\+\_\+queue\+\_\+mutex}}
+\begin{DoxyCompactList}\small\item\em The mutex for the queue. \end{DoxyCompactList}\item 
+std\+::queue$<$ \mbox{\hyperlink{namespaceMTL_aa51e466042eddacf258ce1a69e5a0e6b}{Message}} $>$ \mbox{\hyperlink{classMTL_1_1MTLMessageQueue_ae3d2480272fe6a5a168ebb01f39bc914}{m\+\_\+queue}}
+\begin{DoxyCompactList}\small\item\em The queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that implements a message queue. 
+
+This class is a message queue that can be used to send messages to a thread.
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMTL_1_1MTLMessageQueue_a99546fa52ff05ea01cc6ca46dfa61106}\label{classMTL_1_1MTLMessageQueue_a99546fa52ff05ea01cc6ca46dfa61106}} 
+\index{MTL::MTLMessageQueue@{MTL::MTLMessageQueue}!MTLMessageQueue@{MTLMessageQueue}}
+\index{MTLMessageQueue@{MTLMessageQueue}!MTL::MTLMessageQueue@{MTL::MTLMessageQueue}}
+\doxysubsubsection{\texorpdfstring{MTLMessageQueue()}{MTLMessageQueue()}}
+{\footnotesize\ttfamily M\+T\+L\+::\+M\+T\+L\+Message\+Queue\+::\+M\+T\+L\+Message\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classMTL_1_1MTLMessageQueue}{M\+T\+L\+Message\+Queue}} object. 
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+References m\+\_\+queue, and m\+\_\+queue\+\_\+mutex.
+
+
+
+Referenced by M\+T\+L\+::\+M\+T\+L\+Worker\+Thread\+::\+M\+T\+L\+Worker\+Thread().
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classMTL_1_1MTLMessageQueue_ab99c90cc4d753610f9ed408c58b9cddf}\label{classMTL_1_1MTLMessageQueue_ab99c90cc4d753610f9ed408c58b9cddf}} 
+\index{MTL::MTLMessageQueue@{MTL::MTLMessageQueue}!````~MTLMessageQueue@{$\sim$MTLMessageQueue}}
+\index{````~MTLMessageQueue@{$\sim$MTLMessageQueue}!MTL::MTLMessageQueue@{MTL::MTLMessageQueue}}
+\doxysubsubsection{\texorpdfstring{$\sim$MTLMessageQueue()}{~MTLMessageQueue()}}
+{\footnotesize\ttfamily M\+T\+L\+::\+M\+T\+L\+Message\+Queue\+::$\sim$\+M\+T\+L\+Message\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destroy the \mbox{\hyperlink{classMTL_1_1MTLMessageQueue}{M\+T\+L\+Message\+Queue}} object. 
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMTL_1_1MTLMessageQueue_a949a33a53502b02b3f613d5087e10b12}\label{classMTL_1_1MTLMessageQueue_a949a33a53502b02b3f613d5087e10b12}} 
+\index{MTL::MTLMessageQueue@{MTL::MTLMessageQueue}!clear@{clear}}
+\index{clear@{clear}!MTL::MTLMessageQueue@{MTL::MTLMessageQueue}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void M\+T\+L\+::\+M\+T\+L\+Message\+Queue\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Clear the Queue. 
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+References m\+\_\+queue, and m\+\_\+queue\+\_\+mutex.
+
+\mbox{\Hypertarget{classMTL_1_1MTLMessageQueue_a3327a92430209247c763af2571340157}\label{classMTL_1_1MTLMessageQueue_a3327a92430209247c763af2571340157}} 
+\index{MTL::MTLMessageQueue@{MTL::MTLMessageQueue}!getQueueSize@{getQueueSize}}
+\index{getQueueSize@{getQueueSize}!MTL::MTLMessageQueue@{MTL::MTLMessageQueue}}
+\doxysubsubsection{\texorpdfstring{getQueueSize()}{getQueueSize()}}
+{\footnotesize\ttfamily unsigned int M\+T\+L\+::\+M\+T\+L\+Message\+Queue\+::get\+Queue\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the Queue Size object. 
+
+\begin{DoxyReturn}{Returns}
+unsigned int The size of the queue.
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+References m\+\_\+queue, and m\+\_\+queue\+\_\+mutex.
+
+
+
+Referenced by My\+Worker1\+::clean\+\_\+exit(), My\+Worker2\+::clean\+\_\+exit(), and My\+Worker3\+::clean\+\_\+exit().
+
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classMTL_1_1MTLMessageQueue_a1f04158e8dc8c9c79e6c08a6bfcaecee}\label{classMTL_1_1MTLMessageQueue_a1f04158e8dc8c9c79e6c08a6bfcaecee}} 
+\index{MTL::MTLMessageQueue@{MTL::MTLMessageQueue}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!MTL::MTLMessageQueue@{MTL::MTLMessageQueue}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily bool M\+T\+L\+::\+M\+T\+L\+Message\+Queue\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if the queue is empty. 
+
+\begin{DoxyReturn}{Returns}
+true The queue is empty. 
+
+false The queue is not empty.
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+References m\+\_\+queue, and m\+\_\+queue\+\_\+mutex.
+
+
+
+Referenced by M\+T\+L\+::\+M\+T\+L\+Worker\+Thread\+::run().
+
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classMTL_1_1MTLMessageQueue_a3e9ec500de265bd3d6ab49288d8f26bd}\label{classMTL_1_1MTLMessageQueue_a3e9ec500de265bd3d6ab49288d8f26bd}} 
+\index{MTL::MTLMessageQueue@{MTL::MTLMessageQueue}!popMessage@{popMessage}}
+\index{popMessage@{popMessage}!MTL::MTLMessageQueue@{MTL::MTLMessageQueue}}
+\doxysubsubsection{\texorpdfstring{popMessage()}{popMessage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceMTL_aa51e466042eddacf258ce1a69e5a0e6b}{Message}} M\+T\+L\+::\+M\+T\+L\+Message\+Queue\+::pop\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the next message from the queue. 
+
+\begin{DoxyReturn}{Returns}
+Message The next message.
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+References m\+\_\+queue, and m\+\_\+queue\+\_\+mutex.
+
+
+
+Referenced by M\+T\+L\+::\+M\+T\+L\+Worker\+Thread\+::run().
+
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{classMTL_1_1MTLMessageQueue_ac28ac4dacf9e904ea854999abbd2626e}\label{classMTL_1_1MTLMessageQueue_ac28ac4dacf9e904ea854999abbd2626e}} 
+\index{MTL::MTLMessageQueue@{MTL::MTLMessageQueue}!pushMessage@{pushMessage}}
+\index{pushMessage@{pushMessage}!MTL::MTLMessageQueue@{MTL::MTLMessageQueue}}
+\doxysubsubsection{\texorpdfstring{pushMessage()}{pushMessage()}}
+{\footnotesize\ttfamily void M\+T\+L\+::\+M\+T\+L\+Message\+Queue\+::push\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceMTL_aa51e466042eddacf258ce1a69e5a0e6b}{Message}}}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Add a message to the queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+References m\+\_\+queue, and m\+\_\+queue\+\_\+mutex.
+
+
+
+Referenced by main(), and M\+T\+L\+::\+M\+T\+L\+Thread\+Pool\+::on\+Message().
+
+Here is the caller graph for this function\+:
+% FIG 6
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{classMTL_1_1MTLMessageQueue_ae3d2480272fe6a5a168ebb01f39bc914}\label{classMTL_1_1MTLMessageQueue_ae3d2480272fe6a5a168ebb01f39bc914}} 
+\index{MTL::MTLMessageQueue@{MTL::MTLMessageQueue}!m\_queue@{m\_queue}}
+\index{m\_queue@{m\_queue}!MTL::MTLMessageQueue@{MTL::MTLMessageQueue}}
+\doxysubsubsection{\texorpdfstring{m\_queue}{m\_queue}}
+{\footnotesize\ttfamily std\+::queue$<$\mbox{\hyperlink{namespaceMTL_aa51e466042eddacf258ce1a69e5a0e6b}{Message}}$>$ M\+T\+L\+::\+M\+T\+L\+Message\+Queue\+::m\+\_\+queue\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The queue. 
+
+
+
+Referenced by clear(), get\+Queue\+Size(), is\+Empty(), M\+T\+L\+Message\+Queue(), pop\+Message(), and push\+Message().
+
+\mbox{\Hypertarget{classMTL_1_1MTLMessageQueue_af20d314c59678301e66d5448350aee9c}\label{classMTL_1_1MTLMessageQueue_af20d314c59678301e66d5448350aee9c}} 
+\index{MTL::MTLMessageQueue@{MTL::MTLMessageQueue}!m\_queue\_mutex@{m\_queue\_mutex}}
+\index{m\_queue\_mutex@{m\_queue\_mutex}!MTL::MTLMessageQueue@{MTL::MTLMessageQueue}}
+\doxysubsubsection{\texorpdfstring{m\_queue\_mutex}{m\_queue\_mutex}}
+{\footnotesize\ttfamily std\+::mutex M\+T\+L\+::\+M\+T\+L\+Message\+Queue\+::m\+\_\+queue\+\_\+mutex\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The mutex for the queue. 
+
+
+
+Referenced by clear(), get\+Queue\+Size(), is\+Empty(), M\+T\+L\+Message\+Queue(), pop\+Message(), and push\+Message().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{MTLMessageQueue_8h}{M\+T\+L\+Message\+Queue.\+h}}\item 
+src/\mbox{\hyperlink{MTLMessageQueue_8cpp}{M\+T\+L\+Message\+Queue.\+cpp}}\end{DoxyCompactItemize}

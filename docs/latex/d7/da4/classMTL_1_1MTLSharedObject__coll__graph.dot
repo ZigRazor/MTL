@@ -1,0 +1,7 @@
+digraph "MTL::MTLSharedObject"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{MTL::MTLSharedObject\n|- objId\l- m_mutex\l|+ MTLSharedObject()\l+ ~MTLSharedObject()\l+ getObjId()\l+ getObj()\l+ releaseObj()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Class that implements a shared object."];
+}

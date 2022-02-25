@@ -1,0 +1,69 @@
+.TH "MTL::MTLRunnableTask" 3 "Fri Feb 25 2022" "Version 0.0.1" "MTL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MTL::MTLRunnableTask \- Runnable Task Interface\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MTLRunnableTask\&.h>\fP
+.PP
+Inherited by \fBMTL::MTLTask\fP, \fBMulTask\fP, \fBMyRunnableTask\fP, \fBSumTask\fP, and \fBVar2Task\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual std::shared_ptr< void > \fBrun\fP (\fBMTLTaskInterface\fP *interface=nullptr)=0"
+.br
+.RI "The function that represent the task\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Runnable Task Interface\&. 
+
+This class is the interface for the RunnableTask class\&.
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual std::shared_ptr<void> MTL::MTLRunnableTask::run (\fBMTLTaskInterface\fP * interface = \fCnullptr\fP)\fC [pure virtual]\fP"
+
+.PP
+The function that represent the task\&. 
+.PP
+\fBReturns\fP
+.RS 4
+std::shared_ptr<void> the result of the task\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implemented in \fBMTL::MTLOrderedTask\fP, \fBMTL::MTLTask\fP, \fBMTL::MTLTaskFlow\fP, \fBMulTask\fP, \fBSumTask\fP, \fBMyRunnableTask\fP, and \fBVar2Task\fP\&.
+.PP
+Referenced by MTL::MTLTask::run(), and MTL::MTLOrderedTask::run()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MTL from the source code\&.

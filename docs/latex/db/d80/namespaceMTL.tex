@@ -1,0 +1,183 @@
+\hypertarget{namespaceMTL}{}\doxysection{M\+TL Namespace Reference}
+\label{namespaceMTL}\index{MTL@{MTL}}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classMTL_1_1MTLMessageQueue}{M\+T\+L\+Message\+Queue}}
+\begin{DoxyCompactList}\small\item\em Class that implements a message queue. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMTL_1_1MTLOrderedTask}{M\+T\+L\+Ordered\+Task}}
+\begin{DoxyCompactList}\small\item\em Ordered Task. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMTL_1_1MTLOrderedTaskInterface}{M\+T\+L\+Ordered\+Task\+Interface}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{classMTL_1_1MTLOrderedTaskInterface}{M\+T\+L\+Ordered\+Task\+Interface}} Interface Class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMTL_1_1MTLRunnable}{M\+T\+L\+Runnable}}
+\begin{DoxyCompactList}\small\item\em Runnable Interface. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMTL_1_1MTLRunnableTask}{M\+T\+L\+Runnable\+Task}}
+\begin{DoxyCompactList}\small\item\em Runnable Task Interface. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMTL_1_1MTLSharedMemory}{M\+T\+L\+Shared\+Memory}}
+\begin{DoxyCompactList}\small\item\em Class that implements a shared memory. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMTL_1_1MTLSharedObject}{M\+T\+L\+Shared\+Object}}
+\begin{DoxyCompactList}\small\item\em Class that implements a shared object. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMTL_1_1MTLTask}{M\+T\+L\+Task}}
+\begin{DoxyCompactList}\small\item\em The Class that represent a task. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMTL_1_1MTLTaskFlow}{M\+T\+L\+Task\+Flow}}
+\begin{DoxyCompactList}\small\item\em Task Flow Class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMTL_1_1MTLTaskInterface}{M\+T\+L\+Task\+Interface}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{classMTL_1_1MTLTaskInterface}{M\+T\+L\+Task\+Interface}} Interface Class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMTL_1_1MTLThread}{M\+T\+L\+Thread}}
+\begin{DoxyCompactList}\small\item\em Class that implements a thread. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMTL_1_1MTLThreadInterface}{M\+T\+L\+Thread\+Interface}}
+\begin{DoxyCompactList}\small\item\em Class that implements a thread interface. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMTL_1_1MTLThreadManager}{M\+T\+L\+Thread\+Manager}}
+\begin{DoxyCompactList}\small\item\em Class that implements a thread manager. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMTL_1_1MTLThreadPool}{M\+T\+L\+Thread\+Pool}}
+\begin{DoxyCompactList}\small\item\em Class that implements a thread pool. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMTL_1_1MTLWorker}{M\+T\+L\+Worker}}
+\begin{DoxyCompactList}\small\item\em Worker Interface. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMTL_1_1MTLWorkerThread}{M\+T\+L\+Worker\+Thread}}
+\begin{DoxyCompactList}\small\item\em Class that implements a Worker Thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8}{M\+T\+L\+Thread\+State\+\_\+\+Enumerated}} \mbox{\hyperlink{namespaceMTL_abde43cd9685da8bfa7dc27f54c24a693}{E\+\_\+\+M\+T\+L\+Thread\+State}}
+\begin{DoxyCompactList}\small\item\em Thread State Enumeration Type Definition. \end{DoxyCompactList}\item 
+typedef std\+::shared\+\_\+ptr$<$ void $>$ \mbox{\hyperlink{namespaceMTL_aa51e466042eddacf258ce1a69e5a0e6b}{Message}}
+\begin{DoxyCompactList}\small\item\em Message Type Definition. \end{DoxyCompactList}\item 
+typedef unsigned int \mbox{\hyperlink{namespaceMTL_a0542e7cb430df94190bee9c739c8f773}{Shared\+Object\+Id}}
+\begin{DoxyCompactList}\small\item\em Shared Object Id Type Definition. \end{DoxyCompactList}\item 
+typedef std\+::string \mbox{\hyperlink{namespaceMTL_aedc36e02c48dcdbe69e46c95ede32e48}{Task\+Name}}
+\begin{DoxyCompactList}\small\item\em Task\+Name Type Definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8}{M\+T\+L\+Thread\+State\+\_\+\+Enumerated}} \{ \newline
+\mbox{\hyperlink{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8a89e3aad561518d9e26cfa65813f84231}{C\+R\+E\+A\+T\+ED}} = 0, 
+\mbox{\hyperlink{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8ab493bcf280376f8cb47a58a263e873a8}{R\+U\+N\+N\+I\+NG}} = 1, 
+\mbox{\hyperlink{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8aa311c4374301488706b5fe56bb7c411d}{S\+U\+S\+P\+E\+N\+D\+ED}} = 2, 
+\mbox{\hyperlink{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8a371c128e6398b12c0ee9ffa1dfaf73de}{S\+T\+O\+P\+P\+ED}} = 3, 
+\newline
+\mbox{\hyperlink{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8adbe84a385520794cc0f6d18831f4050e}{E\+X\+I\+T\+ED}} = 4, 
+\mbox{\hyperlink{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8a7db441bf0f26da169bc1a1637d64e7b1}{F\+O\+R\+C\+E\+\_\+\+E\+X\+I\+T\+ED}} = 5
+ \}
+\begin{DoxyCompactList}\small\item\em Thread State Enumeration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespaceMTL_abde43cd9685da8bfa7dc27f54c24a693}\label{namespaceMTL_abde43cd9685da8bfa7dc27f54c24a693}} 
+\index{MTL@{MTL}!E\_MTLThreadState@{E\_MTLThreadState}}
+\index{E\_MTLThreadState@{E\_MTLThreadState}!MTL@{MTL}}
+\doxysubsubsection{\texorpdfstring{E\_MTLThreadState}{E\_MTLThreadState}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8}{M\+T\+L\+Thread\+State\+\_\+\+Enumerated}} \mbox{\hyperlink{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8}{M\+T\+L\+::\+E\+\_\+\+M\+T\+L\+Thread\+State}}}
+
+
+
+Thread State Enumeration Type Definition. 
+
+This typedef is used to represent the state of a thread.
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+\mbox{\Hypertarget{namespaceMTL_aa51e466042eddacf258ce1a69e5a0e6b}\label{namespaceMTL_aa51e466042eddacf258ce1a69e5a0e6b}} 
+\index{MTL@{MTL}!Message@{Message}}
+\index{Message@{Message}!MTL@{MTL}}
+\doxysubsubsection{\texorpdfstring{Message}{Message}}
+{\footnotesize\ttfamily typedef std\+::shared\+\_\+ptr$<$void$>$ \mbox{\hyperlink{namespaceMTL_aa51e466042eddacf258ce1a69e5a0e6b}{M\+T\+L\+::\+Message}}}
+
+
+
+Message Type Definition. 
+
+This typedef is used to represent the message type.
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+\mbox{\Hypertarget{namespaceMTL_a0542e7cb430df94190bee9c739c8f773}\label{namespaceMTL_a0542e7cb430df94190bee9c739c8f773}} 
+\index{MTL@{MTL}!SharedObjectId@{SharedObjectId}}
+\index{SharedObjectId@{SharedObjectId}!MTL@{MTL}}
+\doxysubsubsection{\texorpdfstring{SharedObjectId}{SharedObjectId}}
+{\footnotesize\ttfamily typedef unsigned int \mbox{\hyperlink{namespaceMTL_a0542e7cb430df94190bee9c739c8f773}{M\+T\+L\+::\+Shared\+Object\+Id}}}
+
+
+
+Shared Object Id Type Definition. 
+
+This typedef is used to represent the shared object id.
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+\mbox{\Hypertarget{namespaceMTL_aedc36e02c48dcdbe69e46c95ede32e48}\label{namespaceMTL_aedc36e02c48dcdbe69e46c95ede32e48}} 
+\index{MTL@{MTL}!TaskName@{TaskName}}
+\index{TaskName@{TaskName}!MTL@{MTL}}
+\doxysubsubsection{\texorpdfstring{TaskName}{TaskName}}
+{\footnotesize\ttfamily typedef std\+::string \mbox{\hyperlink{namespaceMTL_aedc36e02c48dcdbe69e46c95ede32e48}{M\+T\+L\+::\+Task\+Name}}}
+
+
+
+Task\+Name Type Definition. 
+
+This typedef is used to represent the task name.
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8}\label{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8}} 
+\index{MTL@{MTL}!MTLThreadState\_Enumerated@{MTLThreadState\_Enumerated}}
+\index{MTLThreadState\_Enumerated@{MTLThreadState\_Enumerated}!MTL@{MTL}}
+\doxysubsubsection{\texorpdfstring{MTLThreadState\_Enumerated}{MTLThreadState\_Enumerated}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8}{M\+T\+L\+::\+M\+T\+L\+Thread\+State\+\_\+\+Enumerated}}}
+
+
+
+Thread State Enumeration. 
+
+This enum is used to represent the state of a thread.
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CREATED@{CREATED}!MTL@{MTL}}\index{MTL@{MTL}!CREATED@{CREATED}}}\mbox{\Hypertarget{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8a89e3aad561518d9e26cfa65813f84231}\label{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8a89e3aad561518d9e26cfa65813f84231}} 
+C\+R\+E\+A\+T\+ED&Thread is created but not yet started. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RUNNING@{RUNNING}!MTL@{MTL}}\index{MTL@{MTL}!RUNNING@{RUNNING}}}\mbox{\Hypertarget{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8ab493bcf280376f8cb47a58a263e873a8}\label{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8ab493bcf280376f8cb47a58a263e873a8}} 
+R\+U\+N\+N\+I\+NG&Thread is running. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SUSPENDED@{SUSPENDED}!MTL@{MTL}}\index{MTL@{MTL}!SUSPENDED@{SUSPENDED}}}\mbox{\Hypertarget{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8aa311c4374301488706b5fe56bb7c411d}\label{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8aa311c4374301488706b5fe56bb7c411d}} 
+S\+U\+S\+P\+E\+N\+D\+ED&Thread is suspended. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STOPPED@{STOPPED}!MTL@{MTL}}\index{MTL@{MTL}!STOPPED@{STOPPED}}}\mbox{\Hypertarget{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8a371c128e6398b12c0ee9ffa1dfaf73de}\label{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8a371c128e6398b12c0ee9ffa1dfaf73de}} 
+S\+T\+O\+P\+P\+ED&Thread is stopped. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXITED@{EXITED}!MTL@{MTL}}\index{MTL@{MTL}!EXITED@{EXITED}}}\mbox{\Hypertarget{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8adbe84a385520794cc0f6d18831f4050e}\label{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8adbe84a385520794cc0f6d18831f4050e}} 
+E\+X\+I\+T\+ED&Thread is exited. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FORCE\_EXITED@{FORCE\_EXITED}!MTL@{MTL}}\index{MTL@{MTL}!FORCE\_EXITED@{FORCE\_EXITED}}}\mbox{\Hypertarget{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8a7db441bf0f26da169bc1a1637d64e7b1}\label{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8a7db441bf0f26da169bc1a1637d64e7b1}} 
+F\+O\+R\+C\+E\+\_\+\+E\+X\+I\+T\+ED&Thread is force exited. \\
+\hline
+
+\end{DoxyEnumFields}

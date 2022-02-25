@@ -1,0 +1,239 @@
+.TH "MTL::MTLSharedMemory" 3 "Fri Feb 25 2022" "Version 0.0.1" "MTL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MTL::MTLSharedMemory \- Class that implements a shared memory\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MTLSharedMemory\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMTLSharedMemory\fP ()"
+.br
+.RI "Construct a new \fBMTLSharedMemory\fP object\&. "
+.ti -1c
+.RI "virtual \fB~MTLSharedMemory\fP ()"
+.br
+.RI "Destroy the \fBMTLSharedMemory\fP object\&. "
+.ti -1c
+.RI "void \fBaddSharedObject\fP (std::unique_ptr< \fBMTLSharedObject\fP > obj)"
+.br
+.RI "Add a shared object to the shared memory\&. "
+.ti -1c
+.RI "void \fBremoveSharedObject\fP (\fBSharedObjectId\fP id)"
+.br
+.RI "Remove a shared object from the shared memory\&. "
+.ti -1c
+.RI "\fBMTLSharedObject\fP & \fBgetSharedObjectById\fP (\fBSharedObjectId\fP id)"
+.br
+.RI "Get a shared object from the shared memory\&. "
+.ti -1c
+.RI "void \fBreleaseSharedObject\fP (\fBMTLSharedObject\fP &obj)"
+.br
+.RI "Release a shared object from the shared memory\&. "
+.ti -1c
+.RI "void \fBclearSharedMemory\fP ()"
+.br
+.RI "Clear the shared memory\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::map< \fBSharedObjectId\fP, std::unique_ptr< \fBMTLSharedObject\fP > > \fBm_sharedObjects\fP"
+.br
+.RI "The shared objects\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class that implements a shared memory\&. 
+
+This class is a shared memory that can be used to share data between threads\&.
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MTL::MTLSharedMemory::MTLSharedMemory ()"
+
+.PP
+Construct a new \fBMTLSharedMemory\fP object\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References m_sharedObjects\&.
+.SS "MTL::MTLSharedMemory::~MTLSharedMemory ()\fC [virtual]\fP"
+
+.PP
+Destroy the \fBMTLSharedMemory\fP object\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void MTL::MTLSharedMemory::addSharedObject (std::unique_ptr< \fBMTLSharedObject\fP > obj)"
+
+.PP
+Add a shared object to the shared memory\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP The shared object to add\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References MTL::MTLSharedObject::getObjId(), and m_sharedObjects\&.
+.PP
+Referenced by main()\&.
+.SS "void MTL::MTLSharedMemory::clearSharedMemory ()"
+
+.PP
+Clear the shared memory\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References m_sharedObjects\&.
+.SS "\fBMTLSharedObject\fP & MTL::MTLSharedMemory::getSharedObjectById (\fBSharedObjectId\fP id)"
+
+.PP
+Get a shared object from the shared memory\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIid\fP The id of the shared object to get\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fBMTLSharedObject\fP& The shared object\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References MTL::MTLSharedObject::getObj(), and m_sharedObjects\&.
+.PP
+Referenced by MyRunnable::run()\&.
+.SS "void MTL::MTLSharedMemory::releaseSharedObject (\fBMTLSharedObject\fP & obj)"
+
+.PP
+Release a shared object from the shared memory\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIobj\fP The shared object to release\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References MTL::MTLSharedObject::getObjId(), m_sharedObjects, and MTL::MTLSharedObject::releaseObj()\&.
+.PP
+Referenced by MyRunnable::run()\&.
+.SS "void MTL::MTLSharedMemory::removeSharedObject (\fBSharedObjectId\fP id)"
+
+.PP
+Remove a shared object from the shared memory\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIid\fP The id of the shared object to remove\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References m_sharedObjects\&.
+.SH "Field Documentation"
+.PP 
+.SS "std::map<\fBSharedObjectId\fP, std::unique_ptr<\fBMTLSharedObject\fP> > MTL::MTLSharedMemory::m_sharedObjects\fC [private]\fP"
+
+.PP
+The shared objects\&. 
+.PP
+Referenced by addSharedObject(), clearSharedMemory(), getSharedObjectById(), MTLSharedMemory(), releaseSharedObject(), and removeSharedObject()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MTL from the source code\&.

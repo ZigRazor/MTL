@@ -1,0 +1,61 @@
+.TH "SumTask" 3 "Fri Feb 25 2022" "Version 0.0.1" "MTL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SumTask
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMTL::MTLRunnableTask\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSumTask\fP ()=default"
+.br
+.ti -1c
+.RI "virtual \fB~SumTask\fP ()=default"
+.br
+.ti -1c
+.RI "std::shared_ptr< void > \fBrun\fP (\fBMTL::MTLTaskInterface\fP *interface=nullptr)"
+.br
+.RI "The function that represent the task\&. "
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SumTask::SumTask ()\fC [default]\fP"
+
+.SS "virtual SumTask::~SumTask ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "std::shared_ptr<void> SumTask::run (\fBMTL::MTLTaskInterface\fP * interface = \fCnullptr\fP)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+The function that represent the task\&. 
+.PP
+\fBReturns\fP
+.RS 4
+std::shared_ptr<void> the result of the task\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnableTask\fP\&.
+.PP
+References MTL::MTLOrderedTaskInterface::getPredecessorsResults(), and MTL::MTLOrderedTaskInterface::getTaskName()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MTL from the source code\&.

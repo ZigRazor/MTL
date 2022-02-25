@@ -1,0 +1,353 @@
+\hypertarget{classMTL_1_1MTLThreadManager}{}\doxysection{M\+TL\+::M\+T\+L\+Thread\+Manager Class Reference}
+\label{classMTL_1_1MTLThreadManager}\index{MTL::MTLThreadManager@{MTL::MTLThreadManager}}
+
+
+Class that implements a thread manager.  
+
+
+
+
+{\ttfamily \#include $<$M\+T\+L\+Thread\+Manager.\+h$>$}
+
+
+
+Inheritance diagram for M\+TL\+::M\+T\+L\+Thread\+Manager\+:
+% FIG 0
+
+
+Collaboration diagram for M\+TL\+::M\+T\+L\+Thread\+Manager\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMTL_1_1MTLThreadManager_a2da48348671dfeafd9fbba0e1ac50308}{M\+T\+L\+Thread\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classMTL_1_1MTLThreadManager}{M\+T\+L\+Thread\+Manager}} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMTL_1_1MTLThreadManager_a38bc3859fbe9c99112177662989818a4}{$\sim$\+M\+T\+L\+Thread\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classMTL_1_1MTLThreadManager}{M\+T\+L\+Thread\+Manager}} object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMTL_1_1MTLThreadManager_a0f7b9c1f198443ffcee9cb0f9e242420}{run}} (\mbox{\hyperlink{classMTL_1_1MTLThreadInterface}{M\+T\+L\+Thread\+Interface}} $\ast$\mbox{\hyperlink{classMTL_1_1MTLRunnable_ac67b70a282bb32fc7a428fb9db506f62}{thread\+If}})
+\begin{DoxyCompactList}\small\item\em Start the thread manager. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMTL_1_1MTLThreadManager_ab5a79086bf05dcd8e26dbd25b6d95bd2}{suspend}} ()
+\begin{DoxyCompactList}\small\item\em Suspend the thread manager. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMTL_1_1MTLThreadManager_a99a59034e6525574ab2caf698b1a870c}{resume}} ()
+\begin{DoxyCompactList}\small\item\em Resume the thread manager. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMTL_1_1MTLThreadManager_a0342209bc98218b70ad0d6c1f5780d96}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop the thread manager. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMTL_1_1MTLThreadManager_af18cec206763fe1766db3e5041856cd2}{clean\+\_\+exit}} ()
+\begin{DoxyCompactList}\small\item\em A clean Exit of the thread manager. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMTL_1_1MTLThreadManager_a12fca1dc22685f3881527783fa26dc12}{force\+\_\+exit}} ()
+\begin{DoxyCompactList}\small\item\em Force the thread manager to exit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMTL_1_1MTLThreadManager_acd122b56c2c73e0b80aa0795a2667717}{add\+Thread}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classMTL_1_1MTLThread}{M\+T\+L\+Thread}} $>$ thread)
+\begin{DoxyCompactList}\small\item\em Add a thread to the thread manager. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMTL_1_1MTLThreadManager_aa717f95928f8ec7d9eeb1c7d009e8fca}{set\+Sleep\+Time}} (int sleep\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Set the Sleep Time object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classMTL_1_1MTLThread}{M\+T\+L\+Thread}} $>$ $>$ \mbox{\hyperlink{classMTL_1_1MTLThreadManager_a18072fb2cea804d6518451614682c021}{m\+\_\+threads}}
+\item 
+std\+::mutex \mbox{\hyperlink{classMTL_1_1MTLThreadManager_abb1dce5fff8bd0c1740290b203f08181}{m\+\_\+threads\+\_\+mutex}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classMTL_1_1MTLThreadManager_ac5ed56c85bd32709de78833ddf8d5fd9}{m\+\_\+sleep\+\_\+time}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that implements a thread manager. 
+
+This class is a thread manager that can be used to manage threads.
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMTL_1_1MTLThreadManager_a2da48348671dfeafd9fbba0e1ac50308}\label{classMTL_1_1MTLThreadManager_a2da48348671dfeafd9fbba0e1ac50308}} 
+\index{MTL::MTLThreadManager@{MTL::MTLThreadManager}!MTLThreadManager@{MTLThreadManager}}
+\index{MTLThreadManager@{MTLThreadManager}!MTL::MTLThreadManager@{MTL::MTLThreadManager}}
+\doxysubsubsection{\texorpdfstring{MTLThreadManager()}{MTLThreadManager()}}
+{\footnotesize\ttfamily M\+T\+L\+::\+M\+T\+L\+Thread\+Manager\+::\+M\+T\+L\+Thread\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classMTL_1_1MTLThreadManager}{M\+T\+L\+Thread\+Manager}} object. 
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+References m\+\_\+sleep\+\_\+time, m\+\_\+threads, and m\+\_\+threads\+\_\+mutex.
+
+
+
+Referenced by M\+T\+L\+::\+M\+T\+L\+Thread\+Pool\+::\+M\+T\+L\+Thread\+Pool().
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classMTL_1_1MTLThreadManager_a38bc3859fbe9c99112177662989818a4}\label{classMTL_1_1MTLThreadManager_a38bc3859fbe9c99112177662989818a4}} 
+\index{MTL::MTLThreadManager@{MTL::MTLThreadManager}!````~MTLThreadManager@{$\sim$MTLThreadManager}}
+\index{````~MTLThreadManager@{$\sim$MTLThreadManager}!MTL::MTLThreadManager@{MTL::MTLThreadManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$MTLThreadManager()}{~MTLThreadManager()}}
+{\footnotesize\ttfamily M\+T\+L\+::\+M\+T\+L\+Thread\+Manager\+::$\sim$\+M\+T\+L\+Thread\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destroy the \mbox{\hyperlink{classMTL_1_1MTLThreadManager}{M\+T\+L\+Thread\+Manager}} object. 
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMTL_1_1MTLThreadManager_acd122b56c2c73e0b80aa0795a2667717}\label{classMTL_1_1MTLThreadManager_acd122b56c2c73e0b80aa0795a2667717}} 
+\index{MTL::MTLThreadManager@{MTL::MTLThreadManager}!addThread@{addThread}}
+\index{addThread@{addThread}!MTL::MTLThreadManager@{MTL::MTLThreadManager}}
+\doxysubsubsection{\texorpdfstring{addThread()}{addThread()}}
+{\footnotesize\ttfamily void M\+T\+L\+::\+M\+T\+L\+Thread\+Manager\+::add\+Thread (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classMTL_1_1MTLThread}{M\+T\+L\+Thread}} $>$}]{thread }\end{DoxyParamCaption})}
+
+
+
+Add a thread to the thread manager. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em thread} & the thread to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+References m\+\_\+threads, and m\+\_\+threads\+\_\+mutex.
+
+
+
+Referenced by main(), and M\+T\+L\+::\+M\+T\+L\+Thread\+Pool\+::\+M\+T\+L\+Thread\+Pool().
+
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classMTL_1_1MTLThreadManager_af18cec206763fe1766db3e5041856cd2}\label{classMTL_1_1MTLThreadManager_af18cec206763fe1766db3e5041856cd2}} 
+\index{MTL::MTLThreadManager@{MTL::MTLThreadManager}!clean\_exit@{clean\_exit}}
+\index{clean\_exit@{clean\_exit}!MTL::MTLThreadManager@{MTL::MTLThreadManager}}
+\doxysubsubsection{\texorpdfstring{clean\_exit()}{clean\_exit()}}
+{\footnotesize\ttfamily void M\+T\+L\+::\+M\+T\+L\+Thread\+Manager\+::clean\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+A clean Exit of the thread manager. 
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+Implements \mbox{\hyperlink{classMTL_1_1MTLRunnable_a4a3986deafa1d9319b7b581780713f1b}{M\+T\+L\+::\+M\+T\+L\+Runnable}}.
+
+
+
+References M\+T\+L\+::\+M\+T\+L\+Thread\+::clean\+\_\+exit(), M\+T\+L\+::\+C\+R\+E\+A\+T\+ED, M\+T\+L\+::\+M\+T\+L\+Thread\+::get\+Thread\+State(), m\+\_\+threads, m\+\_\+threads\+\_\+mutex, and M\+T\+L\+::\+M\+T\+L\+Thread\+::run().
+
+Here is the call graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classMTL_1_1MTLThreadManager_a12fca1dc22685f3881527783fa26dc12}\label{classMTL_1_1MTLThreadManager_a12fca1dc22685f3881527783fa26dc12}} 
+\index{MTL::MTLThreadManager@{MTL::MTLThreadManager}!force\_exit@{force\_exit}}
+\index{force\_exit@{force\_exit}!MTL::MTLThreadManager@{MTL::MTLThreadManager}}
+\doxysubsubsection{\texorpdfstring{force\_exit()}{force\_exit()}}
+{\footnotesize\ttfamily void M\+T\+L\+::\+M\+T\+L\+Thread\+Manager\+::force\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Force the thread manager to exit. 
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+Implements \mbox{\hyperlink{classMTL_1_1MTLRunnable_a1798243153ef1533705e671011ca1b32}{M\+T\+L\+::\+M\+T\+L\+Runnable}}.
+
+
+
+References M\+T\+L\+::\+M\+T\+L\+Thread\+::force\+\_\+exit(), m\+\_\+threads, and m\+\_\+threads\+\_\+mutex.
+
+Here is the call graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{classMTL_1_1MTLThreadManager_a99a59034e6525574ab2caf698b1a870c}\label{classMTL_1_1MTLThreadManager_a99a59034e6525574ab2caf698b1a870c}} 
+\index{MTL::MTLThreadManager@{MTL::MTLThreadManager}!resume@{resume}}
+\index{resume@{resume}!MTL::MTLThreadManager@{MTL::MTLThreadManager}}
+\doxysubsubsection{\texorpdfstring{resume()}{resume()}}
+{\footnotesize\ttfamily void M\+T\+L\+::\+M\+T\+L\+Thread\+Manager\+::resume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Resume the thread manager. 
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+Implements \mbox{\hyperlink{classMTL_1_1MTLRunnable_ae33676898719dfa9b8c49103f2097a31}{M\+T\+L\+::\+M\+T\+L\+Runnable}}.
+
+\mbox{\Hypertarget{classMTL_1_1MTLThreadManager_a0f7b9c1f198443ffcee9cb0f9e242420}\label{classMTL_1_1MTLThreadManager_a0f7b9c1f198443ffcee9cb0f9e242420}} 
+\index{MTL::MTLThreadManager@{MTL::MTLThreadManager}!run@{run}}
+\index{run@{run}!MTL::MTLThreadManager@{MTL::MTLThreadManager}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void M\+T\+L\+::\+M\+T\+L\+Thread\+Manager\+::run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMTL_1_1MTLThreadInterface}{M\+T\+L\+Thread\+Interface}} $\ast$}]{thread\+If }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Start the thread manager. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em thread\+If} & the thread interface.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+Implements \mbox{\hyperlink{classMTL_1_1MTLRunnable_aace6740637b130b019b9b42a1bf11e02}{M\+T\+L\+::\+M\+T\+L\+Runnable}}.
+
+
+
+References M\+T\+L\+::\+C\+R\+E\+A\+T\+ED, M\+T\+L\+::\+E\+X\+I\+T\+ED, M\+T\+L\+::\+F\+O\+R\+C\+E\+\_\+\+E\+X\+I\+T\+ED, M\+T\+L\+::\+M\+T\+L\+Thread\+Interface\+::get\+Thread\+State(), M\+T\+L\+::\+M\+T\+L\+Thread\+::get\+Thread\+State(), M\+T\+L\+::\+M\+T\+L\+Thread\+::is\+Running(), M\+T\+L\+::\+M\+T\+L\+Thread\+::join(), m\+\_\+sleep\+\_\+time, m\+\_\+threads, m\+\_\+threads\+\_\+mutex, M\+T\+L\+::\+M\+T\+L\+Thread\+::run(), M\+T\+L\+::\+S\+T\+O\+P\+P\+ED, and M\+T\+L\+::\+S\+U\+S\+P\+E\+N\+D\+ED.
+
+Here is the call graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{classMTL_1_1MTLThreadManager_aa717f95928f8ec7d9eeb1c7d009e8fca}\label{classMTL_1_1MTLThreadManager_aa717f95928f8ec7d9eeb1c7d009e8fca}} 
+\index{MTL::MTLThreadManager@{MTL::MTLThreadManager}!setSleepTime@{setSleepTime}}
+\index{setSleepTime@{setSleepTime}!MTL::MTLThreadManager@{MTL::MTLThreadManager}}
+\doxysubsubsection{\texorpdfstring{setSleepTime()}{setSleepTime()}}
+{\footnotesize\ttfamily void M\+T\+L\+::\+M\+T\+L\+Thread\+Manager\+::set\+Sleep\+Time (\begin{DoxyParamCaption}\item[{int}]{sleep\+\_\+time }\end{DoxyParamCaption})}
+
+
+
+Set the Sleep Time object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sleep\+\_\+time} & Sleep time in milliseconds.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+References m\+\_\+sleep\+\_\+time.
+
+\mbox{\Hypertarget{classMTL_1_1MTLThreadManager_a0342209bc98218b70ad0d6c1f5780d96}\label{classMTL_1_1MTLThreadManager_a0342209bc98218b70ad0d6c1f5780d96}} 
+\index{MTL::MTLThreadManager@{MTL::MTLThreadManager}!stop@{stop}}
+\index{stop@{stop}!MTL::MTLThreadManager@{MTL::MTLThreadManager}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void M\+T\+L\+::\+M\+T\+L\+Thread\+Manager\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Stop the thread manager. 
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+Implements \mbox{\hyperlink{classMTL_1_1MTLRunnable_a2eabd102cbc87e273703720472c33352}{M\+T\+L\+::\+M\+T\+L\+Runnable}}.
+
+\mbox{\Hypertarget{classMTL_1_1MTLThreadManager_ab5a79086bf05dcd8e26dbd25b6d95bd2}\label{classMTL_1_1MTLThreadManager_ab5a79086bf05dcd8e26dbd25b6d95bd2}} 
+\index{MTL::MTLThreadManager@{MTL::MTLThreadManager}!suspend@{suspend}}
+\index{suspend@{suspend}!MTL::MTLThreadManager@{MTL::MTLThreadManager}}
+\doxysubsubsection{\texorpdfstring{suspend()}{suspend()}}
+{\footnotesize\ttfamily void M\+T\+L\+::\+M\+T\+L\+Thread\+Manager\+::suspend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Suspend the thread manager. 
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+Implements \mbox{\hyperlink{classMTL_1_1MTLRunnable_a4cb89fd1eee760d5a8acde74c1d5d59e}{M\+T\+L\+::\+M\+T\+L\+Runnable}}.
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{classMTL_1_1MTLThreadManager_ac5ed56c85bd32709de78833ddf8d5fd9}\label{classMTL_1_1MTLThreadManager_ac5ed56c85bd32709de78833ddf8d5fd9}} 
+\index{MTL::MTLThreadManager@{MTL::MTLThreadManager}!m\_sleep\_time@{m\_sleep\_time}}
+\index{m\_sleep\_time@{m\_sleep\_time}!MTL::MTLThreadManager@{MTL::MTLThreadManager}}
+\doxysubsubsection{\texorpdfstring{m\_sleep\_time}{m\_sleep\_time}}
+{\footnotesize\ttfamily unsigned int M\+T\+L\+::\+M\+T\+L\+Thread\+Manager\+::m\+\_\+sleep\+\_\+time\hspace{0.3cm}{\ttfamily [private]}}
+
+The sleep time. 
+
+Referenced by M\+T\+L\+Thread\+Manager(), run(), and set\+Sleep\+Time().
+
+\mbox{\Hypertarget{classMTL_1_1MTLThreadManager_a18072fb2cea804d6518451614682c021}\label{classMTL_1_1MTLThreadManager_a18072fb2cea804d6518451614682c021}} 
+\index{MTL::MTLThreadManager@{MTL::MTLThreadManager}!m\_threads@{m\_threads}}
+\index{m\_threads@{m\_threads}!MTL::MTLThreadManager@{MTL::MTLThreadManager}}
+\doxysubsubsection{\texorpdfstring{m\_threads}{m\_threads}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classMTL_1_1MTLThread}{M\+T\+L\+Thread}}$>$ $>$ M\+T\+L\+::\+M\+T\+L\+Thread\+Manager\+::m\+\_\+threads\hspace{0.3cm}{\ttfamily [protected]}}
+
+The threads vector. 
+
+Referenced by add\+Thread(), clean\+\_\+exit(), force\+\_\+exit(), M\+T\+L\+Thread\+Manager(), and run().
+
+\mbox{\Hypertarget{classMTL_1_1MTLThreadManager_abb1dce5fff8bd0c1740290b203f08181}\label{classMTL_1_1MTLThreadManager_abb1dce5fff8bd0c1740290b203f08181}} 
+\index{MTL::MTLThreadManager@{MTL::MTLThreadManager}!m\_threads\_mutex@{m\_threads\_mutex}}
+\index{m\_threads\_mutex@{m\_threads\_mutex}!MTL::MTLThreadManager@{MTL::MTLThreadManager}}
+\doxysubsubsection{\texorpdfstring{m\_threads\_mutex}{m\_threads\_mutex}}
+{\footnotesize\ttfamily std\+::mutex M\+T\+L\+::\+M\+T\+L\+Thread\+Manager\+::m\+\_\+threads\+\_\+mutex\hspace{0.3cm}{\ttfamily [protected]}}
+
+The threads mutex. 
+
+Referenced by add\+Thread(), clean\+\_\+exit(), force\+\_\+exit(), M\+T\+L\+Thread\+Manager(), and run().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{MTLThreadManager_8h}{M\+T\+L\+Thread\+Manager.\+h}}\item 
+src/\mbox{\hyperlink{MTLThreadManager_8cpp}{M\+T\+L\+Thread\+Manager.\+cpp}}\end{DoxyCompactItemize}

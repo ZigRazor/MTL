@@ -1,0 +1,337 @@
+.TH "MyRunnable" 3 "Fri Feb 25 2022" "Version 0.0.1" "MTL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MyRunnable
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMTL::MTLRunnable\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMyRunnable\fP ()=default"
+.br
+.ti -1c
+.RI "virtual \fB~MyRunnable\fP ()=default"
+.br
+.ti -1c
+.RI "void \fBrun\fP (\fBMTL::MTLThreadInterface\fP *\fBthreadIf\fP)"
+.br
+.RI "Run the runnable\&. "
+.ti -1c
+.RI "void \fBstop\fP ()"
+.br
+.RI "Stop the runnable\&. "
+.ti -1c
+.RI "void \fBsuspend\fP ()"
+.br
+.RI "Suspend the runnable\&. "
+.ti -1c
+.RI "void \fBresume\fP ()"
+.br
+.RI "Resume the runnable\&. "
+.ti -1c
+.RI "void \fBclean_exit\fP ()"
+.br
+.RI "A clean Exit of the runnable\&. "
+.ti -1c
+.RI "void \fBforce_exit\fP ()"
+.br
+.RI "Force the runnable to exit\&. "
+.ti -1c
+.RI "\fBMyRunnable\fP (\fBMTL::MTLSharedMemory\fP *sharedMemory)"
+.br
+.ti -1c
+.RI "virtual \fB~MyRunnable\fP ()=default"
+.br
+.ti -1c
+.RI "void \fBrun\fP (\fBMTL::MTLThreadInterface\fP *\fBthreadIf\fP)"
+.br
+.RI "Run the runnable\&. "
+.ti -1c
+.RI "void \fBstop\fP ()"
+.br
+.RI "Stop the runnable\&. "
+.ti -1c
+.RI "void \fBsuspend\fP ()"
+.br
+.RI "Suspend the runnable\&. "
+.ti -1c
+.RI "void \fBresume\fP ()"
+.br
+.RI "Resume the runnable\&. "
+.ti -1c
+.RI "void \fBclean_exit\fP ()"
+.br
+.RI "A clean Exit of the runnable\&. "
+.ti -1c
+.RI "void \fBforce_exit\fP ()"
+.br
+.RI "Force the runnable to exit\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBMTL::MTLSharedMemory\fP * \fBm_sharedMemory\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MyRunnable::MyRunnable ()\fC [default]\fP"
+
+.SS "virtual MyRunnable::~MyRunnable ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SS "MyRunnable::MyRunnable (\fBMTL::MTLSharedMemory\fP * sharedMemory)\fC [inline]\fP"
+
+.PP
+References m_sharedMemory\&.
+.PP
+Referenced by main()\&.
+.SS "virtual MyRunnable::~MyRunnable ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void MyRunnable::clean_exit ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+A clean Exit of the runnable\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.SS "void MyRunnable::clean_exit ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+A clean Exit of the runnable\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.SS "void MyRunnable::force_exit ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Force the runnable to exit\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.SS "void MyRunnable::force_exit ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Force the runnable to exit\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.SS "void MyRunnable::resume ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Resume the runnable\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.SS "void MyRunnable::resume ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Resume the runnable\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.SS "void MyRunnable::run (\fBMTL::MTLThreadInterface\fP * threadIf)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Run the runnable\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIthreadIf\fP The thread interface\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.PP
+References MTL::EXITED, MTL::MTLThreadInterface::getThreadState(), MTL::RUNNING, MTL::MTLThreadInterface::setThreadState(), MTL::STOPPED, and MTL::SUSPENDED\&.
+.SS "void MyRunnable::run (\fBMTL::MTLThreadInterface\fP * threadIf)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Run the runnable\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIthreadIf\fP The thread interface\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.PP
+References MTL::EXITED, MTL::MTLSharedMemory::getSharedObjectById(), MTL::MTLThreadInterface::getThreadState(), MySharedObject::getValue(), m_sharedMemory, MTL::MTLSharedMemory::releaseSharedObject(), MTL::RUNNING, MySharedObject::setValue(), MTL::STOPPED, and MTL::SUSPENDED\&.
+.SS "void MyRunnable::stop ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Stop the runnable\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.SS "void MyRunnable::stop ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Stop the runnable\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.SS "void MyRunnable::suspend ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Suspend the runnable\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.SS "void MyRunnable::suspend ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Suspend the runnable\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.SH "Field Documentation"
+.PP 
+.SS "\fBMTL::MTLSharedMemory\fP* MyRunnable::m_sharedMemory\fC [private]\fP"
+
+.PP
+Referenced by MyRunnable(), and run()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MTL from the source code\&.

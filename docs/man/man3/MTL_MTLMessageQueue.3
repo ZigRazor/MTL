@@ -1,0 +1,252 @@
+.TH "MTL::MTLMessageQueue" 3 "Fri Feb 25 2022" "Version 0.0.1" "MTL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MTL::MTLMessageQueue \- Class that implements a message queue\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MTLMessageQueue\&.h>\fP
+.PP
+Inherited by \fBMTL::MTLWorkerThread\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMTLMessageQueue\fP ()"
+.br
+.RI "Construct a new \fBMTLMessageQueue\fP object\&. "
+.ti -1c
+.RI "virtual \fB~MTLMessageQueue\fP ()"
+.br
+.RI "Destroy the \fBMTLMessageQueue\fP object\&. "
+.ti -1c
+.RI "virtual void \fBpushMessage\fP (\fBMessage\fP message)"
+.br
+.RI "Add a message to the queue\&. "
+.ti -1c
+.RI "virtual \fBMessage\fP \fBpopMessage\fP ()"
+.br
+.RI "Get the next message from the queue\&. "
+.ti -1c
+.RI "virtual bool \fBisEmpty\fP ()"
+.br
+.RI "Check if the queue is empty\&. "
+.ti -1c
+.RI "virtual void \fBclear\fP ()"
+.br
+.RI "Clear the Queue\&. "
+.ti -1c
+.RI "virtual unsigned int \fBgetQueueSize\fP ()"
+.br
+.RI "Get the Queue Size object\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::mutex \fBm_queue_mutex\fP"
+.br
+.RI "The mutex for the queue\&. "
+.ti -1c
+.RI "std::queue< \fBMessage\fP > \fBm_queue\fP"
+.br
+.RI "The queue\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class that implements a message queue\&. 
+
+This class is a message queue that can be used to send messages to a thread\&.
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MTL::MTLMessageQueue::MTLMessageQueue ()"
+
+.PP
+Construct a new \fBMTLMessageQueue\fP object\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References m_queue, and m_queue_mutex\&.
+.PP
+Referenced by MTL::MTLWorkerThread::MTLWorkerThread()\&.
+.SS "MTL::MTLMessageQueue::~MTLMessageQueue ()\fC [virtual]\fP"
+
+.PP
+Destroy the \fBMTLMessageQueue\fP object\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void MTL::MTLMessageQueue::clear ()\fC [virtual]\fP"
+
+.PP
+Clear the Queue\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References m_queue, and m_queue_mutex\&.
+.SS "unsigned int MTL::MTLMessageQueue::getQueueSize ()\fC [virtual]\fP"
+
+.PP
+Get the Queue Size object\&. 
+.PP
+\fBReturns\fP
+.RS 4
+unsigned int The size of the queue\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References m_queue, and m_queue_mutex\&.
+.PP
+Referenced by MyWorker1::clean_exit(), MyWorker2::clean_exit(), and MyWorker3::clean_exit()\&.
+.SS "bool MTL::MTLMessageQueue::isEmpty ()\fC [virtual]\fP"
+
+.PP
+Check if the queue is empty\&. 
+.PP
+\fBReturns\fP
+.RS 4
+true The queue is empty\&. 
+.PP
+false The queue is not empty\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References m_queue, and m_queue_mutex\&.
+.PP
+Referenced by MTL::MTLWorkerThread::run()\&.
+.SS "\fBMessage\fP MTL::MTLMessageQueue::popMessage ()\fC [virtual]\fP"
+
+.PP
+Get the next message from the queue\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Message The next message\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References m_queue, and m_queue_mutex\&.
+.PP
+Referenced by MTL::MTLWorkerThread::run()\&.
+.SS "void MTL::MTLMessageQueue::pushMessage (\fBMessage\fP message)\fC [virtual]\fP"
+
+.PP
+Add a message to the queue\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImessage\fP The message to add\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References m_queue, and m_queue_mutex\&.
+.PP
+Referenced by main(), and MTL::MTLThreadPool::onMessage()\&.
+.SH "Field Documentation"
+.PP 
+.SS "std::queue<\fBMessage\fP> MTL::MTLMessageQueue::m_queue\fC [private]\fP"
+
+.PP
+The queue\&. 
+.PP
+Referenced by clear(), getQueueSize(), isEmpty(), MTLMessageQueue(), popMessage(), and pushMessage()\&.
+.SS "std::mutex MTL::MTLMessageQueue::m_queue_mutex\fC [private]\fP"
+
+.PP
+The mutex for the queue\&. 
+.PP
+Referenced by clear(), getQueueSize(), isEmpty(), MTLMessageQueue(), popMessage(), and pushMessage()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MTL from the source code\&.

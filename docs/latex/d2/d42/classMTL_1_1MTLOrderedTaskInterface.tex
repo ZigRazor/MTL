@@ -1,0 +1,135 @@
+\hypertarget{classMTL_1_1MTLOrderedTaskInterface}{}\doxysection{M\+TL\+::M\+T\+L\+Ordered\+Task\+Interface Class Reference}
+\label{classMTL_1_1MTLOrderedTaskInterface}\index{MTL::MTLOrderedTaskInterface@{MTL::MTLOrderedTaskInterface}}
+
+
+The \mbox{\hyperlink{classMTL_1_1MTLOrderedTaskInterface}{M\+T\+L\+Ordered\+Task\+Interface}} Interface Class.  
+
+
+
+
+{\ttfamily \#include $<$M\+T\+L\+Ordered\+Task\+Interface.\+h$>$}
+
+
+
+Inheritance diagram for M\+TL\+::M\+T\+L\+Ordered\+Task\+Interface\+:
+% FIG 0
+
+
+Collaboration diagram for M\+TL\+::M\+T\+L\+Ordered\+Task\+Interface\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::shared\+\_\+ptr$<$ void $>$ \mbox{\hyperlink{classMTL_1_1MTLOrderedTaskInterface_adbafb46cb05b2c84f65392168480ab28}{get\+Predecessor\+Result}} (const \mbox{\hyperlink{namespaceMTL_aedc36e02c48dcdbe69e46c95ede32e48}{Task\+Name}} \&task\+Name)=0
+\begin{DoxyCompactList}\small\item\em Get the Predecessor Result object. \end{DoxyCompactList}\item 
+virtual const std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{namespaceMTL_aedc36e02c48dcdbe69e46c95ede32e48}{Task\+Name}}, std\+::shared\+\_\+ptr$<$ void $>$ $>$ \& \mbox{\hyperlink{classMTL_1_1MTLOrderedTaskInterface_a3a5b3c52d592da31a4acbc99c8f3aff3}{get\+Predecessors\+Results}} ()=0
+\begin{DoxyCompactList}\small\item\em Get the Predecessors Results object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespaceMTL_aedc36e02c48dcdbe69e46c95ede32e48}{Task\+Name}} \mbox{\hyperlink{classMTL_1_1MTLOrderedTaskInterface_a392a1bc49dcae5df892378f2a0e2f47b}{get\+Task\+Name}} ()=0
+\begin{DoxyCompactList}\small\item\em Get the Task Name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classMTL_1_1MTLOrderedTaskInterface}{M\+T\+L\+Ordered\+Task\+Interface}} Interface Class. 
+
+This class is the interface for the \mbox{\hyperlink{classMTL_1_1MTLOrderedTask}{M\+T\+L\+Ordered\+Task}} class.
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/02-\/16 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMTL_1_1MTLOrderedTaskInterface_adbafb46cb05b2c84f65392168480ab28}\label{classMTL_1_1MTLOrderedTaskInterface_adbafb46cb05b2c84f65392168480ab28}} 
+\index{MTL::MTLOrderedTaskInterface@{MTL::MTLOrderedTaskInterface}!getPredecessorResult@{getPredecessorResult}}
+\index{getPredecessorResult@{getPredecessorResult}!MTL::MTLOrderedTaskInterface@{MTL::MTLOrderedTaskInterface}}
+\doxysubsubsection{\texorpdfstring{getPredecessorResult()}{getPredecessorResult()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$void$>$ M\+T\+L\+::\+M\+T\+L\+Ordered\+Task\+Interface\+::get\+Predecessor\+Result (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceMTL_aedc36e02c48dcdbe69e46c95ede32e48}{Task\+Name}} \&}]{task\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the Predecessor Result object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+Name} & The name of the predecessor task \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$void$>$ The result of the predecessor task
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/02-\/16 
+\end{DoxyDate}
+
+
+Implemented in \mbox{\hyperlink{classMTL_1_1MTLOrderedTask_ac810273dfda5c871a27c9abfd9bacbaa}{M\+T\+L\+::\+M\+T\+L\+Ordered\+Task}}.
+
+\mbox{\Hypertarget{classMTL_1_1MTLOrderedTaskInterface_a3a5b3c52d592da31a4acbc99c8f3aff3}\label{classMTL_1_1MTLOrderedTaskInterface_a3a5b3c52d592da31a4acbc99c8f3aff3}} 
+\index{MTL::MTLOrderedTaskInterface@{MTL::MTLOrderedTaskInterface}!getPredecessorsResults@{getPredecessorsResults}}
+\index{getPredecessorsResults@{getPredecessorsResults}!MTL::MTLOrderedTaskInterface@{MTL::MTLOrderedTaskInterface}}
+\doxysubsubsection{\texorpdfstring{getPredecessorsResults()}{getPredecessorsResults()}}
+{\footnotesize\ttfamily virtual const std\+::unordered\+\_\+map$<$\mbox{\hyperlink{namespaceMTL_aedc36e02c48dcdbe69e46c95ede32e48}{Task\+Name}}, std\+::shared\+\_\+ptr$<$void$>$ $>$\& M\+T\+L\+::\+M\+T\+L\+Ordered\+Task\+Interface\+::get\+Predecessors\+Results (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the Predecessors Results object. 
+
+\begin{DoxyReturn}{Returns}
+const std\+::unordered\+\_\+map$<$Task\+Name, std\+::shared\+\_\+ptr$<$void$>$$>$\& The predecessors results
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/02-\/16 
+\end{DoxyDate}
+
+
+Implemented in \mbox{\hyperlink{classMTL_1_1MTLOrderedTask_ad674007614b1cade345e809b96ad8764}{M\+T\+L\+::\+M\+T\+L\+Ordered\+Task}}.
+
+
+
+Referenced by Var2\+Task\+::run(), Sum\+Task\+::run(), and Mul\+Task\+::run().
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classMTL_1_1MTLOrderedTaskInterface_a392a1bc49dcae5df892378f2a0e2f47b}\label{classMTL_1_1MTLOrderedTaskInterface_a392a1bc49dcae5df892378f2a0e2f47b}} 
+\index{MTL::MTLOrderedTaskInterface@{MTL::MTLOrderedTaskInterface}!getTaskName@{getTaskName}}
+\index{getTaskName@{getTaskName}!MTL::MTLOrderedTaskInterface@{MTL::MTLOrderedTaskInterface}}
+\doxysubsubsection{\texorpdfstring{getTaskName()}{getTaskName()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespaceMTL_aedc36e02c48dcdbe69e46c95ede32e48}{Task\+Name}} M\+T\+L\+::\+M\+T\+L\+Ordered\+Task\+Interface\+::get\+Task\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the Task Name. 
+
+\begin{DoxyReturn}{Returns}
+const Task\+Name\& The name of the task
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/02-\/16 
+\end{DoxyDate}
+
+
+Implemented in \mbox{\hyperlink{classMTL_1_1MTLOrderedTask_a9ce48fa95355ecf44d30677e0b0a2768}{M\+T\+L\+::\+M\+T\+L\+Ordered\+Task}}.
+
+
+
+Referenced by Var2\+Task\+::run(), Sum\+Task\+::run(), and Mul\+Task\+::run().
+
+Here is the caller graph for this function\+:
+% FIG 3
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{MTLOrderedTaskInterface_8h}{M\+T\+L\+Ordered\+Task\+Interface.\+h}}\end{DoxyCompactItemize}

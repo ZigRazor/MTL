@@ -1,0 +1,16 @@
+digraph "main"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="main",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="MTL::MTLTask::getResult",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d56/classMTL_1_1MTLTask.html#a48580a37b7656b3dfbe72a014a0c8a93",tooltip="Get the result of the task. When the execution is finished and the result is available."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="MTL::MTLTask::MTLTask",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d56/classMTL_1_1MTLTask.html#a118449766aa8489f5d7d29a43af28a40",tooltip="Construct a new MTLTask object."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="MTL::MTLTask::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d56/classMTL_1_1MTLTask.html#ad0ef08abe13512386918b5897d896215",tooltip="Execute the task."];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="MTL::MTLRunnableTask::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/db2/classMTL_1_1MTLRunnableTask.html#a0ef247f982d3fea2276a98971e672273",tooltip="The function that represent the task."];
+}

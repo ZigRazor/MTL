@@ -1,0 +1,157 @@
+.TH "MTL::MTLThreadPool" 3 "Fri Feb 25 2022" "Version 0.0.1" "MTL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MTL::MTLThreadPool \- Class that implements a thread pool\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MTLThreadPool\&.h>\fP
+.PP
+Inherits \fBMTL::MTLThreadManager\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMTLThreadPool\fP (\fBMTLWorkerThread\fP &\fBworker\fP, unsigned int num_threads)"
+.br
+.RI "Construct a new \fBMTLThreadPool\fP object\&. "
+.ti -1c
+.RI "\fB~MTLThreadPool\fP ()"
+.br
+.RI "Destroy the \fBMTLThreadPool\fP object\&. "
+.ti -1c
+.RI "virtual void \fBonMessage\fP (\fBMessage\fP &message)"
+.br
+.RI "Dispatch a message to the thread pool\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::mutex \fBm_onMessage_mutex\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBm_num_threads\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBm_current_thread\fP"
+.br
+.ti -1c
+.RI "\fBMTLWorkerThread\fP & \fBworker\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Class that implements a thread pool\&. 
+
+This class is a thread pool that can be used to manage threads\&.
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MTL::MTLThreadPool::MTLThreadPool (\fBMTLWorkerThread\fP & worker, unsigned int num_threads)"
+
+.PP
+Construct a new \fBMTLThreadPool\fP object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIworker\fP worker thread for the thread pool\&. 
+.br
+\fInum_threads\fP number of threads in the thread pool\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References MTL::MTLThreadManager::addThread(), m_current_thread, m_num_threads, m_onMessage_mutex, MTL::MTLThread::MTLThread(), MTL::MTLThreadManager::MTLThreadManager(), and worker\&.
+.PP
+Referenced by main()\&.
+.SS "MTL::MTLThreadPool::~MTLThreadPool ()"
+
+.PP
+Destroy the \fBMTLThreadPool\fP object\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void MTL::MTLThreadPool::onMessage (\fBMessage\fP & message)\fC [virtual]\fP"
+
+.PP
+Dispatch a message to the thread pool\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImessage\fP Message to dispatch\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References m_onMessage_mutex, MTL::MTLMessageQueue::pushMessage(), and worker\&.
+.PP
+Referenced by main()\&.
+.SH "Field Documentation"
+.PP 
+.SS "unsigned int MTL::MTLThreadPool::m_current_thread\fC [private]\fP"
+Current thread in the thread pool\&. 
+.PP
+Referenced by MTLThreadPool()\&.
+.SS "unsigned int MTL::MTLThreadPool::m_num_threads\fC [private]\fP"
+Number of threads in the thread pool\&. 
+.PP
+Referenced by MTLThreadPool()\&.
+.SS "std::mutex MTL::MTLThreadPool::m_onMessage_mutex\fC [private]\fP"
+Mutex for the onMessage method\&. 
+.PP
+Referenced by MTLThreadPool(), and onMessage()\&.
+.SS "\fBMTLWorkerThread\fP& MTL::MTLThreadPool::worker\fC [private]\fP"
+Worker thread for the thread pool\&. 
+.PP
+Referenced by MTLThreadPool(), and onMessage()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MTL from the source code\&.

@@ -1,0 +1,127 @@
+.TH "MTL::MTLThreadInterface" 3 "Fri Feb 25 2022" "Version 0.0.1" "MTL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MTL::MTLThreadInterface \- Class that implements a thread interface\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MTLThreadInterface\&.h>\fP
+.PP
+Inherited by \fBMTL::MTLThread\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual bool \fBisRunning\fP ()=0"
+.br
+.RI "Check if the thread is running\&. "
+.ti -1c
+.RI "virtual \fBE_MTLThreadState\fP \fBgetThreadState\fP ()=0"
+.br
+.RI "Get the Thread State object\&. "
+.ti -1c
+.RI "virtual void \fBsetThreadState\fP (\fBE_MTLThreadState\fP threadState)=0"
+.br
+.RI "Set the Thread State object\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class that implements a thread interface\&. 
+
+This class is a thread interface that can be used to run a task\&.
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual \fBE_MTLThreadState\fP MTL::MTLThreadInterface::getThreadState ()\fC [pure virtual]\fP"
+
+.PP
+Get the Thread State object\&. 
+.PP
+\fBReturns\fP
+.RS 4
+E_MTLThreadState the state of the thread\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implemented in \fBMTL::MTLThread\fP\&.
+.PP
+Referenced by MyRunnable::run(), MTL::MTLWorkerThread::run(), and MTL::MTLThreadManager::run()\&.
+.SS "virtual bool MTL::MTLThreadInterface::isRunning ()\fC [pure virtual]\fP"
+
+.PP
+Check if the thread is running\&. 
+.PP
+\fBReturns\fP
+.RS 4
+true if the thread is running\&. 
+.PP
+false if the thread is not running\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implemented in \fBMTL::MTLThread\fP\&.
+.SS "virtual void MTL::MTLThreadInterface::setThreadState (\fBE_MTLThreadState\fP threadState)\fC [pure virtual]\fP"
+
+.PP
+Set the Thread State object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIthreadState\fP the Thread State to set
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implemented in \fBMTL::MTLThread\fP\&.
+.PP
+Referenced by MyRunnable::run()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MTL from the source code\&.

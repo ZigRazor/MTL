@@ -1,0 +1,284 @@
+\hypertarget{classMTL_1_1MTLTask}{}\doxysection{M\+TL\+::M\+T\+L\+Task Class Reference}
+\label{classMTL_1_1MTLTask}\index{MTL::MTLTask@{MTL::MTLTask}}
+
+
+The Class that represent a task.  
+
+
+
+
+{\ttfamily \#include $<$M\+T\+L\+Task.\+h$>$}
+
+
+
+Inheritance diagram for M\+TL\+::M\+T\+L\+Task\+:
+% FIG 0
+
+
+Collaboration diagram for M\+TL\+::M\+T\+L\+Task\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMTL_1_1MTLTask_a118449766aa8489f5d7d29a43af28a40}{M\+T\+L\+Task}} (\mbox{\hyperlink{classMTL_1_1MTLRunnableTask}{M\+T\+L\+Runnable\+Task}} \&runnable\+Task)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classMTL_1_1MTLTask}{M\+T\+L\+Task}} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMTL_1_1MTLTask_a3c41044d7e546101fa6838214f63ca73}{$\sim$\+M\+T\+L\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classMTL_1_1MTLTask}{M\+T\+L\+Task}} object. \end{DoxyCompactList}\item 
+virtual std\+::shared\+\_\+ptr$<$ void $>$ \mbox{\hyperlink{classMTL_1_1MTLTask_ad0ef08abe13512386918b5897d896215}{run}} (\mbox{\hyperlink{classMTL_1_1MTLTaskInterface}{M\+T\+L\+Task\+Interface}} $\ast$interface=nullptr)
+\begin{DoxyCompactList}\small\item\em Execute the task. \end{DoxyCompactList}\item 
+virtual std\+::shared\+\_\+ptr$<$ void $>$ \mbox{\hyperlink{classMTL_1_1MTLTask_a48580a37b7656b3dfbe72a014a0c8a93}{get\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Get the result of the task. When the execution is finished and the result is available. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMTL_1_1MTLTask_a2eb6d3347c4f1cf5e47f3c80fb29237d}{wait\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Wait for the result of the task. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMTL_1_1MTLRunnableTask}{M\+T\+L\+Runnable\+Task}} \& \mbox{\hyperlink{classMTL_1_1MTLTask_a29705aa96621d5535a613e2eb7e3e70b}{m\+\_\+runnable\+Task}}
+\begin{DoxyCompactList}\small\item\em The runnable task. \end{DoxyCompactList}\item 
+std\+::future$<$ std\+::shared\+\_\+ptr$<$ void $>$ $>$ \mbox{\hyperlink{classMTL_1_1MTLTask_a8d7db8f5e174068744b3bcc51c73637d}{m\+\_\+future}}
+\begin{DoxyCompactList}\small\item\em The future object. \end{DoxyCompactList}\item 
+std\+::mutex \mbox{\hyperlink{classMTL_1_1MTLTask_adda2ec59c3ae85b3843dae9b28874c7c}{m\+\_\+future\+Mutex}}
+\begin{DoxyCompactList}\small\item\em The mutex for the future object. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ void $>$ \mbox{\hyperlink{classMTL_1_1MTLTask_a711b8e0ff4297291d5351ab4280b8bb6}{m\+\_\+result}}
+\begin{DoxyCompactList}\small\item\em The result of the task. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The Class that represent a task. 
+
+This class is the base class for all the task.
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMTL_1_1MTLTask_a118449766aa8489f5d7d29a43af28a40}\label{classMTL_1_1MTLTask_a118449766aa8489f5d7d29a43af28a40}} 
+\index{MTL::MTLTask@{MTL::MTLTask}!MTLTask@{MTLTask}}
+\index{MTLTask@{MTLTask}!MTL::MTLTask@{MTL::MTLTask}}
+\doxysubsubsection{\texorpdfstring{MTLTask()}{MTLTask()}}
+{\footnotesize\ttfamily M\+T\+L\+::\+M\+T\+L\+Task\+::\+M\+T\+L\+Task (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMTL_1_1MTLRunnableTask}{M\+T\+L\+Runnable\+Task}} \&}]{runnable\+Task }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classMTL_1_1MTLTask}{M\+T\+L\+Task}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em runnable\+Task} & The runnable task.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+References m\+\_\+future, m\+\_\+future\+Mutex, m\+\_\+result, and m\+\_\+runnable\+Task.
+
+
+
+Referenced by main(), and M\+T\+L\+::\+M\+T\+L\+Ordered\+Task\+::\+M\+T\+L\+Ordered\+Task().
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classMTL_1_1MTLTask_a3c41044d7e546101fa6838214f63ca73}\label{classMTL_1_1MTLTask_a3c41044d7e546101fa6838214f63ca73}} 
+\index{MTL::MTLTask@{MTL::MTLTask}!````~MTLTask@{$\sim$MTLTask}}
+\index{````~MTLTask@{$\sim$MTLTask}!MTL::MTLTask@{MTL::MTLTask}}
+\doxysubsubsection{\texorpdfstring{$\sim$MTLTask()}{~MTLTask()}}
+{\footnotesize\ttfamily M\+T\+L\+::\+M\+T\+L\+Task\+::$\sim$\+M\+T\+L\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destroy the \mbox{\hyperlink{classMTL_1_1MTLTask}{M\+T\+L\+Task}} object. 
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMTL_1_1MTLTask_a48580a37b7656b3dfbe72a014a0c8a93}\label{classMTL_1_1MTLTask_a48580a37b7656b3dfbe72a014a0c8a93}} 
+\index{MTL::MTLTask@{MTL::MTLTask}!getResult@{getResult}}
+\index{getResult@{getResult}!MTL::MTLTask@{MTL::MTLTask}}
+\doxysubsubsection{\texorpdfstring{getResult()}{getResult()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ void $>$ M\+T\+L\+::\+M\+T\+L\+Task\+::get\+Result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the result of the task. When the execution is finished and the result is available. 
+
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$void$>$ The result of the task
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+Implements \mbox{\hyperlink{classMTL_1_1MTLTaskInterface_aefd16fdc19d58c7458120af3a963ed34}{M\+T\+L\+::\+M\+T\+L\+Task\+Interface}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classMTL_1_1MTLTaskFlow_a1f756a20d8397eb3ab53fbd3edbdf40d}{M\+T\+L\+::\+M\+T\+L\+Task\+Flow}}.
+
+
+
+References m\+\_\+future, m\+\_\+future\+Mutex, and m\+\_\+result.
+
+
+
+Referenced by M\+T\+L\+::\+M\+T\+L\+Ordered\+Task\+::get\+Predecessor\+Result(), M\+T\+L\+::\+M\+T\+L\+Ordered\+Task\+::get\+Predecessors\+Results(), M\+T\+L\+::\+M\+T\+L\+Task\+Flow\+::get\+Result(), and main().
+
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classMTL_1_1MTLTask_ad0ef08abe13512386918b5897d896215}\label{classMTL_1_1MTLTask_ad0ef08abe13512386918b5897d896215}} 
+\index{MTL::MTLTask@{MTL::MTLTask}!run@{run}}
+\index{run@{run}!MTL::MTLTask@{MTL::MTLTask}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ void $>$ M\+T\+L\+::\+M\+T\+L\+Task\+::run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMTL_1_1MTLTaskInterface}{M\+T\+L\+Task\+Interface}} $\ast$}]{interface = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Execute the task. 
+
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$void$>$ The result of the run.
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+Implements \mbox{\hyperlink{classMTL_1_1MTLRunnableTask_a0ef247f982d3fea2276a98971e672273}{M\+T\+L\+::\+M\+T\+L\+Runnable\+Task}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classMTL_1_1MTLOrderedTask_a55977164204fad0c767d099ca53af87e}{M\+T\+L\+::\+M\+T\+L\+Ordered\+Task}}, and \mbox{\hyperlink{classMTL_1_1MTLTaskFlow_ae6653a4aa745cd0932348295ef4866b3}{M\+T\+L\+::\+M\+T\+L\+Task\+Flow}}.
+
+
+
+References m\+\_\+future, m\+\_\+runnable\+Task, and M\+T\+L\+::\+M\+T\+L\+Runnable\+Task\+::run().
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{classMTL_1_1MTLTask_a2eb6d3347c4f1cf5e47f3c80fb29237d}\label{classMTL_1_1MTLTask_a2eb6d3347c4f1cf5e47f3c80fb29237d}} 
+\index{MTL::MTLTask@{MTL::MTLTask}!waitResult@{waitResult}}
+\index{waitResult@{waitResult}!MTL::MTLTask@{MTL::MTLTask}}
+\doxysubsubsection{\texorpdfstring{waitResult()}{waitResult()}}
+{\footnotesize\ttfamily void M\+T\+L\+::\+M\+T\+L\+Task\+::wait\+Result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Wait for the result of the task. 
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+Implements \mbox{\hyperlink{classMTL_1_1MTLTaskInterface_a7389c94d7677980bafa2c49b5f617892}{M\+T\+L\+::\+M\+T\+L\+Task\+Interface}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classMTL_1_1MTLTaskFlow_a53a5ef5faaf8970af552ea589e8f946c}{M\+T\+L\+::\+M\+T\+L\+Task\+Flow}}.
+
+
+
+References m\+\_\+future.
+
+
+
+Referenced by M\+T\+L\+::\+M\+T\+L\+Task\+Flow\+::wait\+Result().
+
+Here is the caller graph for this function\+:
+% FIG 6
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{classMTL_1_1MTLTask_a8d7db8f5e174068744b3bcc51c73637d}\label{classMTL_1_1MTLTask_a8d7db8f5e174068744b3bcc51c73637d}} 
+\index{MTL::MTLTask@{MTL::MTLTask}!m\_future@{m\_future}}
+\index{m\_future@{m\_future}!MTL::MTLTask@{MTL::MTLTask}}
+\doxysubsubsection{\texorpdfstring{m\_future}{m\_future}}
+{\footnotesize\ttfamily std\+::future$<$std\+::shared\+\_\+ptr$<$void$>$ $>$ M\+T\+L\+::\+M\+T\+L\+Task\+::m\+\_\+future\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The future object. 
+
+
+
+Referenced by get\+Result(), M\+T\+L\+Task(), run(), M\+T\+L\+::\+M\+T\+L\+Ordered\+Task\+::run(), and wait\+Result().
+
+\mbox{\Hypertarget{classMTL_1_1MTLTask_adda2ec59c3ae85b3843dae9b28874c7c}\label{classMTL_1_1MTLTask_adda2ec59c3ae85b3843dae9b28874c7c}} 
+\index{MTL::MTLTask@{MTL::MTLTask}!m\_futureMutex@{m\_futureMutex}}
+\index{m\_futureMutex@{m\_futureMutex}!MTL::MTLTask@{MTL::MTLTask}}
+\doxysubsubsection{\texorpdfstring{m\_futureMutex}{m\_futureMutex}}
+{\footnotesize\ttfamily std\+::mutex M\+T\+L\+::\+M\+T\+L\+Task\+::m\+\_\+future\+Mutex\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The mutex for the future object. 
+
+
+
+Referenced by get\+Result(), and M\+T\+L\+Task().
+
+\mbox{\Hypertarget{classMTL_1_1MTLTask_a711b8e0ff4297291d5351ab4280b8bb6}\label{classMTL_1_1MTLTask_a711b8e0ff4297291d5351ab4280b8bb6}} 
+\index{MTL::MTLTask@{MTL::MTLTask}!m\_result@{m\_result}}
+\index{m\_result@{m\_result}!MTL::MTLTask@{MTL::MTLTask}}
+\doxysubsubsection{\texorpdfstring{m\_result}{m\_result}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$void$>$ M\+T\+L\+::\+M\+T\+L\+Task\+::m\+\_\+result\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The result of the task. 
+
+
+
+Referenced by get\+Result(), and M\+T\+L\+Task().
+
+\mbox{\Hypertarget{classMTL_1_1MTLTask_a29705aa96621d5535a613e2eb7e3e70b}\label{classMTL_1_1MTLTask_a29705aa96621d5535a613e2eb7e3e70b}} 
+\index{MTL::MTLTask@{MTL::MTLTask}!m\_runnableTask@{m\_runnableTask}}
+\index{m\_runnableTask@{m\_runnableTask}!MTL::MTLTask@{MTL::MTLTask}}
+\doxysubsubsection{\texorpdfstring{m\_runnableTask}{m\_runnableTask}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMTL_1_1MTLRunnableTask}{M\+T\+L\+Runnable\+Task}}\& M\+T\+L\+::\+M\+T\+L\+Task\+::m\+\_\+runnable\+Task\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The runnable task. 
+
+
+
+Referenced by M\+T\+L\+Task(), run(), and M\+T\+L\+::\+M\+T\+L\+Ordered\+Task\+::run().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{MTLTask_8h}{M\+T\+L\+Task.\+h}}\item 
+src/\mbox{\hyperlink{MTLTask_8cpp}{M\+T\+L\+Task.\+cpp}}\end{DoxyCompactItemize}

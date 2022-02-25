@@ -1,0 +1,233 @@
+.TH "MTL::MTLTask" 3 "Fri Feb 25 2022" "Version 0.0.1" "MTL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MTL::MTLTask \- The Class that represent a task\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MTLTask\&.h>\fP
+.PP
+Inherits \fBMTL::MTLTaskInterface\fP, and \fBMTL::MTLRunnableTask\fP\&.
+.PP
+Inherited by \fBMTL::MTLOrderedTask\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMTLTask\fP (\fBMTLRunnableTask\fP &runnableTask)"
+.br
+.RI "Construct a new \fBMTLTask\fP object\&. "
+.ti -1c
+.RI "virtual \fB~MTLTask\fP ()"
+.br
+.RI "Destroy the \fBMTLTask\fP object\&. "
+.ti -1c
+.RI "virtual std::shared_ptr< void > \fBrun\fP (\fBMTLTaskInterface\fP *interface=nullptr)"
+.br
+.RI "Execute the task\&. "
+.ti -1c
+.RI "virtual std::shared_ptr< void > \fBgetResult\fP ()"
+.br
+.RI "Get the result of the task\&. When the execution is finished and the result is available\&. "
+.ti -1c
+.RI "virtual void \fBwaitResult\fP ()"
+.br
+.RI "Wait for the result of the task\&. "
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBMTLRunnableTask\fP & \fBm_runnableTask\fP"
+.br
+.RI "The runnable task\&. "
+.ti -1c
+.RI "std::future< std::shared_ptr< void > > \fBm_future\fP"
+.br
+.RI "The future object\&. "
+.ti -1c
+.RI "std::mutex \fBm_futureMutex\fP"
+.br
+.RI "The mutex for the future object\&. "
+.ti -1c
+.RI "std::shared_ptr< void > \fBm_result\fP"
+.br
+.RI "The result of the task\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+The Class that represent a task\&. 
+
+This class is the base class for all the task\&.
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MTL::MTLTask::MTLTask (\fBMTLRunnableTask\fP & runnableTask)"
+
+.PP
+Construct a new \fBMTLTask\fP object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIrunnableTask\fP The runnable task\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References m_future, m_futureMutex, m_result, and m_runnableTask\&.
+.PP
+Referenced by main(), and MTL::MTLOrderedTask::MTLOrderedTask()\&.
+.SS "MTL::MTLTask::~MTLTask ()\fC [virtual]\fP"
+
+.PP
+Destroy the \fBMTLTask\fP object\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "std::shared_ptr< void > MTL::MTLTask::getResult ()\fC [virtual]\fP"
+
+.PP
+Get the result of the task\&. When the execution is finished and the result is available\&. 
+.PP
+\fBReturns\fP
+.RS 4
+std::shared_ptr<void> The result of the task
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLTaskInterface\fP\&.
+.PP
+Reimplemented in \fBMTL::MTLTaskFlow\fP\&.
+.PP
+References m_future, m_futureMutex, and m_result\&.
+.PP
+Referenced by MTL::MTLOrderedTask::getPredecessorResult(), MTL::MTLOrderedTask::getPredecessorsResults(), MTL::MTLTaskFlow::getResult(), and main()\&.
+.SS "std::shared_ptr< void > MTL::MTLTask::run (\fBMTLTaskInterface\fP * interface = \fCnullptr\fP)\fC [virtual]\fP"
+
+.PP
+Execute the task\&. 
+.PP
+\fBReturns\fP
+.RS 4
+std::shared_ptr<void> The result of the run\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnableTask\fP\&.
+.PP
+Reimplemented in \fBMTL::MTLOrderedTask\fP, and \fBMTL::MTLTaskFlow\fP\&.
+.PP
+References m_future, m_runnableTask, and MTL::MTLRunnableTask::run()\&.
+.PP
+Referenced by main()\&.
+.SS "void MTL::MTLTask::waitResult ()\fC [virtual]\fP"
+
+.PP
+Wait for the result of the task\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLTaskInterface\fP\&.
+.PP
+Reimplemented in \fBMTL::MTLTaskFlow\fP\&.
+.PP
+References m_future\&.
+.PP
+Referenced by MTL::MTLTaskFlow::waitResult()\&.
+.SH "Field Documentation"
+.PP 
+.SS "std::future<std::shared_ptr<void> > MTL::MTLTask::m_future\fC [protected]\fP"
+
+.PP
+The future object\&. 
+.PP
+Referenced by getResult(), MTLTask(), run(), MTL::MTLOrderedTask::run(), and waitResult()\&.
+.SS "std::mutex MTL::MTLTask::m_futureMutex\fC [protected]\fP"
+
+.PP
+The mutex for the future object\&. 
+.PP
+Referenced by getResult(), and MTLTask()\&.
+.SS "std::shared_ptr<void> MTL::MTLTask::m_result\fC [protected]\fP"
+
+.PP
+The result of the task\&. 
+.PP
+Referenced by getResult(), and MTLTask()\&.
+.SS "\fBMTLRunnableTask\fP& MTL::MTLTask::m_runnableTask\fC [protected]\fP"
+
+.PP
+The runnable task\&. 
+.PP
+Referenced by MTLTask(), run(), and MTL::MTLOrderedTask::run()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MTL from the source code\&.

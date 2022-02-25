@@ -1,0 +1,21 @@
+digraph "MTL::MTLThreadManager::run"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="MTL::MTLThreadManager::run",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Start the thread manager."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="MTL::MTLThreadInterface\l::getThreadState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d69/classMTL_1_1MTLThreadInterface.html#af225df695ccb6f30fcb8b8dc05056bc2",tooltip="Get the Thread State object."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="MTL::MTLThread::getThread\lState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/df5/classMTL_1_1MTLThread.html#a1acdb1f09de4ef1b4190e631e954e528",tooltip="Get the Thread State."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="MTL::MTLThread::isRunning",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/df5/classMTL_1_1MTLThread.html#aec8cfd545b4830ea113b3f025d8fa83f",tooltip="Check if the thread is running."];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="MTL::MTLThread::join",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/df5/classMTL_1_1MTLThread.html#ab5a282b602cde5db0f1fcafa36f6dfb0",tooltip="Join the thread."];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="MTL::MTLThread::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/df5/classMTL_1_1MTLThread.html#a2fedbec7c31e994cd79837898833954d",tooltip="Start the thread."];
+  Node6 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="MTL::MTLRunnable::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/da7/classMTL_1_1MTLRunnable.html#aace6740637b130b019b9b42a1bf11e02",tooltip="Run the runnable."];
+}

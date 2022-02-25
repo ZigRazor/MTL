@@ -1,0 +1,212 @@
+.TH "MTL" 3 "Fri Feb 25 2022" "Version 0.0.1" "MTL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MTL
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "class \fBMTLMessageQueue\fP"
+.br
+.RI "Class that implements a message queue\&. "
+.ti -1c
+.RI "class \fBMTLOrderedTask\fP"
+.br
+.RI "Ordered Task\&. "
+.ti -1c
+.RI "class \fBMTLOrderedTaskInterface\fP"
+.br
+.RI "The \fBMTLOrderedTaskInterface\fP Interface Class\&. "
+.ti -1c
+.RI "class \fBMTLRunnable\fP"
+.br
+.RI "Runnable Interface\&. "
+.ti -1c
+.RI "class \fBMTLRunnableTask\fP"
+.br
+.RI "Runnable Task Interface\&. "
+.ti -1c
+.RI "class \fBMTLSharedMemory\fP"
+.br
+.RI "Class that implements a shared memory\&. "
+.ti -1c
+.RI "class \fBMTLSharedObject\fP"
+.br
+.RI "Class that implements a shared object\&. "
+.ti -1c
+.RI "class \fBMTLTask\fP"
+.br
+.RI "The Class that represent a task\&. "
+.ti -1c
+.RI "class \fBMTLTaskFlow\fP"
+.br
+.RI "Task Flow Class\&. "
+.ti -1c
+.RI "class \fBMTLTaskInterface\fP"
+.br
+.RI "The \fBMTLTaskInterface\fP Interface Class\&. "
+.ti -1c
+.RI "class \fBMTLThread\fP"
+.br
+.RI "Class that implements a thread\&. "
+.ti -1c
+.RI "class \fBMTLThreadInterface\fP"
+.br
+.RI "Class that implements a thread interface\&. "
+.ti -1c
+.RI "class \fBMTLThreadManager\fP"
+.br
+.RI "Class that implements a thread manager\&. "
+.ti -1c
+.RI "class \fBMTLThreadPool\fP"
+.br
+.RI "Class that implements a thread pool\&. "
+.ti -1c
+.RI "class \fBMTLWorker\fP"
+.br
+.RI "Worker Interface\&. "
+.ti -1c
+.RI "class \fBMTLWorkerThread\fP"
+.br
+.RI "Class that implements a Worker Thread\&. "
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBMTLThreadState_Enumerated\fP \fBE_MTLThreadState\fP"
+.br
+.RI "Thread State Enumeration Type Definition\&. "
+.ti -1c
+.RI "typedef std::shared_ptr< void > \fBMessage\fP"
+.br
+.RI "Message Type Definition\&. "
+.ti -1c
+.RI "typedef unsigned int \fBSharedObjectId\fP"
+.br
+.RI "Shared Object Id Type Definition\&. "
+.ti -1c
+.RI "typedef std::string \fBTaskName\fP"
+.br
+.RI "TaskName Type Definition\&. "
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBMTLThreadState_Enumerated\fP { \fBCREATED\fP = 0, \fBRUNNING\fP = 1, \fBSUSPENDED\fP = 2, \fBSTOPPED\fP = 3, \fBEXITED\fP = 4, \fBFORCE_EXITED\fP = 5 }"
+.br
+.RI "Thread State Enumeration\&. "
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBMTLThreadState_Enumerated\fP \fBMTL::E_MTLThreadState\fP"
+
+.PP
+Thread State Enumeration Type Definition\&. This typedef is used to represent the state of a thread\&.
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.SS "typedef std::shared_ptr<void> \fBMTL::Message\fP"
+
+.PP
+Message Type Definition\&. This typedef is used to represent the message type\&.
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.SS "typedef unsigned int \fBMTL::SharedObjectId\fP"
+
+.PP
+Shared Object Id Type Definition\&. This typedef is used to represent the shared object id\&.
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.SS "typedef std::string \fBMTL::TaskName\fP"
+
+.PP
+TaskName Type Definition\&. This typedef is used to represent the task name\&.
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBMTL::MTLThreadState_Enumerated\fP"
+
+.PP
+Thread State Enumeration\&. This enum is used to represent the state of a thread\&.
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fICREATED \fP\fP
+Thread is created but not yet started\&. 
+.TP
+\fB\fIRUNNING \fP\fP
+Thread is running\&. 
+.TP
+\fB\fISUSPENDED \fP\fP
+Thread is suspended\&. 
+.TP
+\fB\fISTOPPED \fP\fP
+Thread is stopped\&. 
+.TP
+\fB\fIEXITED \fP\fP
+Thread is exited\&. 
+.TP
+\fB\fIFORCE_EXITED \fP\fP
+Thread is force exited\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MTL from the source code\&.

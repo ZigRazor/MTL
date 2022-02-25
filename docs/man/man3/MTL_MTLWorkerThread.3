@@ -1,0 +1,304 @@
+.TH "MTL::MTLWorkerThread" 3 "Fri Feb 25 2022" "Version 0.0.1" "MTL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MTL::MTLWorkerThread \- Class that implements a Worker Thread\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MTLWorkerThread\&.h>\fP
+.PP
+Inherits \fBMTL::MTLRunnable\fP, \fBMTL::MTLWorker\fP, and \fBMTL::MTLMessageQueue\fP\&.
+.PP
+Inherited by \fBMyWorker\fP, \fBMyWorker1\fP, \fBMyWorker2\fP, and \fBMyWorker3\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMTLWorkerThread\fP ()"
+.br
+.RI "Construct a new \fBMTLWorkerThread\fP object\&. "
+.ti -1c
+.RI "virtual \fB~MTLWorkerThread\fP ()"
+.br
+.RI "Destroy the \fBMTLWorkerThread\fP object\&. "
+.ti -1c
+.RI "virtual void \fBrun\fP (\fBMTLThreadInterface\fP *\fBthreadIf\fP)"
+.br
+.RI "Start the thread\&. "
+.ti -1c
+.RI "virtual void \fBsuspend\fP ()"
+.br
+.RI "Suspend the thread\&. "
+.ti -1c
+.RI "virtual void \fBresume\fP ()"
+.br
+.RI "Resume the thread\&. "
+.ti -1c
+.RI "virtual void \fBstop\fP ()"
+.br
+.RI "Stop the thread\&. "
+.ti -1c
+.RI "virtual void \fBclean_exit\fP ()"
+.br
+.RI "A clean Exit of the Thread\&. "
+.ti -1c
+.RI "virtual void \fBforce_exit\fP ()"
+.br
+.RI "Force the thread to exit\&. "
+.ti -1c
+.RI "void \fBsetSleepTime\fP (int sleep_time)"
+.br
+.RI "Set the Sleep Time\&. "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBprocessMessage\fP (\fBMessage\fP message)=0"
+.br
+.RI "Process the message Message\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned int \fBm_sleep_time\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class that implements a Worker Thread\&. 
+
+This class is a Worker Thread that can be used to run a task\&.
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MTL::MTLWorkerThread::MTLWorkerThread ()"
+
+.PP
+Construct a new \fBMTLWorkerThread\fP object\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References m_sleep_time, and MTL::MTLMessageQueue::MTLMessageQueue()\&.
+.SS "MTL::MTLWorkerThread::~MTLWorkerThread ()\fC [virtual]\fP"
+
+.PP
+Destroy the \fBMTLWorkerThread\fP object\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void MTL::MTLWorkerThread::clean_exit ()\fC [virtual]\fP"
+
+.PP
+A clean Exit of the Thread\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.PP
+Reimplemented in \fBMyWorker3\fP, \fBMyWorker2\fP, \fBMyWorker1\fP, and \fBMyWorker1\fP\&.
+.PP
+Referenced by MyWorker1::clean_exit(), MyWorker2::clean_exit(), and MyWorker3::clean_exit()\&.
+.SS "void MTL::MTLWorkerThread::force_exit ()\fC [virtual]\fP"
+
+.PP
+Force the thread to exit\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.SS "virtual void MTL::MTLWorkerThread::processMessage (\fBMessage\fP message)\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.PP
+Process the message Message\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImessage\fP The message to process\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLWorker\fP\&.
+.PP
+Implemented in \fBMyWorker3\fP, \fBMyWorker2\fP, \fBMyWorker\fP, \fBMyWorker1\fP, and \fBMyWorker1\fP\&.
+.PP
+Referenced by run()\&.
+.SS "void MTL::MTLWorkerThread::resume ()\fC [virtual]\fP"
+
+.PP
+Resume the thread\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.SS "void MTL::MTLWorkerThread::run (\fBMTLThreadInterface\fP * threadIf)\fC [virtual]\fP"
+
+.PP
+Start the thread\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIthreadIf\fP The thread interface\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.PP
+References MTL::EXITED, MTL::FORCE_EXITED, MTL::MTLThreadInterface::getThreadState(), MTL::MTLMessageQueue::isEmpty(), m_sleep_time, MTL::MTLMessageQueue::popMessage(), processMessage(), MTL::STOPPED, and MTL::SUSPENDED\&.
+.SS "void MTL::MTLWorkerThread::setSleepTime (int sleep_time)"
+
+.PP
+Set the Sleep Time\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsleep_time\fP sleep time in milliseconds\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References m_sleep_time\&.
+.SS "void MTL::MTLWorkerThread::stop ()\fC [virtual]\fP"
+
+.PP
+Stop the thread\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.SS "void MTL::MTLWorkerThread::suspend ()\fC [virtual]\fP"
+
+.PP
+Suspend the thread\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.SH "Field Documentation"
+.PP 
+.SS "unsigned int MTL::MTLWorkerThread::m_sleep_time\fC [private]\fP"
+Sleep time in milliseconds\&. 
+.PP
+Referenced by MTLWorkerThread(), run(), and setSleepTime()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MTL from the source code\&.

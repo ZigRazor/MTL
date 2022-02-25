@@ -1,0 +1,222 @@
+\hypertarget{classMTL_1_1MTLSharedObject}{}\doxysection{M\+TL\+::M\+T\+L\+Shared\+Object Class Reference}
+\label{classMTL_1_1MTLSharedObject}\index{MTL::MTLSharedObject@{MTL::MTLSharedObject}}
+
+
+Class that implements a shared object.  
+
+
+
+
+{\ttfamily \#include $<$M\+T\+L\+Shared\+Object.\+h$>$}
+
+
+
+Inheritance diagram for M\+TL\+::M\+T\+L\+Shared\+Object\+:
+% FIG 0
+
+
+Collaboration diagram for M\+TL\+::M\+T\+L\+Shared\+Object\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMTL_1_1MTLSharedObject_ac74ef7c74a4bc7c1cac5987004ba5a20}{M\+T\+L\+Shared\+Object}} (\mbox{\hyperlink{namespaceMTL_a0542e7cb430df94190bee9c739c8f773}{Shared\+Object\+Id}} id)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classMTL_1_1MTLSharedObject}{M\+T\+L\+Shared\+Object}} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMTL_1_1MTLSharedObject_adfe24d761d8a3fa6c69a0c70755e882a}{$\sim$\+M\+T\+L\+Shared\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classMTL_1_1MTLSharedObject}{M\+T\+L\+Shared\+Object}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceMTL_a0542e7cb430df94190bee9c739c8f773}{Shared\+Object\+Id}} \mbox{\hyperlink{classMTL_1_1MTLSharedObject_ad56a611bde833eabe435712323cfce2d}{get\+Obj\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Get the id of the object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMTL_1_1MTLSharedObject}{M\+T\+L\+Shared\+Object}} \& \mbox{\hyperlink{classMTL_1_1MTLSharedObject_af01337ed6697d2297f7d60c694a6f702}{get\+Obj}} ()
+\begin{DoxyCompactList}\small\item\em Lock the object and Get the object reference. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMTL_1_1MTLSharedObject_a0482ccceb3002cf6098df52d6d078c61}{release\+Obj}} ()
+\begin{DoxyCompactList}\small\item\em Release the object lock. ( this function should be used only after the end of the critical section that use the object ) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceMTL_a0542e7cb430df94190bee9c739c8f773}{Shared\+Object\+Id}} \mbox{\hyperlink{classMTL_1_1MTLSharedObject_a0087070e494d6fce85e18e4daf5cab72}{obj\+Id}}
+\item 
+std\+::mutex \mbox{\hyperlink{classMTL_1_1MTLSharedObject_a33bff5a914c36744bda555cae66457fc}{m\+\_\+mutex}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that implements a shared object. 
+
+This class is a shared object that can be used to share data between threads.
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMTL_1_1MTLSharedObject_ac74ef7c74a4bc7c1cac5987004ba5a20}\label{classMTL_1_1MTLSharedObject_ac74ef7c74a4bc7c1cac5987004ba5a20}} 
+\index{MTL::MTLSharedObject@{MTL::MTLSharedObject}!MTLSharedObject@{MTLSharedObject}}
+\index{MTLSharedObject@{MTLSharedObject}!MTL::MTLSharedObject@{MTL::MTLSharedObject}}
+\doxysubsubsection{\texorpdfstring{MTLSharedObject()}{MTLSharedObject()}}
+{\footnotesize\ttfamily M\+T\+L\+::\+M\+T\+L\+Shared\+Object\+::\+M\+T\+L\+Shared\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceMTL_a0542e7cb430df94190bee9c739c8f773}{Shared\+Object\+Id}}}]{id }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classMTL_1_1MTLSharedObject}{M\+T\+L\+Shared\+Object}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the object.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+References m\+\_\+mutex, and obj\+Id.
+
+
+
+Referenced by My\+Shared\+Object\+::\+My\+Shared\+Object().
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classMTL_1_1MTLSharedObject_adfe24d761d8a3fa6c69a0c70755e882a}\label{classMTL_1_1MTLSharedObject_adfe24d761d8a3fa6c69a0c70755e882a}} 
+\index{MTL::MTLSharedObject@{MTL::MTLSharedObject}!````~MTLSharedObject@{$\sim$MTLSharedObject}}
+\index{````~MTLSharedObject@{$\sim$MTLSharedObject}!MTL::MTLSharedObject@{MTL::MTLSharedObject}}
+\doxysubsubsection{\texorpdfstring{$\sim$MTLSharedObject()}{~MTLSharedObject()}}
+{\footnotesize\ttfamily M\+T\+L\+::\+M\+T\+L\+Shared\+Object\+::$\sim$\+M\+T\+L\+Shared\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destroy the \mbox{\hyperlink{classMTL_1_1MTLSharedObject}{M\+T\+L\+Shared\+Object}} object. 
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+References m\+\_\+mutex.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMTL_1_1MTLSharedObject_af01337ed6697d2297f7d60c694a6f702}\label{classMTL_1_1MTLSharedObject_af01337ed6697d2297f7d60c694a6f702}} 
+\index{MTL::MTLSharedObject@{MTL::MTLSharedObject}!getObj@{getObj}}
+\index{getObj@{getObj}!MTL::MTLSharedObject@{MTL::MTLSharedObject}}
+\doxysubsubsection{\texorpdfstring{getObj()}{getObj()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMTL_1_1MTLSharedObject}{M\+T\+L\+Shared\+Object}} \& M\+T\+L\+::\+M\+T\+L\+Shared\+Object\+::get\+Obj (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Lock the object and Get the object reference. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classMTL_1_1MTLSharedObject}{M\+T\+L\+Shared\+Object}}\& The object.
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+References m\+\_\+mutex.
+
+
+
+Referenced by M\+T\+L\+::\+M\+T\+L\+Shared\+Memory\+::get\+Shared\+Object\+By\+Id().
+
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classMTL_1_1MTLSharedObject_ad56a611bde833eabe435712323cfce2d}\label{classMTL_1_1MTLSharedObject_ad56a611bde833eabe435712323cfce2d}} 
+\index{MTL::MTLSharedObject@{MTL::MTLSharedObject}!getObjId@{getObjId}}
+\index{getObjId@{getObjId}!MTL::MTLSharedObject@{MTL::MTLSharedObject}}
+\doxysubsubsection{\texorpdfstring{getObjId()}{getObjId()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceMTL_a0542e7cb430df94190bee9c739c8f773}{Shared\+Object\+Id}} M\+T\+L\+::\+M\+T\+L\+Shared\+Object\+::get\+Obj\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the id of the object. 
+
+\begin{DoxyReturn}{Returns}
+Shared\+Object\+Id The id of the object.
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+References obj\+Id.
+
+
+
+Referenced by M\+T\+L\+::\+M\+T\+L\+Shared\+Memory\+::add\+Shared\+Object(), and M\+T\+L\+::\+M\+T\+L\+Shared\+Memory\+::release\+Shared\+Object().
+
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classMTL_1_1MTLSharedObject_a0482ccceb3002cf6098df52d6d078c61}\label{classMTL_1_1MTLSharedObject_a0482ccceb3002cf6098df52d6d078c61}} 
+\index{MTL::MTLSharedObject@{MTL::MTLSharedObject}!releaseObj@{releaseObj}}
+\index{releaseObj@{releaseObj}!MTL::MTLSharedObject@{MTL::MTLSharedObject}}
+\doxysubsubsection{\texorpdfstring{releaseObj()}{releaseObj()}}
+{\footnotesize\ttfamily void M\+T\+L\+::\+M\+T\+L\+Shared\+Object\+::release\+Obj (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Release the object lock. ( this function should be used only after the end of the critical section that use the object ) 
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+References m\+\_\+mutex.
+
+
+
+Referenced by M\+T\+L\+::\+M\+T\+L\+Shared\+Memory\+::release\+Shared\+Object().
+
+Here is the caller graph for this function\+:
+% FIG 5
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{classMTL_1_1MTLSharedObject_a33bff5a914c36744bda555cae66457fc}\label{classMTL_1_1MTLSharedObject_a33bff5a914c36744bda555cae66457fc}} 
+\index{MTL::MTLSharedObject@{MTL::MTLSharedObject}!m\_mutex@{m\_mutex}}
+\index{m\_mutex@{m\_mutex}!MTL::MTLSharedObject@{MTL::MTLSharedObject}}
+\doxysubsubsection{\texorpdfstring{m\_mutex}{m\_mutex}}
+{\footnotesize\ttfamily std\+::mutex M\+T\+L\+::\+M\+T\+L\+Shared\+Object\+::m\+\_\+mutex\hspace{0.3cm}{\ttfamily [private]}}
+
+The mutex of the object. 
+
+Referenced by get\+Obj(), M\+T\+L\+Shared\+Object(), release\+Obj(), and $\sim$\+M\+T\+L\+Shared\+Object().
+
+\mbox{\Hypertarget{classMTL_1_1MTLSharedObject_a0087070e494d6fce85e18e4daf5cab72}\label{classMTL_1_1MTLSharedObject_a0087070e494d6fce85e18e4daf5cab72}} 
+\index{MTL::MTLSharedObject@{MTL::MTLSharedObject}!objId@{objId}}
+\index{objId@{objId}!MTL::MTLSharedObject@{MTL::MTLSharedObject}}
+\doxysubsubsection{\texorpdfstring{objId}{objId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceMTL_a0542e7cb430df94190bee9c739c8f773}{Shared\+Object\+Id}} M\+T\+L\+::\+M\+T\+L\+Shared\+Object\+::obj\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+The id of the object. 
+
+Referenced by get\+Obj\+Id(), and M\+T\+L\+Shared\+Object().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{MTLSharedObject_8h}{M\+T\+L\+Shared\+Object.\+h}}\item 
+src/\mbox{\hyperlink{MTLSharedObject_8cpp}{M\+T\+L\+Shared\+Object.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,49 @@
+.TH "include/MTLTypedefs.h" 3 "Fri Feb 25 2022" "Version 0.0.1" "MTL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/MTLTypedefs.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <memory>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBMTL\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef MTLThreadState_Enumerated \fBMTL::E_MTLThreadState\fP"
+.br
+.RI "Thread State Enumeration Type Definition\&. "
+.ti -1c
+.RI "typedef std::shared_ptr< void > \fBMTL::Message\fP"
+.br
+.RI "Message Type Definition\&. "
+.ti -1c
+.RI "typedef unsigned int \fBMTL::SharedObjectId\fP"
+.br
+.RI "Shared Object Id Type Definition\&. "
+.ti -1c
+.RI "typedef std::string \fBMTL::TaskName\fP"
+.br
+.RI "TaskName Type Definition\&. "
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBMTL::MTLThreadState_Enumerated\fP { \fBMTL::CREATED\fP = 0, \fBMTL::RUNNING\fP = 1, \fBMTL::SUSPENDED\fP = 2, \fBMTL::STOPPED\fP = 3, \fBMTL::EXITED\fP = 4, \fBMTL::FORCE_EXITED\fP = 5 }"
+.br
+.RI "Thread State Enumeration\&. "
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MTL from the source code\&.

@@ -1,0 +1,60 @@
+.TH "MyWorker" 3 "Fri Feb 25 2022" "Version 0.0.1" "MTL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MyWorker
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMTL::MTLWorkerThread\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMyWorker\fP ()=default"
+.br
+.ti -1c
+.RI "virtual \fB~MyWorker\fP ()=default"
+.br
+.ti -1c
+.RI "virtual void \fBprocessMessage\fP (\fBMTL::Message\fP message) override"
+.br
+.RI "Process the message Message\&. "
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MyWorker::MyWorker ()\fC [default]\fP"
+
+.SS "virtual MyWorker::~MyWorker ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void MyWorker::processMessage (\fBMTL::Message\fP message)\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Process the message Message\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImessage\fP The message to process\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLWorkerThread\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MTL from the source code\&.

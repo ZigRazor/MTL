@@ -1,0 +1,16 @@
+digraph "MTL::MTLOrderedTask"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{MTL::MTLOrderedTask\n|- m_name\l- m_predecessor\l- m_successor\l- m_predecessorResults\l|+ MTLOrderedTask()\l+ ~MTLOrderedTask()\l+ run()\l+ getTaskName()\l+ addPredecessor()\l+ addSuccessor()\l+ getPredecessorResult()\l+ getPredecessorsResults()\l+ hasSuccessor()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Ordered Task."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node2 [label="{MTL::MTLTask\n|# m_future\l# m_futureMutex\l# m_result\l|+ MTLTask()\l+ ~MTLTask()\l+ run()\l+ getResult()\l+ waitResult()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d56/classMTL_1_1MTLTask.html",tooltip="The Class that represent a task."];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node3 [label="{MTL::MTLTaskInterface\n||+ getResult()\l+ waitResult()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/d46/classMTL_1_1MTLTaskInterface.html",tooltip="The MTLTaskInterface Interface Class."];
+  Node4 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node4 [label="{MTL::MTLRunnableTask\n||+ run()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/db2/classMTL_1_1MTLRunnableTask.html",tooltip="Runnable Task Interface."];
+  Node4 -> Node2 [color="grey25",fontsize="10",style="solid",label=" #m_runnableTask" ,arrowhead="odiamond"];
+  Node5 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node5 [label="{MTL::MTLOrderedTaskInterface\n||+ getPredecessorResult()\l+ getPredecessorsResults()\l+ getTaskName()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d42/classMTL_1_1MTLOrderedTaskInterface.html",tooltip="The MTLOrderedTaskInterface Interface Class."];
+}

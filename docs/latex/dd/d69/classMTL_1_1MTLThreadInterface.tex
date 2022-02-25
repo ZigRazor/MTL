@@ -1,0 +1,134 @@
+\hypertarget{classMTL_1_1MTLThreadInterface}{}\doxysection{M\+TL\+::M\+T\+L\+Thread\+Interface Class Reference}
+\label{classMTL_1_1MTLThreadInterface}\index{MTL::MTLThreadInterface@{MTL::MTLThreadInterface}}
+
+
+Class that implements a thread interface.  
+
+
+
+
+{\ttfamily \#include $<$M\+T\+L\+Thread\+Interface.\+h$>$}
+
+
+
+Inheritance diagram for M\+TL\+::M\+T\+L\+Thread\+Interface\+:
+% FIG 0
+
+
+Collaboration diagram for M\+TL\+::M\+T\+L\+Thread\+Interface\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classMTL_1_1MTLThreadInterface_a4a0e76a69c3bd1c7ea926034856aee87}{is\+Running}} ()=0
+\begin{DoxyCompactList}\small\item\em Check if the thread is running. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8}{E\+\_\+\+M\+T\+L\+Thread\+State}} \mbox{\hyperlink{classMTL_1_1MTLThreadInterface_af225df695ccb6f30fcb8b8dc05056bc2}{get\+Thread\+State}} ()=0
+\begin{DoxyCompactList}\small\item\em Get the Thread State object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMTL_1_1MTLThreadInterface_a6f284c63d396efe6870294eb1612ac12}{set\+Thread\+State}} (\mbox{\hyperlink{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8}{E\+\_\+\+M\+T\+L\+Thread\+State}} thread\+State)=0
+\begin{DoxyCompactList}\small\item\em Set the Thread State object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that implements a thread interface. 
+
+This class is a thread interface that can be used to run a task.
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMTL_1_1MTLThreadInterface_af225df695ccb6f30fcb8b8dc05056bc2}\label{classMTL_1_1MTLThreadInterface_af225df695ccb6f30fcb8b8dc05056bc2}} 
+\index{MTL::MTLThreadInterface@{MTL::MTLThreadInterface}!getThreadState@{getThreadState}}
+\index{getThreadState@{getThreadState}!MTL::MTLThreadInterface@{MTL::MTLThreadInterface}}
+\doxysubsubsection{\texorpdfstring{getThreadState()}{getThreadState()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8}{E\+\_\+\+M\+T\+L\+Thread\+State}} M\+T\+L\+::\+M\+T\+L\+Thread\+Interface\+::get\+Thread\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the Thread State object. 
+
+\begin{DoxyReturn}{Returns}
+E\+\_\+\+M\+T\+L\+Thread\+State the state of the thread.
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+Implemented in \mbox{\hyperlink{classMTL_1_1MTLThread_a1acdb1f09de4ef1b4190e631e954e528}{M\+T\+L\+::\+M\+T\+L\+Thread}}.
+
+
+
+Referenced by My\+Runnable\+::run(), M\+T\+L\+::\+M\+T\+L\+Worker\+Thread\+::run(), and M\+T\+L\+::\+M\+T\+L\+Thread\+Manager\+::run().
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classMTL_1_1MTLThreadInterface_a4a0e76a69c3bd1c7ea926034856aee87}\label{classMTL_1_1MTLThreadInterface_a4a0e76a69c3bd1c7ea926034856aee87}} 
+\index{MTL::MTLThreadInterface@{MTL::MTLThreadInterface}!isRunning@{isRunning}}
+\index{isRunning@{isRunning}!MTL::MTLThreadInterface@{MTL::MTLThreadInterface}}
+\doxysubsubsection{\texorpdfstring{isRunning()}{isRunning()}}
+{\footnotesize\ttfamily virtual bool M\+T\+L\+::\+M\+T\+L\+Thread\+Interface\+::is\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Check if the thread is running. 
+
+\begin{DoxyReturn}{Returns}
+true if the thread is running. 
+
+false if the thread is not running.
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+Implemented in \mbox{\hyperlink{classMTL_1_1MTLThread_aec8cfd545b4830ea113b3f025d8fa83f}{M\+T\+L\+::\+M\+T\+L\+Thread}}.
+
+\mbox{\Hypertarget{classMTL_1_1MTLThreadInterface_a6f284c63d396efe6870294eb1612ac12}\label{classMTL_1_1MTLThreadInterface_a6f284c63d396efe6870294eb1612ac12}} 
+\index{MTL::MTLThreadInterface@{MTL::MTLThreadInterface}!setThreadState@{setThreadState}}
+\index{setThreadState@{setThreadState}!MTL::MTLThreadInterface@{MTL::MTLThreadInterface}}
+\doxysubsubsection{\texorpdfstring{setThreadState()}{setThreadState()}}
+{\footnotesize\ttfamily virtual void M\+T\+L\+::\+M\+T\+L\+Thread\+Interface\+::set\+Thread\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceMTL_a5fed7b85ef7b0f6bc46485c3bd448fa8}{E\+\_\+\+M\+T\+L\+Thread\+State}}}]{thread\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set the Thread State object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em thread\+State} & the Thread State to set\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+Implemented in \mbox{\hyperlink{classMTL_1_1MTLThread_a91e211bf57777f789717a77ae13aa6d9}{M\+T\+L\+::\+M\+T\+L\+Thread}}.
+
+
+
+Referenced by My\+Runnable\+::run().
+
+Here is the caller graph for this function\+:
+% FIG 3
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{MTLThreadInterface_8h}{M\+T\+L\+Thread\+Interface.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,14 @@
+digraph "MTL::MTLThreadPool::MTLThreadPool"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="MTL::MTLThreadPool\l::MTLThreadPool",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Construct a new MTLThreadPool object."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="MTL::MTLThreadManager\l::addThread",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/def/classMTL_1_1MTLThreadManager.html#acd122b56c2c73e0b80aa0795a2667717",tooltip="Add a thread to the thread manager."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="MTL::MTLThread::MTLThread",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/df5/classMTL_1_1MTLThread.html#a4c5b32a271ce07ba35636bc42db44467",tooltip="Construct a new MTLThread object."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="MTL::MTLThreadManager\l::MTLThreadManager",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/def/classMTL_1_1MTLThreadManager.html#a2da48348671dfeafd9fbba0e1ac50308",tooltip="Construct a new MTLThreadManager object."];
+}

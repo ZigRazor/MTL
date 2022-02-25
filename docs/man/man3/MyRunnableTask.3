@@ -1,0 +1,59 @@
+.TH "MyRunnableTask" 3 "Fri Feb 25 2022" "Version 0.0.1" "MTL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MyRunnableTask
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMTL::MTLRunnableTask\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMyRunnableTask\fP ()=default"
+.br
+.ti -1c
+.RI "virtual \fB~MyRunnableTask\fP ()=default"
+.br
+.ti -1c
+.RI "std::shared_ptr< void > \fBrun\fP (\fBMTL::MTLTaskInterface\fP *interface=nullptr)"
+.br
+.RI "The function that represent the task\&. "
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MyRunnableTask::MyRunnableTask ()\fC [default]\fP"
+
+.SS "virtual MyRunnableTask::~MyRunnableTask ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "std::shared_ptr<void> MyRunnableTask::run (\fBMTL::MTLTaskInterface\fP * interface = \fCnullptr\fP)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+The function that represent the task\&. 
+.PP
+\fBReturns\fP
+.RS 4
+std::shared_ptr<void> the result of the task\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnableTask\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MTL from the source code\&.

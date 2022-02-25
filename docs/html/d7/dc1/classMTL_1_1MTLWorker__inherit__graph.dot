@@ -1,0 +1,17 @@
+digraph "MTL::MTLWorker"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{MTL::MTLWorker\n||# processMessage()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Worker Interface."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{MTL::MTLWorkerThread\n|- m_sleep_time\l|+ MTLWorkerThread()\l+ ~MTLWorkerThread()\l+ run()\l+ suspend()\l+ resume()\l+ stop()\l+ clean_exit()\l+ force_exit()\l+ setSleepTime()\l# processMessage()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/dfb/classMTL_1_1MTLWorkerThread.html",tooltip="Class that implements a Worker Thread."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{MyWorker\n||+ MyWorker()\l+ ~MyWorker()\l+ processMessage()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d13/classMyWorker.html",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node4 [label="{MyWorker1\n||+ MyWorker1()\l+ ~MyWorker1()\l+ processMessage()\l+ clean_exit()\l+ MyWorker1()\l+ ~MyWorker1()\l+ processMessage()\l+ clean_exit()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/d0c/classMyWorker1.html",tooltip=" "];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node5 [label="{MyWorker2\n||+ MyWorker2()\l+ ~MyWorker2()\l+ processMessage()\l+ clean_exit()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/da2/classMyWorker2.html",tooltip=" "];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node6 [label="{MyWorker3\n||+ MyWorker3()\l+ ~MyWorker3()\l+ processMessage()\l+ clean_exit()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d9f/classMyWorker3.html",tooltip=" "];
+}

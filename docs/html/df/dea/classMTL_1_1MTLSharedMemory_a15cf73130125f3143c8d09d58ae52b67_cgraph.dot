@@ -1,0 +1,10 @@
+digraph "MTL::MTLSharedMemory::addSharedObject"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="MTL::MTLSharedMemory\l::addSharedObject",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Add a shared object to the shared memory."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="MTL::MTLSharedObject\l::getObjId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d61/classMTL_1_1MTLSharedObject.html#ad56a611bde833eabe435712323cfce2d",tooltip="Get the id of the object."];
+}

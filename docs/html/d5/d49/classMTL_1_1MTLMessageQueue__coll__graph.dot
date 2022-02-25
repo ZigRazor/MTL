@@ -1,0 +1,7 @@
+digraph "MTL::MTLMessageQueue"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{MTL::MTLMessageQueue\n|- m_queue_mutex\l- m_queue\l|+ MTLMessageQueue()\l+ ~MTLMessageQueue()\l+ pushMessage()\l+ popMessage()\l+ isEmpty()\l+ clear()\l+ getQueueSize()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Class that implements a message queue."];
+}

@@ -1,0 +1,14 @@
+digraph "MTL::MTLWorkerThread::clean_exit"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="MTL::MTLWorkerThread\l::clean_exit",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="A clean Exit of the Thread."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="MyWorker1::clean_exit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/d0c/classMyWorker1.html#a74b6b2d8601007ac00896a7e34309306",tooltip="A clean Exit of the Thread."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="MyWorker2::clean_exit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/da2/classMyWorker2.html#adac093b1d768db4f85d43ac98bbba32f",tooltip="A clean Exit of the Thread."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="MyWorker3::clean_exit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d9f/classMyWorker3.html#adc69df20c89e7f1e5f2b68d4868a8936",tooltip="A clean Exit of the Thread."];
+}

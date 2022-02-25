@@ -1,0 +1,17 @@
+digraph "MyWorker3"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{MyWorker3\n||+ MyWorker3()\l+ ~MyWorker3()\l+ processMessage()\l+ clean_exit()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node2 [label="{MTL::MTLWorkerThread\n|- m_sleep_time\l|+ MTLWorkerThread()\l+ ~MTLWorkerThread()\l+ run()\l+ suspend()\l+ resume()\l+ stop()\l+ clean_exit()\l+ force_exit()\l+ setSleepTime()\l# processMessage()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/dfb/classMTL_1_1MTLWorkerThread.html",tooltip="Class that implements a Worker Thread."];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node3 [label="{MTL::MTLRunnable\n||+ run()\l+ suspend()\l+ resume()\l+ stop()\l+ clean_exit()\l+ force_exit()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/da7/classMTL_1_1MTLRunnable.html",tooltip="Runnable Interface."];
+  Node4 -> Node3 [color="grey25",fontsize="10",style="solid",label=" -threadIf" ,arrowhead="odiamond"];
+  Node4 [label="{MTL::MTLThreadInterface\n||+ isRunning()\l+ getThreadState()\l+ setThreadState()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d69/classMTL_1_1MTLThreadInterface.html",tooltip="Class that implements a thread interface."];
+  Node5 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node5 [label="{MTL::MTLWorker\n||# processMessage()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d66/classMTL_1_1MTLWorker.html",tooltip="Worker Interface."];
+  Node6 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node6 [label="{MTL::MTLMessageQueue\n|- m_queue_mutex\l- m_queue\l|+ MTLMessageQueue()\l+ ~MTLMessageQueue()\l+ pushMessage()\l+ popMessage()\l+ isEmpty()\l+ clear()\l+ getQueueSize()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d50/classMTL_1_1MTLMessageQueue.html",tooltip="Class that implements a message queue."];
+}

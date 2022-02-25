@@ -1,0 +1,16 @@
+digraph "MTL::MTLTaskFlow::precede"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="MTL::MTLTaskFlow::precede",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Declare the taskA as a predecessor of taskB."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="MTL::MTLOrderedTask\l::addPredecessor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d77/classMTL_1_1MTLOrderedTask.html#a2894341a8bcab900f3588b50397532d4",tooltip="Add a predecessor task."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="MTL::MTLOrderedTask\l::getTaskName",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d77/classMTL_1_1MTLOrderedTask.html#a9ce48fa95355ecf44d30677e0b0a2768",tooltip="Get the Task Name."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="MTL::MTLOrderedTask\l::addSuccessor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d77/classMTL_1_1MTLOrderedTask.html#aa235ef007910f0e4515ba64ec6681b77",tooltip="Add a successor task."];
+  Node4 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+}

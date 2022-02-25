@@ -1,0 +1,67 @@
+.TH "MySharedObject" 3 "Fri Feb 25 2022" "Version 0.0.1" "MTL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MySharedObject
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMTL::MTLSharedObject\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMySharedObject\fP (unsigned int id)"
+.br
+.ti -1c
+.RI "\fB~MySharedObject\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetValue\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetValue\fP (int v)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBvalue\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MySharedObject::MySharedObject (unsigned int id)\fC [inline]\fP"
+
+.PP
+References MTL::MTLSharedObject::MTLSharedObject(), and value\&.
+.PP
+Referenced by main()\&.
+.SS "MySharedObject::~MySharedObject ()\fC [inline]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "int MySharedObject::getValue ()\fC [inline]\fP"
+
+.PP
+References value\&.
+.PP
+Referenced by MyRunnable::run()\&.
+.SS "void MySharedObject::setValue (int v)\fC [inline]\fP"
+
+.PP
+References value\&.
+.PP
+Referenced by MyRunnable::run()\&.
+.SH "Field Documentation"
+.PP 
+.SS "int MySharedObject::value\fC [private]\fP"
+
+.PP
+Referenced by getValue(), MySharedObject(), and setValue()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MTL from the source code\&.

@@ -1,0 +1,192 @@
+\hypertarget{classMTL_1_1MTLThreadPool}{}\doxysection{M\+TL\+::M\+T\+L\+Thread\+Pool Class Reference}
+\label{classMTL_1_1MTLThreadPool}\index{MTL::MTLThreadPool@{MTL::MTLThreadPool}}
+
+
+Class that implements a thread pool.  
+
+
+
+
+{\ttfamily \#include $<$M\+T\+L\+Thread\+Pool.\+h$>$}
+
+
+
+Inheritance diagram for M\+TL\+::M\+T\+L\+Thread\+Pool\+:
+% FIG 0
+
+
+Collaboration diagram for M\+TL\+::M\+T\+L\+Thread\+Pool\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMTL_1_1MTLThreadPool_a0097f5e1fdbe0e09acfc62331f511185}{M\+T\+L\+Thread\+Pool}} (\mbox{\hyperlink{classMTL_1_1MTLWorkerThread}{M\+T\+L\+Worker\+Thread}} \&\mbox{\hyperlink{classMTL_1_1MTLThreadPool_a370dca6ec9b28347c2ea6f63759a50cb}{worker}}, unsigned int num\+\_\+threads)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classMTL_1_1MTLThreadPool}{M\+T\+L\+Thread\+Pool}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMTL_1_1MTLThreadPool_ac31d48091da0648b4900d20f1df6d2d8}{$\sim$\+M\+T\+L\+Thread\+Pool}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classMTL_1_1MTLThreadPool}{M\+T\+L\+Thread\+Pool}} object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMTL_1_1MTLThreadPool_a234134e6ed1e39274b13c6c61ac1d1b8}{on\+Message}} (\mbox{\hyperlink{namespaceMTL_aa51e466042eddacf258ce1a69e5a0e6b}{Message}} \&message)
+\begin{DoxyCompactList}\small\item\em Dispatch a message to the thread pool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::mutex \mbox{\hyperlink{classMTL_1_1MTLThreadPool_a796105cd5702ecf876c728d981e4e689}{m\+\_\+on\+Message\+\_\+mutex}}
+\item 
+unsigned int \mbox{\hyperlink{classMTL_1_1MTLThreadPool_a7a2503a0969870f4889558991b4060c9}{m\+\_\+num\+\_\+threads}}
+\item 
+unsigned int \mbox{\hyperlink{classMTL_1_1MTLThreadPool_af1d6092d08f40d5202bcabacfd5d1e4c}{m\+\_\+current\+\_\+thread}}
+\item 
+\mbox{\hyperlink{classMTL_1_1MTLWorkerThread}{M\+T\+L\+Worker\+Thread}} \& \mbox{\hyperlink{classMTL_1_1MTLThreadPool_a370dca6ec9b28347c2ea6f63759a50cb}{worker}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class that implements a thread pool. 
+
+This class is a thread pool that can be used to manage threads.
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMTL_1_1MTLThreadPool_a0097f5e1fdbe0e09acfc62331f511185}\label{classMTL_1_1MTLThreadPool_a0097f5e1fdbe0e09acfc62331f511185}} 
+\index{MTL::MTLThreadPool@{MTL::MTLThreadPool}!MTLThreadPool@{MTLThreadPool}}
+\index{MTLThreadPool@{MTLThreadPool}!MTL::MTLThreadPool@{MTL::MTLThreadPool}}
+\doxysubsubsection{\texorpdfstring{MTLThreadPool()}{MTLThreadPool()}}
+{\footnotesize\ttfamily M\+T\+L\+::\+M\+T\+L\+Thread\+Pool\+::\+M\+T\+L\+Thread\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMTL_1_1MTLWorkerThread}{M\+T\+L\+Worker\+Thread}} \&}]{worker,  }\item[{unsigned int}]{num\+\_\+threads }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classMTL_1_1MTLThreadPool}{M\+T\+L\+Thread\+Pool}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em worker} & worker thread for the thread pool. \\
+\hline
+{\em num\+\_\+threads} & number of threads in the thread pool.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+References M\+T\+L\+::\+M\+T\+L\+Thread\+Manager\+::add\+Thread(), m\+\_\+current\+\_\+thread, m\+\_\+num\+\_\+threads, m\+\_\+on\+Message\+\_\+mutex, M\+T\+L\+::\+M\+T\+L\+Thread\+::\+M\+T\+L\+Thread(), M\+T\+L\+::\+M\+T\+L\+Thread\+Manager\+::\+M\+T\+L\+Thread\+Manager(), and worker.
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classMTL_1_1MTLThreadPool_ac31d48091da0648b4900d20f1df6d2d8}\label{classMTL_1_1MTLThreadPool_ac31d48091da0648b4900d20f1df6d2d8}} 
+\index{MTL::MTLThreadPool@{MTL::MTLThreadPool}!````~MTLThreadPool@{$\sim$MTLThreadPool}}
+\index{````~MTLThreadPool@{$\sim$MTLThreadPool}!MTL::MTLThreadPool@{MTL::MTLThreadPool}}
+\doxysubsubsection{\texorpdfstring{$\sim$MTLThreadPool()}{~MTLThreadPool()}}
+{\footnotesize\ttfamily M\+T\+L\+::\+M\+T\+L\+Thread\+Pool\+::$\sim$\+M\+T\+L\+Thread\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the \mbox{\hyperlink{classMTL_1_1MTLThreadPool}{M\+T\+L\+Thread\+Pool}} object. 
+
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMTL_1_1MTLThreadPool_a234134e6ed1e39274b13c6c61ac1d1b8}\label{classMTL_1_1MTLThreadPool_a234134e6ed1e39274b13c6c61ac1d1b8}} 
+\index{MTL::MTLThreadPool@{MTL::MTLThreadPool}!onMessage@{onMessage}}
+\index{onMessage@{onMessage}!MTL::MTLThreadPool@{MTL::MTLThreadPool}}
+\doxysubsubsection{\texorpdfstring{onMessage()}{onMessage()}}
+{\footnotesize\ttfamily void M\+T\+L\+::\+M\+T\+L\+Thread\+Pool\+::on\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceMTL_aa51e466042eddacf258ce1a69e5a0e6b}{Message}} \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Dispatch a message to the thread pool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Message to dispatch.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+@\+Zig\+Razor 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/16 
+\end{DoxyDate}
+
+
+References m\+\_\+on\+Message\+\_\+mutex, M\+T\+L\+::\+M\+T\+L\+Message\+Queue\+::push\+Message(), and worker.
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{classMTL_1_1MTLThreadPool_af1d6092d08f40d5202bcabacfd5d1e4c}\label{classMTL_1_1MTLThreadPool_af1d6092d08f40d5202bcabacfd5d1e4c}} 
+\index{MTL::MTLThreadPool@{MTL::MTLThreadPool}!m\_current\_thread@{m\_current\_thread}}
+\index{m\_current\_thread@{m\_current\_thread}!MTL::MTLThreadPool@{MTL::MTLThreadPool}}
+\doxysubsubsection{\texorpdfstring{m\_current\_thread}{m\_current\_thread}}
+{\footnotesize\ttfamily unsigned int M\+T\+L\+::\+M\+T\+L\+Thread\+Pool\+::m\+\_\+current\+\_\+thread\hspace{0.3cm}{\ttfamily [private]}}
+
+Current thread in the thread pool. 
+
+Referenced by M\+T\+L\+Thread\+Pool().
+
+\mbox{\Hypertarget{classMTL_1_1MTLThreadPool_a7a2503a0969870f4889558991b4060c9}\label{classMTL_1_1MTLThreadPool_a7a2503a0969870f4889558991b4060c9}} 
+\index{MTL::MTLThreadPool@{MTL::MTLThreadPool}!m\_num\_threads@{m\_num\_threads}}
+\index{m\_num\_threads@{m\_num\_threads}!MTL::MTLThreadPool@{MTL::MTLThreadPool}}
+\doxysubsubsection{\texorpdfstring{m\_num\_threads}{m\_num\_threads}}
+{\footnotesize\ttfamily unsigned int M\+T\+L\+::\+M\+T\+L\+Thread\+Pool\+::m\+\_\+num\+\_\+threads\hspace{0.3cm}{\ttfamily [private]}}
+
+Number of threads in the thread pool. 
+
+Referenced by M\+T\+L\+Thread\+Pool().
+
+\mbox{\Hypertarget{classMTL_1_1MTLThreadPool_a796105cd5702ecf876c728d981e4e689}\label{classMTL_1_1MTLThreadPool_a796105cd5702ecf876c728d981e4e689}} 
+\index{MTL::MTLThreadPool@{MTL::MTLThreadPool}!m\_onMessage\_mutex@{m\_onMessage\_mutex}}
+\index{m\_onMessage\_mutex@{m\_onMessage\_mutex}!MTL::MTLThreadPool@{MTL::MTLThreadPool}}
+\doxysubsubsection{\texorpdfstring{m\_onMessage\_mutex}{m\_onMessage\_mutex}}
+{\footnotesize\ttfamily std\+::mutex M\+T\+L\+::\+M\+T\+L\+Thread\+Pool\+::m\+\_\+on\+Message\+\_\+mutex\hspace{0.3cm}{\ttfamily [private]}}
+
+Mutex for the on\+Message method. 
+
+Referenced by M\+T\+L\+Thread\+Pool(), and on\+Message().
+
+\mbox{\Hypertarget{classMTL_1_1MTLThreadPool_a370dca6ec9b28347c2ea6f63759a50cb}\label{classMTL_1_1MTLThreadPool_a370dca6ec9b28347c2ea6f63759a50cb}} 
+\index{MTL::MTLThreadPool@{MTL::MTLThreadPool}!worker@{worker}}
+\index{worker@{worker}!MTL::MTLThreadPool@{MTL::MTLThreadPool}}
+\doxysubsubsection{\texorpdfstring{worker}{worker}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMTL_1_1MTLWorkerThread}{M\+T\+L\+Worker\+Thread}}\& M\+T\+L\+::\+M\+T\+L\+Thread\+Pool\+::worker\hspace{0.3cm}{\ttfamily [private]}}
+
+Worker thread for the thread pool. 
+
+Referenced by M\+T\+L\+Thread\+Pool(), and on\+Message().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{MTLThreadPool_8h}{M\+T\+L\+Thread\+Pool.\+h}}\item 
+src/\mbox{\hyperlink{MTLThreadPool_8cpp}{M\+T\+L\+Thread\+Pool.\+cpp}}\end{DoxyCompactItemize}

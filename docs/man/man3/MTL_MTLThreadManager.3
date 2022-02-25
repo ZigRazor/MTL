@@ -1,0 +1,318 @@
+.TH "MTL::MTLThreadManager" 3 "Fri Feb 25 2022" "Version 0.0.1" "MTL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MTL::MTLThreadManager \- Class that implements a thread manager\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MTLThreadManager\&.h>\fP
+.PP
+Inherits \fBMTL::MTLRunnable\fP\&.
+.PP
+Inherited by \fBMTL::MTLThreadPool\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMTLThreadManager\fP ()"
+.br
+.RI "Construct a new \fBMTLThreadManager\fP object\&. "
+.ti -1c
+.RI "virtual \fB~MTLThreadManager\fP ()"
+.br
+.RI "Destroy the \fBMTLThreadManager\fP object\&. "
+.ti -1c
+.RI "virtual void \fBrun\fP (\fBMTLThreadInterface\fP *\fBthreadIf\fP)"
+.br
+.RI "Start the thread manager\&. "
+.ti -1c
+.RI "virtual void \fBsuspend\fP ()"
+.br
+.RI "Suspend the thread manager\&. "
+.ti -1c
+.RI "virtual void \fBresume\fP ()"
+.br
+.RI "Resume the thread manager\&. "
+.ti -1c
+.RI "virtual void \fBstop\fP ()"
+.br
+.RI "Stop the thread manager\&. "
+.ti -1c
+.RI "virtual void \fBclean_exit\fP ()"
+.br
+.RI "A clean Exit of the thread manager\&. "
+.ti -1c
+.RI "virtual void \fBforce_exit\fP ()"
+.br
+.RI "Force the thread manager to exit\&. "
+.ti -1c
+.RI "void \fBaddThread\fP (std::unique_ptr< \fBMTLThread\fP > thread)"
+.br
+.RI "Add a thread to the thread manager\&. "
+.ti -1c
+.RI "void \fBsetSleepTime\fP (int sleep_time)"
+.br
+.RI "Set the Sleep Time object\&. "
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< std::unique_ptr< \fBMTLThread\fP > > \fBm_threads\fP"
+.br
+.ti -1c
+.RI "std::mutex \fBm_threads_mutex\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned int \fBm_sleep_time\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class that implements a thread manager\&. 
+
+This class is a thread manager that can be used to manage threads\&.
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MTL::MTLThreadManager::MTLThreadManager ()"
+
+.PP
+Construct a new \fBMTLThreadManager\fP object\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References m_sleep_time, m_threads, and m_threads_mutex\&.
+.PP
+Referenced by MTL::MTLThreadPool::MTLThreadPool()\&.
+.SS "MTL::MTLThreadManager::~MTLThreadManager ()\fC [virtual]\fP"
+
+.PP
+Destroy the \fBMTLThreadManager\fP object\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void MTL::MTLThreadManager::addThread (std::unique_ptr< \fBMTLThread\fP > thread)"
+
+.PP
+Add a thread to the thread manager\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIthread\fP the thread to add\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References m_threads, and m_threads_mutex\&.
+.PP
+Referenced by main(), and MTL::MTLThreadPool::MTLThreadPool()\&.
+.SS "void MTL::MTLThreadManager::clean_exit ()\fC [virtual]\fP"
+
+.PP
+A clean Exit of the thread manager\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.PP
+References MTL::MTLThread::clean_exit(), MTL::CREATED, MTL::MTLThread::getThreadState(), m_threads, m_threads_mutex, and MTL::MTLThread::run()\&.
+.SS "void MTL::MTLThreadManager::force_exit ()\fC [virtual]\fP"
+
+.PP
+Force the thread manager to exit\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.PP
+References MTL::MTLThread::force_exit(), m_threads, and m_threads_mutex\&.
+.SS "void MTL::MTLThreadManager::resume ()\fC [virtual]\fP"
+
+.PP
+Resume the thread manager\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.SS "void MTL::MTLThreadManager::run (\fBMTLThreadInterface\fP * threadIf)\fC [virtual]\fP"
+
+.PP
+Start the thread manager\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIthreadIf\fP the thread interface\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.PP
+References MTL::CREATED, MTL::EXITED, MTL::FORCE_EXITED, MTL::MTLThreadInterface::getThreadState(), MTL::MTLThread::getThreadState(), MTL::MTLThread::isRunning(), MTL::MTLThread::join(), m_sleep_time, m_threads, m_threads_mutex, MTL::MTLThread::run(), MTL::STOPPED, and MTL::SUSPENDED\&.
+.SS "void MTL::MTLThreadManager::setSleepTime (int sleep_time)"
+
+.PP
+Set the Sleep Time object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsleep_time\fP Sleep time in milliseconds\&.
+.RE
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+References m_sleep_time\&.
+.SS "void MTL::MTLThreadManager::stop ()\fC [virtual]\fP"
+
+.PP
+Stop the thread manager\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.SS "void MTL::MTLThreadManager::suspend ()\fC [virtual]\fP"
+
+.PP
+Suspend the thread manager\&. 
+.PP
+\fBAuthor\fP
+.RS 4
+@ZigRazor 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2020-02-16 
+.RE
+.PP
+
+.PP
+Implements \fBMTL::MTLRunnable\fP\&.
+.SH "Field Documentation"
+.PP 
+.SS "unsigned int MTL::MTLThreadManager::m_sleep_time\fC [private]\fP"
+The sleep time\&. 
+.PP
+Referenced by MTLThreadManager(), run(), and setSleepTime()\&.
+.SS "std::vector<std::unique_ptr<\fBMTLThread\fP> > MTL::MTLThreadManager::m_threads\fC [protected]\fP"
+The threads vector\&. 
+.PP
+Referenced by addThread(), clean_exit(), force_exit(), MTLThreadManager(), and run()\&.
+.SS "std::mutex MTL::MTLThreadManager::m_threads_mutex\fC [protected]\fP"
+The threads mutex\&. 
+.PP
+Referenced by addThread(), clean_exit(), force_exit(), MTLThreadManager(), and run()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MTL from the source code\&.
