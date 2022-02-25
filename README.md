@@ -22,7 +22,7 @@ Multi Threading Library
 - [x] Task Class
 - [X] Ordered Task
 - [x] Task Flow
-- [ ] Complete Documentation
+- [x] Complete Documentation
 - [ ] Doxygen Integration
 - [ ] First Beta Release
 - [ ] Test Framework
