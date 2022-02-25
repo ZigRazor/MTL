@@ -7,8 +7,9 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 # MTL
-
-![MTL](logo/logo.gif)
+<p align="center">
+    <img src="logo/logo.gif" alt="MTL_Logo" width="500" height="500" style="display: block; margin: 0 auto" />
+</p>
 
 [![Contributors][contributors-shield]][contributors-url] [![Forks][forks-shield]][forks-url] [![Stargazers][stars-shield]][stars-url] [![Issues][issues-shield]][issues-url] [![GPL-3.0 License][license-shield]][license-url]
 
