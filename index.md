@@ -6,15 +6,14 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-# MTL
-
+# MTL (Multi Threading Library)
 <p align="center">
     <img src="logo/logo.gif" alt="MTL_Logo" width="500" height="500" style="display: block; margin: 0 auto" />
 </p>
 
 [![Contributors][contributors-shield]][contributors-url] [![Forks][forks-shield]][forks-url] [![Stargazers][stars-shield]][stars-url] [![Issues][issues-shield]][issues-url] [![GPL-3.0 License][license-shield]][license-url]
 
-Multi Threading Library
+Multi Threading Library is a set of utilities, easy and ready to use for common task in multi threading environment and development.
 
 ## Roadmap
 
