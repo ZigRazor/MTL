@@ -1,0 +1,28 @@
+name: Deploy Site
+
+on:
+  workflow_dispatch:
+  push:
+    #paths-ignore:
+    #- '.github/**' # Ignore changes towards the .github directory
+    paths:
+      - 'README.md'
+    branches:
+    - master # Only trigger on the master branch
+
+jobs:
+  build:
+    runs-on: [ubuntu-latest]
+    steps:
+    - name: Copy
+      uses: andstor/copycat-action@v3
+      with:
+        personal_token: ${{ secrets.PERSONAL_TOKEN }}
+        src_path: /README.md
+        dst_path: /index.md
+        src_branch: master
+        dst_branch: gh-pages
+        username: ZigRazor
+        email: zigrazor@gmail.com
+        dst_owner: ZigRazor
+        dst_repo_name: MTL
