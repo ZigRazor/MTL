@@ -8,7 +8,7 @@ on:
     paths:
       - 'README.md'
     branches:
-    - master # Only trigger on the master branch
+    - main # Only trigger on the master branch
 
 jobs:
   build:
@@ -20,7 +20,7 @@ jobs:
         personal_token: ${{ secrets.PERSONAL_TOKEN }}
         src_path: /README.md
         dst_path: /index.md
-        src_branch: master
+        src_branch: main
         dst_branch: gh-pages
         username: ZigRazor
         email: zigrazor@gmail.com
