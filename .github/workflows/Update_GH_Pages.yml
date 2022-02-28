@@ -1,4 +1,4 @@
-name: Deploy Site
+name: Update GithHub Pages
 
 on:
   workflow_dispatch:
