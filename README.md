@@ -728,6 +728,9 @@ You can find more detailed documentation at [MTL Documentation](https://raw.gith
 
 ## Contact
 
+| [<img src="https://avatars0.githubusercontent.com/u/6591180?s=460&v=4" width="100"><br><sub>@ZigRazor</sub>](https://github.com/ZigRazor) |
+|:----:|
+
 ZigRazor - zigrazor@gmail.com
 
 Project Link: [https://github.com/ZigRazor/MTL](https://github.com/ZigRazor/MTL)
