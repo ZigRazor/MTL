@@ -95,6 +95,14 @@ namespace MTL
         bool isRunning();
 
         /**
+         * @brief Check if the thread is in Exiting State.
+         * 
+         * @return true if the thread is in Exiting State.
+         * @return false if the thread is not in Exiting State.
+         */
+        bool isExiting();    
+
+        /**
          * @brief Join the thread.
          *
          * @author @ZigRazor

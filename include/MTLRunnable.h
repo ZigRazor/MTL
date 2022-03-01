@@ -65,7 +65,7 @@ namespace MTL
          */
         virtual void force_exit() = 0;
 
-    private:
+    protected:
         MTLThreadInterface *threadIf; //!< The thread interface.
     };
 

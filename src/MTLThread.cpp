@@ -17,7 +17,7 @@ namespace MTL
 
     void MTLThread::run(MTLThreadInterface *threadIf)
     {
-        if (!isRunning())
+        if (getThreadState() == CREATED)
         {
             std::lock_guard<std::mutex> lock(m_threadState_mutex);
             m_thread_ptr = std::unique_ptr<std::thread>(new std::thread(&MTLRunnable::run, &m_runnable, this));
@@ -73,6 +73,11 @@ namespace MTL
     {
         std::lock_guard<std::mutex> lock(m_threadState_mutex);
         return m_threadState == RUNNING || m_threadState == SUSPENDED || m_threadState == STOPPED;
+    }
+
+    bool MTLThread::isExiting(){
+        std::lock_guard<std::mutex> lock(m_threadState_mutex);
+        return m_threadState == EXITED || m_threadState == FORCE_EXITED;
     }
 
     void MTLThread::join()

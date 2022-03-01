@@ -43,9 +43,11 @@ endif(CODE_COVERAGE)
 
 file (GLOB SOURCE_FILES "src/*.cpp")
 file (GLOB HEADER_FILES "include/*.h")
+file (GLOB TEST_FILES "test/*.cpp")
 
 message( STATUS "MTL Source files: ${SOURCE_FILES}" )
 message( STATUS "MTL Header files: ${HEADER_FILES}" )
+message( STATUS "MTL Test files: ${TEST_FILES}" )
 
 add_library(MTL SHARED 
 			${SOURCE_FILES}
@@ -58,22 +60,21 @@ target_include_directories(MTL PUBLIC
 target_link_libraries(MTL
                           pthread)
 
-add_executable(test_exe test/main.cpp)
+add_executable(test_exe ${TEST_FILES})
 target_include_directories(test_exe PUBLIC
 						  "${PROJECT_SOURCE_DIR}/include"
 						  )
 target_link_libraries(test_exe
 					   libgtest.a
 					   libgtest_main.a
-					   pthread
-					   ssl
-					   crypto
-					   z)
+					   libgmock.a
+					   MTL)
 
 
-#enable_testing()
+enable_testing()
 
-#add_test(test_node test_exe --gtest_filter=NodeTest*)
+add_test(MTLRunnableTest test_exe --gtest_filter=MTLRunnableTest*)
+add_test(MTLThreadTest test_exe --gtest_filter=MTLThreadTest*)
 
 
 
