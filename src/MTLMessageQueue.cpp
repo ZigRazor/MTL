@@ -19,6 +19,10 @@ namespace MTL
 
     Message MTLMessageQueue::popMessage()
     {
+        if(m_queue.empty())
+        {
+            return nullptr;
+        }
         std::lock_guard<std::mutex> lock(m_queue_mutex);
         Message message = m_queue.front();
         m_queue.pop();

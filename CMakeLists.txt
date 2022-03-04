@@ -75,6 +75,7 @@ enable_testing()
 
 add_test(MTLRunnableTest test_exe --gtest_filter=MTLRunnableTest*)
 add_test(MTLThreadTest test_exe --gtest_filter=MTLThreadTest*)
+add_test(MTLMessageQueueTest test_exe --gtest_filter=MTLMessageQueueTest*)
 
 
 
